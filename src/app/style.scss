@@ -1,0 +1,111 @@
+.common {
+  .pagination,
+  .pagination_2,
+  .pagination_3,
+  .pagination_4,
+  .pagination_5 {
+    .swiper-pagination-bullet {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: #004C5B;
+      opacity: 1;
+      transition:
+        width 0.3s ease-in-out,
+        height 0.3s ease-in-out,
+        border-radius 0.3s ease-in-out;
+    }
+    .swiper-pagination-bullet-active {
+      height: 0.5rem;
+      width: 2rem;
+      border-radius: 0.5rem;
+      transition:
+        width 0.3s ease-in-out,
+        height 0.3s ease-in-out,
+        border-radius 0.3s ease-in-out;
+    }
+  }
+}
+.common2 {
+  .pagination,
+  .pagination_2,
+  .pagination_3,
+  .pagination_4,
+  .pagination_5 {
+    .swiper-pagination-bullet {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background-color: #131313;
+      border: 1px solid #fff;
+      opacity: 1;
+      transition:
+        width 0.3s ease-in-out,
+        height 0.3s ease-in-out,
+        border-radius 0.3s ease-in-out;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #fff;
+      height: 0.5rem;
+      width: 2rem;
+      border-radius: 0.5rem;
+      transition:
+        width 0.3s ease-in-out,
+        height 0.3s ease-in-out,
+        border-radius 0.3s ease-in-out;
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #131313; /* Default icon color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      font-weight: 400;
+      font-size: 2rem;
+    }
+    @media screen and (max-width: 768px) {
+      width: 1.5rem;
+      height: 1.5rem;
+
+      &::after {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.common2 {
+  .swiper-button-next,
+  .swiper-button-prev {
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    &::after {
+      color: #131313;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    @media (width < 768px) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.box-shadow {
+  box-shadow: 0px 7px 29px rgba(100, 100, 111, 0.2);
+}
+

@@ -1,26 +1,127 @@
 @import "tailwindcss";
+/* @import "@tailwindcss/utilities"; */
+
+
+
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dark: #343434;
+  --light: #686767;
+  --primary: #004C5B;
+  --secondary: #F2B636;
+  --bg1: #FFFCF8;
+  --bg2: #F9F4DC;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+::-webkit-scrollbar {
+  width: .3rem;
+  height: .3rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg2);
+  max-block-size: .5rem;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--bg2);
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+@layer utilities {
+
+  /* no-spiner class */
+  .no-spinner::-webkit-inner-spin-button,
+  .no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* color variables */
+  @theme inline {
+    --color-primary: var(--primary);
+    --color-secondary: var(--secondary);
+    --color-dark: var(--dark);
+    --color-light: var(--light);
+    --color-bg1: var(--bg1);
+    --color-bg2: var(--bg2);
+  }
+
+  /* font-family */
+  .abhayaLibre {
+    font-family: "Abhaya Libre";
+    font-weight: 500;
+  }
+
+  body {
+    font-family: "poppins", sans-serif;
+  }
+
+  /* max-width for all screens */
+  .max_screen {
+    max-width: 1600px;
+    margin-inline: auto;
+  }
+
+  /* max-width for all three screens {xxl, xl, lg, md, sm} */
+  .max-width {
+    max-width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .max-width {
+      max-width: 600px;
+      margin-inline: auto;
+      padding-inline: 1rem;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .max-width {
+      max-width: 900px;
+      margin-inline: auto;
+      padding-inline: 1rem;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .max-width {
+      max-width: 1100px;
+      margin-inline: auto;
+      padding-inline: 0;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .max-width {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: 0;
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .max-width {
+      max-width: 1300px;
+      margin-inline: auto;
+      padding-inline: 0;
+      width: 100%;
+    }
+  }
 }
