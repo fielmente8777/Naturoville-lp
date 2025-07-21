@@ -1,8 +1,8 @@
 "use client";
 import { AiOutlineClose } from "react-icons/ai";
-import Form1 from "../forms/Form1";
-import DataContext from "@/ContextApi/DataContext";
 import { useContext, useEffect } from "react";
+import DataContext from "@/contextApi/DataContext";
+import { Form } from "../forms";
 
 const PopForm: React.FC = () => {
   const { isOpen, setIsOpen } = useContext(DataContext);
@@ -31,7 +31,7 @@ const PopForm: React.FC = () => {
         >
           <AiOutlineClose size={20} />
         </button>
-        <Form1 setOpen={setIsOpen} />
+        <Form />
       </div>
     </div>
   );
