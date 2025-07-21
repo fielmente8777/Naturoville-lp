@@ -748,6 +748,26 @@ export const BtnNextIcon = ({ ...props }) => (
   </svg>
 );
 
+export const BtnNextIcon2 = ({ ...props }) => (
+  <svg
+    width={8}
+    height={16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M1.025 16L0 14.824 5.95 8 0 1.176 1.025 0 8 8l-6.975 8z"
+      fill="#004C5B"
+    />
+    <path
+      d="M1.025 16L0 14.824 5.95 8 0 1.176 1.025 0 8 8l-6.975 8z"
+      fill="#000"
+      fillOpacity={0.2}
+    />
+  </svg>
+);
+
 export const BtnPrevIcon = ({ ...props }) => (
   <svg
     width={18}
@@ -762,6 +782,26 @@ export const BtnPrevIcon = ({ ...props }) => (
     />
     <path
       d="M15.667 31.166l1.417-1.416L3.334 16l13.75-13.75L15.667.833.501 16l15.166 15.166z"
+      fill="#000"
+      fillOpacity={0.2}
+    />
+  </svg>
+);
+
+export const BtnPrevIcon2 = ({ ...props }) => (
+  <svg
+    width={8}
+    height={16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M6.975 16L8 14.824 2.05 8 8 1.176 6.975 0 0 8l6.975 8z"
+      fill="#004C5B"
+    />
+    <path
+      d="M6.975 16L8 14.824 2.05 8 8 1.176 6.975 0 0 8l6.975 8z"
       fill="#000"
       fillOpacity={0.2}
     />

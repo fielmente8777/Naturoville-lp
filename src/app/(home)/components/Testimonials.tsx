@@ -16,7 +16,7 @@ const Testimonials: React.FC<TestimonialsTypes> = ({
   cards,
 }) => {
   return (
-    <Section className="bg-bg1">
+    <Section className="bg-bg1 max-md:!py-0">
       <SectionWithContainer>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div className="max-w-[518px] w-full bg-bg1 p-6 flex flex-col gap-4 border rounded-lg border-primary box-shadow">
@@ -25,20 +25,20 @@ const Testimonials: React.FC<TestimonialsTypes> = ({
             </h2>
             <Form />
           </div>
-          <div className="flex flex-col md:gap-14 gap-8 max-w-lg">
-            <div className="space-y-4">
-              <h2 className="text-dark text-lg">{title}</h2>
-              <h3 className="md:text-5xl text-2xl text-primary abhayaLibre">
+          <div className="flex flex-col md:gap-7 gap-6 max-w-lg">
+            <div className="md:space-y-4 space-y-2">
+              <h2 className="text-dark text-lg max-md:text-center">{title}</h2>
+              <h3 className="md:text-5xl text-2xl text-primary abhayaLibre max-md:text-center">
                 {description}
               </h3>
-              <div className="w-full max-w-[60px] relative aspect-square">
-                <Image
-                  src="/quote.png"
-                  alt="quote"
-                  fill
-                  className="object-contain"
-                />
-              </div>
+            </div>
+            <div className="w-full max-w-[80px] relative aspect-square max-md:mx-auto">
+              <Image
+                src="/quote.png"
+                alt="quote"
+                fill
+                className="object-contain"
+              />
             </div>
             <div className="common">
               <SwiperCarousel

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Facilities: React.FC<FacilitiesTypes> = ({ title, list, links, src }) => {
   return (
-    <SectionWithContainer>
+    <SectionWithContainer sectionClassName="relative after:absolute after:bg-[url(/bg.png)] after:bg-no-repeat after:bg-contain after:opacity-5 md:after:w-[680px] after:w-[400px] max-md:after:mx-4 md:after:h-[480px] after:h-[400px] after:right-0 md:after:top-0 after:bottom-0 after:z-[-1]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <div className="relative md:aspect-[4/2.3] aspect-[4/3] w-full">
           <Image src={src} alt={title} fill className="object-cover rounded-sm" />

@@ -8,7 +8,7 @@ import {
   SwiperCarousel,
   TherapieCard,
 } from "@/components";
-import { BtnNextIcon, BtnPrevIcon, FlowerIcon } from "@/utils/icons";
+import { BtnNextIcon, BtnNextIcon2, BtnPrevIcon, BtnPrevIcon2, FlowerIcon } from "@/utils/icons";
 import { useState } from "react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 
@@ -29,7 +29,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
     <SectionWithContainer>
       <div className="flex flex-col md:gap-14 gap-8">
         <div className="flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
-          <span className="">
+          <span >
             <FlowerIcon />
           </span>
           <SectionHeadingDesc
@@ -39,7 +39,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
           />
         </div>
         {/* buttons for categories */}
-        <div className="flex flex-wrap gap-4 md:gap-6 mb-6 items-center justify-center w-full">
+        <div className="flex flex-wrap gap-4 md:gap-6 items-center justify-center w-full">
           {categories.map((cat, index) => (
             <OnlyButton
               label={cat}
@@ -107,11 +107,11 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
               <TherapieCard key={index} {...card} />
             )}
           />
-          <button className="about-prev px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute -left-3 box-shadow top-[35%] -translate-y-[35%] z-10">
-            <BtnPrevIcon  classname=""  />
+          <button className="about-prev px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute -left-4 box-shadow top-[30%] -translate-y-[30%] z-10">
+            <BtnPrevIcon2 />
           </button>
-          <button className="about-next px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute -right-3 box-shadow top-[35%] -translate-y-[35%] z-10">
-            <BtnNextIcon  classname="" />
+          <button className="about-next px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute -right-4 box-shadow top-[30%] -translate-y-[30%] z-10">
+            <BtnNextIcon2 />
           </button>
         </div>
         {/* slider buttons */}

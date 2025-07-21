@@ -8,7 +8,7 @@ const AccommodationCard: React.FC<AccommodationTypes["cards"][0]> = ({
 }) => {
   return (
     <div className="md:space-y-10 space-y-2">
-      <div className="relative aspect-[4/3] w-full">
+      <div className="relative md:aspect-[4/3] aspect-[4/2.2] w-full">
         <Image
           src={src}
           alt={title}

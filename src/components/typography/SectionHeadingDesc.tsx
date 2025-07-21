@@ -8,6 +8,7 @@ interface SectionHeadingDescProps {
   textcenter?: boolean;
   titleColor?: string;
   subTitleColor?: string;
+  smTextCenter?: boolean;
 }
 
 const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
@@ -18,13 +19,14 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
   textcenter = false,
   titleColor,
   subTitleColor,
+  smTextCenter = false,
 }) => {
   return (
     <div className="flex flex-col w-full gap-4">
       {title && (
         <Headings
           level={2}
-          className={` ${textcenter ? "text-center" : ""} ${titleColor ? `text-${titleColor}` : "text-primary"}  abhayaLibre md:text-5xl text-2xl `}
+          className={` ${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${titleColor ? `text-${titleColor}` : "text-primary"}  abhayaLibre md:text-5xl text-2xl `}
         >
           {title}
         </Headings>
@@ -32,13 +34,13 @@ const SectionHeadingDesc: React.FC<SectionHeadingDescProps> = ({
       {subTitle && (
         <Headings
           level={3}
-          className={` ${textcenter ? "text-center" : ""} ${subTitleColor ? `text-${subTitleColor}` : "text-dark"} abhayaLibre md:text-[2.5rem]/[3rem] text-2xl`}
+          className={` ${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${subTitleColor ? `text-${subTitleColor}` : "text-dark"} abhayaLibre md:text-[2.5rem]/[3rem] text-2xl`}
         >
           {subTitle}
         </Headings>
       )}
       {description && (
-        <p className={`${textcenter ? "text-center" : ""} ${descriptionColor ? `text-${descriptionColor}` : "text-light"} md:text-lg text-base`}>{description}</p>
+        <p className={`${textcenter ? "text-center" : ""} ${smTextCenter ? "max-md:text-center" : ""} ${descriptionColor ? `text-${descriptionColor}` : "text-light"} md:text-lg text-base`}>{description}</p>
       )}
     </div>
   );

@@ -18,7 +18,7 @@ const Accommodation: React.FC<AccommodationTypes> = ({
   links,
 }) => {
   return (
-    <Section>
+    <Section className="max-md:!py-0">
       <Section className="relative after:absolute after:content-[''] after:bg-[url(/bg.png)] after:bg-no-repeat after:bg-cover after:opacity-3.5 md:after:w-[614px] after:aspect-[4/2.5] after:left-0 after:-top-16 after:z-[-1]">
         <div className="w-full md:space-y-14 space-y-8">
           <Container className="flex flex-col items-center justify-center w-full">

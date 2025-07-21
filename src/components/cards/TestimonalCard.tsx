@@ -10,7 +10,7 @@ const TestimonialCard: React.FC<TestimonialsTypes["cards"][0]> = ({
   const [readMore, setReadMore] = useState(false);
   return (
     <div className="w-full flex flex-col gap-6">
-      <p className="text-light text-lg ">
+      <p className="text-light text-lg  max-md:text-center">
         {readMore ? desc : `${desc.slice(0, 300)}...`}
         <span
           className="cursor-pointer text-dark font-semibold"
@@ -21,7 +21,7 @@ const TestimonialCard: React.FC<TestimonialsTypes["cards"][0]> = ({
       </p>
       <Headings
         level={3}
-        className="text-primary font-semibold text-lg tracking-wide"
+        className="text-primary font-semibold text-lg tracking-wide max-md:text-center"
       >
         {title}
       </Headings>
