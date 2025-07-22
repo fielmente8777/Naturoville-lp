@@ -80,7 +80,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
             key={index}
             href={link.href}
             label={link.label}
-            className="w-fit bg-primary text-white"
+            className="w-fit bg-primary text-white mx-auto"
           />
         ))}
       </Container>
