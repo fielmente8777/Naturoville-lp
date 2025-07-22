@@ -67,10 +67,10 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           }}
           renderSlide={(card) => <WellnesCard {...card} />}
         />
-        <button className="wellness-prev px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute left-0 box-shadow top-[35%] -translate-y-[35%] z-10">
+        <button className="wellness-prev px-4 flex md:hidden items-center justify-center w-10 aspect-square rounded-full bg-white absolute left-0 box-shadow top-[35%] -translate-y-[35%] z-10">
           <BtnPrevIcon2 />
         </button>
-        <button className="wellness-next px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute right-0 box-shadow top-[35%] -translate-y-[35%] z-10">
+        <button className="wellness-next px-4 flex md:hidden items-center justify-center w-10 aspect-square rounded-full bg-white absolute right-0 box-shadow top-[35%] -translate-y-[35%] z-10">
           <BtnNextIcon2 />
         </button>
       </div>
