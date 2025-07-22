@@ -28,7 +28,7 @@ const HolisticHealing: React.FC<HolisticHealingTypes> = ({ title, cards }) => {
               </Headings>
             </div>
           </div>
-          <div className="md:col-span-4 md:grid hidden grid-cols-4 gap-11">
+          <div className="md:col-span-4 md:grid hidden grid-cols-4 gap-3">
             {cards.map((card, index) => (
               <HealingCard key={index} {...card} />
             ))}

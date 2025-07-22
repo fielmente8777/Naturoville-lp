@@ -201,7 +201,7 @@ const Form1 = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder={field.placeholder}
-                  className="pe-4 py-3.5 bg-white outline-none w-full"
+                  className="pe-4 py-3.5 bg-white outline-none w-full focus:outline-none"
                   aria-required={field.required}
                 />
               </div>

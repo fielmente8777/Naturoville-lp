@@ -7,7 +7,7 @@ export default function Home() {
   return (
    <main>
     <Banner {...pageData.bannerData}/>
-    <Section className="bg-dark lg:!py-8">
+    <Section className="bg-dark lg:!py-8 !py-4">
       <Container>
         <Form1 />
       </Container>
