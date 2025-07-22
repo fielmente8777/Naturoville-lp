@@ -7,7 +7,7 @@ import { LazyLoadedVideo } from "../Video";
 const Banner: React.FC<BannerType> = ({ title, src, videoSrc }) => {
   return (
     <section className="w-full max_screen ">
-      <div className="relative md:aspect-[4/1.82] aspect-[4/4.5] w-full">
+      <div className="relative md:aspect-[4/1.82] aspect-[4/4.5] w-full after:absolute after:inset-0 after:bg-black/50">
         {videoSrc ? (
           <LazyLoadedVideo
             src={videoSrc}

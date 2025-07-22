@@ -35,7 +35,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           />
         </div>
         {/* slider buttons */}
-        <div className="flex items-center justify-center gap-4 max-md:hidden">
+        <div className="flex items-center justify-center gap-8 max-md:hidden">
           <button className="wellness-prev flex items-center justify-center w-8">
             <BtnPrevIcon />
           </button>

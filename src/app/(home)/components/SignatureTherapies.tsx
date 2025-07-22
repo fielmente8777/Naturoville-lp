@@ -115,7 +115,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
           </button>
         </div>
         {/* slider buttons */}
-        <div className="md:flex hidden items-center justify-center gap-4">
+        <div className="md:flex hidden items-center justify-center gap-8">
           <button className="about-prev flex items-center justify-center w-8">
             <BtnPrevIcon />
           </button>

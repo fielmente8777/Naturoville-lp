@@ -14,7 +14,7 @@ const Navbar = () => {
     <header className="md:py-6 py-2">
       <nav className="max-width">
         <div className="flex items-center justify-between md:py-4">
-          <div className="relative max-md:w-24 md:aspect-[4/2.5] h-[3.9rem] aspect-[4/.3]">
+          <div className="relative max-md:w-24 md:aspect-[4/1.5] h-[3.9rem] aspect-[4/.3]">
             <Image src="/logo.png" alt="logo" fill className="object-contain" />
           </div>
           <div className="">

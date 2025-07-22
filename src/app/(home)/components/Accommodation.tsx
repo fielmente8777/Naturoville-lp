@@ -51,7 +51,7 @@ const Accommodation: React.FC<AccommodationTypes> = ({
               }}
               renderSlide={(card) => <AccommodationCard {...card} />}
             />
-            <div className="pagination flex items-center justify-center mt-8"></div>
+            {/* <div className="pagination flex items-center justify-center mt-8"></div> */}
           </div>
           <div className="flex justify-center mt-4 max-md:px-4">
             {links.map((link, index) => (
