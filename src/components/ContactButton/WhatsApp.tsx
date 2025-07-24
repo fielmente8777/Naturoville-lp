@@ -7,7 +7,7 @@ import { FaWhatsapp } from "react-icons/fa";
 function Whatsapp({ whatsAppNumber }: { whatsAppNumber: string }) {
   const pathName = usePathname();
   
-    if (pathName === "/thank-you") {
+    if (pathName === "/thank-you/") {
       return null;
     }
   return (

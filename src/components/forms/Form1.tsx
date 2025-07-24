@@ -139,7 +139,7 @@ const Form1 = () => {
           wellnessOffer: "",
         });
         setSubmitSuccess(true);
-        window.open("/thank-you", "_blank");
+        window.open("/thank-you/", "_blank");
       } else {
         alert(data.message || "Submission failed. Please try again.");
       }

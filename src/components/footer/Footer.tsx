@@ -12,7 +12,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   const pathName = usePathname();
 
-  if (pathName === "/thank-you") {
+  if (pathName === "/thank-you/") {
     return null;
   }
   return (
