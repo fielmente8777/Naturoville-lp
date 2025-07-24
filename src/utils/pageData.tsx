@@ -285,12 +285,12 @@ export const footerLinks = {
 export const socialLinks = [
   {
     label: "facebook",
-    href: "https://www.facebook.com/naturoville",
+    href: contact.socialLinks.facebook,
     icon: <FillFacebookIcon />,
   },
   {
     label: "instagram",
-    href: "https://www.instagram.com/naturoville/",
+    href: contact.socialLinks.instagram,
     icon: <OutLineInstagramIcon />,
   },
 ];
