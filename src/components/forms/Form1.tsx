@@ -14,8 +14,9 @@ const Form1 = () => {
 
   const offers = [
     "Wellness Offers",
-    "Detox & Panchakarma Therapy",
-    "Weight Management Program",
+    "Rejuvenation Treatments",
+    "Lifestyle Treatments",
+    "Ailment Treatments",
   ];
 
   const [formData, setFormData] = useState({
