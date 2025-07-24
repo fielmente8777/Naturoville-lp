@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { countries } from "../chatbot/constant";
 import useClickOutside from "@/hocks/useClickOutside";
 import { DropDownIcon } from "@/utils/icons";
+import { contact } from "../../../Constent";
 
 const Form = () => {
   const [countryCode, setCountryCode] = useState("+91");
@@ -117,7 +118,7 @@ const Form = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: "testmulti",
+          Domain: contact.formDomain,
           email: formData.email,
           Name: formData.name,
           Contact: formData.phone,

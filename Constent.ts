@@ -12,4 +12,5 @@ export const contact = {
     facebook: "https://www.facebook.com/Naturovillewellnessrishikesh/",
     instagram: "https://www.instagram.com/naturovillewellness/#",
   },
+  formDomain: "naturoville",
 };
