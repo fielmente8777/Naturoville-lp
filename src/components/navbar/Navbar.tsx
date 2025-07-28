@@ -3,6 +3,7 @@ import { OutLinePhone } from "@/utils/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { contact } from "../../../Constent";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -19,7 +20,7 @@ const Navbar = () => {
           </div>
           <div className="">
             <Link
-              href="tel:+91 96222 05133"
+              href={"tel:" + contact.phoneNumber}
               className="md:text-primary text-white md:bg-white md:hover:bg-primary md:hover:text-white rounded-sm px-4 py-2 text-lg flex items-center gap-2"
             >
               <span>
