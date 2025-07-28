@@ -16,7 +16,7 @@ const poppins = Poppins({
 });
 
 const myFont = localFont({
-  src:  [
+  src: [
     {
       path: './font/AbhayaLibre-Regular.ttf',
       weight: '400',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://naturoville.com",
   },
-  
+
   openGraph: {
     title: "Best Ayurveda Wellness & Panchkarma Center in Rishikesh | Naturoville",
     description: "Explore Naturoville, Rishikesh's premier Ayurvedic & Retreat. Rejuvenate your mind and body at the best wellness center in Rishikesh.",
@@ -122,6 +122,19 @@ export default function RootLayout({
         <Footer />
         <Call callNumber={contact.phoneNumber} />
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.eazbotConfig = {
+        ndid: "030384e0-2390-493f-996b-2fa116a6ae97",
+        hid: "35871148",
+        interval: "40000"
+      };
+    `,
+          }}
+        />
+        <script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></script>
       </body>
     </html>
   );
