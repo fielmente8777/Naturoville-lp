@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 // local font import
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import "./globals.css";
 import "./style.scss";
 import { Footer } from "@/components";
@@ -19,40 +19,42 @@ const poppins = Poppins({
 const myFont = localFont({
   src: [
     {
-      path: './font/AbhayaLibre-Regular.ttf',
-      weight: '400',
-      style: 'normal',
+      path: "./font/AbhayaLibre-Regular.ttf",
+      weight: "400",
+      style: "normal",
     },
     {
-      path: './font/AbhayaLibre-Medium.ttf',
-      weight: '500',
-      style: 'normal',
+      path: "./font/AbhayaLibre-Medium.ttf",
+      weight: "500",
+      style: "normal",
     },
     {
-      path: './font/AbhayaLibre-SemiBold.ttf',
-      weight: '600',
-      style: 'normal',
+      path: "./font/AbhayaLibre-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
     },
     {
-      path: './font/AbhayaLibre-Bold.ttf',
-      weight: '700',
-      style: 'normal',
+      path: "./font/AbhayaLibre-Bold.ttf",
+      weight: "700",
+      style: "normal",
     },
     {
-      path: './font/AbhayaLibre-ExtraBold.ttf',
-      weight: '800',
-      style: 'normal',
+      path: "./font/AbhayaLibre-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
     },
   ],
-  variable: '--abhaya-libre',
-  display: 'swap',
-  fallback: ['sans-serif'],
+  variable: "--abhaya-libre",
+  display: "swap",
+  fallback: ["sans-serif"],
   preload: true,
 });
 
 export const metadata: Metadata = {
-  title: "Best Ayurveda Wellness & Panchkarma Center in Rishikesh | Naturoville",
-  description: "Explore Naturoville, Rishikesh's premier Ayurvedic & Retreat. Rejuvenate your mind and body at the best wellness center in Rishikesh.",
+  title:
+    "Best Ayurveda Wellness & Panchkarma Center in Rishikesh | Naturoville",
+  description:
+    "Explore Naturoville, Rishikesh's premier Ayurvedic & Retreat. Rejuvenate your mind and body at the best wellness center in Rishikesh.",
   keywords: [
     "wellness",
     "spa",
@@ -68,8 +70,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Best Ayurveda Wellness & Panchkarma Center in Rishikesh | Naturoville",
-    description: "Explore Naturoville, Rishikesh's premier Ayurvedic & Retreat. Rejuvenate your mind and body at the best wellness center in Rishikesh.",
+    title:
+      "Best Ayurveda Wellness & Panchkarma Center in Rishikesh | Naturoville",
+    description:
+      "Explore Naturoville, Rishikesh's premier Ayurvedic & Retreat. Rejuvenate your mind and body at the best wellness center in Rishikesh.",
     url: "https://naturoville.com",
     siteName: "Naturoville",
     images: [
@@ -85,8 +89,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Ayurveda Wellness & Panchkarma Center in Rishikesh | Naturoville",
-    description: "Explore Naturoville, Rishikesh's premier Ayurvedic & Retreat. Rejuvenate your mind and body at the best wellness center in Rishikesh.",
+    title:
+      "Best Ayurveda Wellness & Panchkarma Center in Rishikesh | Naturoville",
+    description:
+      "Explore Naturoville, Rishikesh's premier Ayurvedic & Retreat. Rejuvenate your mind and body at the best wellness center in Rishikesh.",
     images: ["https://naturoville.com/og-image.jpg"],
   },
   icons: {
@@ -115,10 +121,38 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* <!-- Google Tag Manager --> */}
+        <Script
+          id="gtm-script"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PKZRDHZL');`,
+          }}
+        />
+        {/* <!-- End Google Tag Manager --> */}
+      </head>
       <body
         className={`${poppins.variable}${myFont.className}  antialiased`}
         suppressHydrationWarning={true}
       >
+        {/* <!-- Google Tag Manager (noscript) --> */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PKZRDHZL"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* <!-- End Google Tag Manager (noscript) --> */}
         {children}
         <Footer />
         <Call callNumber={contact.phoneNumber} />
@@ -126,14 +160,14 @@ export default function RootLayout({
 
         <Script
           id="eazbot-config"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-      window.eazbotConfig = {
-        ndid: "030384e0-2390-493f-996b-2fa116a6ae97",
-        hid: "35871148",
-        interval: "40000"
-      };
-    `,
+            window.eazbotConfig = {
+              ndid: "030384e0-2390-493f-996b-2fa116a6ae97",
+              hid: "35871148",
+              interval: "40000"
+            };`,
           }}
         />
         <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" />
