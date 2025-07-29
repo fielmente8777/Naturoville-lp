@@ -16,7 +16,12 @@ interface EazobotConfig {
   ndid: string;
   interval?: number;
 }
-
+interface Event {
+  data: {
+    type: string;
+    payload: EazobotConfig;
+  };
+}
 interface ChatbotDataFlow {
   domain: string;
   messagesFlow: {
@@ -148,8 +153,9 @@ const RenderChatBot = () => {
     }
   }, [eazbotConfig]);
 
+
   useEffect(() => {
-    const handleMessage = (event: any) => {
+    const handleMessage = (event: Event) => {
       if (event.data?.type === "CHATBOT_INIT") {
         setEazbotConfig(event.data.payload);
       }
