@@ -8,6 +8,7 @@ import { Footer } from "@/components";
 import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import { contact } from "../../Constent";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -123,7 +124,8 @@ export default function RootLayout({
         <Call callNumber={contact.phoneNumber} />
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
 
-        <script
+        <Script
+          id="eazbot-config"
           dangerouslySetInnerHTML={{
             __html: `
       window.eazbotConfig = {
@@ -134,7 +136,7 @@ export default function RootLayout({
     `,
           }}
         />
-        <script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js"></script>
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" />
       </body>
     </html>
   );

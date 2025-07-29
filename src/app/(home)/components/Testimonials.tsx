@@ -19,12 +19,6 @@ const Testimonials: React.FC<TestimonialsTypes> = ({
     <Section className="bg-bg1 max-md:!py-0">
       <SectionWithContainer>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-          <div className="max-w-[518px] w-full bg-bg1 p-6 flex flex-col gap-4 border rounded-lg border-primary box-shadow">
-            <h2 className="text-primary text-[1.75rem]/[2.25rem] abhayaLibre">
-              Path to better stays!
-            </h2>
-            <Form />
-          </div>
           <div className="flex flex-col md:gap-7 gap-6 max-w-lg">
             <div className="md:space-y-4 space-y-2">
               <h2 className="text-dark text-lg max-md:text-center">{title}</h2>
@@ -57,6 +51,13 @@ const Testimonials: React.FC<TestimonialsTypes> = ({
               <div className="flex justify-center mt-4 pagination_2"></div>
             </div>
           </div>
+          <div className="max-w-[518px] w-full bg-bg1 p-6 flex flex-col gap-4 border rounded-lg border-primary box-shadow">
+            <h2 className="text-primary text-[1.75rem]/[2.25rem] abhayaLibre">
+              Path to better stays!
+            </h2>
+            <Form />
+          </div>
+
         </div>
       </SectionWithContainer>
     </Section>
