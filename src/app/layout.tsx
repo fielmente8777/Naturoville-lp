@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "./style.scss";
 import { Footer } from "@/components";
+import RenderChatBot from "@/components/LeadChatbot/RenderChatBot";
 import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import { contact } from "../../Constent";
@@ -138,6 +139,33 @@ export default function RootLayout({
           }}
         />
         {/* <!-- End Google Tag Manager --> */}
+
+        <Script
+          id="fb-pixel"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `!function(f,b,e,v,n,t,s)
+              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+              n.queue=[];t=b.createElement(e);t.async=!0;
+              t.src=v;s=b.getElementsByTagName(e)[0];
+              s.parentNode.insertBefore(t,s)}(window, document,'script',
+              'https://connect.facebook.net/en_US/fbevents.js');
+              fbq('init', '753380013733451');
+              fbq('track', 'PageView');
+              `,
+          }}
+        />
+        <Script
+          id="fb-pixel-noscript"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `<noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=753380013733451&ev=PageView&noscript=1"
+                /></noscript>`,
+          }}
+        />
       </head>
       <body
         className={`${poppins.variable}${myFont.className}  antialiased`}
@@ -153,12 +181,13 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
+        <RenderChatBot />
         {children}
         <Footer />
         <Call callNumber={contact.phoneNumber} />
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
 
-        <Script
+        {/* <Script
           id="eazbot-config"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -170,7 +199,7 @@ export default function RootLayout({
             };`,
           }}
         />
-        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" />
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" /> */}
       </body>
     </html>
   );
