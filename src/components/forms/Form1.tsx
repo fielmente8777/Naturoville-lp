@@ -183,13 +183,13 @@ const Form1 = () => {
         {inputFields.map((field) => (
           <React.Fragment key={field.name}>
             {field.type === "tel" ? (
-              <div className="flex items-center bg-white md:col-span-2 w-full h-full">
+              <div className="flex items-center md:col-span-2 w-full h-full">
                 <select
                   value={countryCode}
                   onChange={(e) => setCountryCode(e.target.value)}
-                  className={`ps-3 py-3.5 bg-white focus:outline-none`}
+                  className={`ps-3 py-3.5 bg-white focus:outline-none h-full`}
                   aria-label="Country code"
-                  style={{ width: `${countryCode.length * 2.5}ch` }}
+                  style={{ width: `${countryCode.length * 2.5}ch`,backgroundColor:"white" }}
                 >
                   {countries.map((country) => (
                     <option key={country.code} value={country.code}>
@@ -203,16 +203,16 @@ const Form1 = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder={field.placeholder}
-                  className="pe-4 py-3.5 bg-white outline-none w-full focus:outline-none"
+                  className="pe-4 py-3.5 bg-white outline-none w-full h-full focus:outline-none"
                   aria-required={field.required}
                 />
               </div>
             ) : field.type === "select" ? (
-              <div className="relative md:col-span-2 w-full" ref={dropDownRef}>
+              <div className="relative md:col-span-2 w-full h-full" ref={dropDownRef}>
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className={`w-full px-4 py-3.5 text-left bg-white flex items-center justify-between ${
+                  className={`w-full h-full px-4 py-3.5 text-left bg-white flex items-center justify-between ${
                     !formData.wellnessOffer ? "text-gray-400" : ""
                   }`}
                   aria-haspopup="listbox"
@@ -226,7 +226,7 @@ const Form1 = () => {
                 {isDropdownOpen && (
                   <div
                     role="listbox"
-                    className="absolute z-10 w-full mt-1 bg-white border border-light shadow-lg"
+                    className="absolute top-full z-10 w-full bg-white border border-light shadow-lg"
                   >
                     {offers.map((offer) => (
                       <button
