@@ -179,11 +179,11 @@ const Form1 = () => {
   ];
   return (
     <div className="w-full">
-      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-9 divide-x max-md:gap-2 divide-[#E0E0E0] w-full">
+      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-9 md:divide-x max-md:gap-2 md:divide-[#E0E0E0] w-full">
         {inputFields.map((field) => (
           <React.Fragment key={field.name}>
             {field.type === "tel" ? (
-              <div className="flex items-center md:col-span-2 w-full h-full">
+              <div className="flex items-center bg-white md:col-span-2 w-full h-full">
                 <select
                   value={countryCode}
                   onChange={(e) => setCountryCode(e.target.value)}
