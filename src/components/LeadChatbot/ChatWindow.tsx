@@ -471,19 +471,17 @@ const ChatWindow = ({
             <div
               key={index}
               style={{
-                background: `${
-                  msg?.sender === "user"
-                    ? !Array.isArray(msg.text)
-                      ? theme
-                      : ""
-                    : "#EEEEEE"
-                }`,
+                background: `${msg?.sender === "user"
+                  ? !Array.isArray(msg.text)
+                    ? theme
+                    : ""
+                  : "#EEEEEE"
+                  }`,
               }}
-              className={`max-w-[85%] break-words whitespace-wrap px-3 py-2 rounded-lg text-sm ${
-                msg.sender === "user"
-                  ? "self-end bg-gray-100 text-white"
-                  : "self-start bg-gray-200 text-gray-800"
-              }`}
+              className={`max-w-[85%] break-words whitespace-wrap px-3 py-2 rounded-lg text-sm ${msg.sender === "user"
+                ? "self-end bg-gray-100 text-white"
+                : "self-start bg-gray-200 text-gray-800"
+                }`}
             >
               {Array.isArray(msg.text) ? (
                 <div className="flex flex-wrap gap-2 justify-end border-t-[2px] py-2">
@@ -511,17 +509,15 @@ const ChatWindow = ({
                     <button
                       key={idx}
                       style={{
-                        background: `${
-                          selectedOptions[msg.key]?.value.includes(opt?.label)
-                            ? theme
-                            : "#eae6e6"
-                        }`,
+                        background: `${selectedOptions[msg.key]?.value.includes(opt?.label)
+                          ? theme
+                          : "#eae6e6"
+                          }`,
 
-                        color: `${
-                          selectedOptions[msg.key]?.value.includes(opt.label)
-                            ? "#ffffff"
-                            : "#393838"
-                        }`,
+                        color: `${selectedOptions[msg.key]?.value.includes(opt.label)
+                          ? "#ffffff"
+                          : "#393838"
+                          }`,
                       }}
                       onClick={() =>
                         handleOptionSelect(
@@ -663,9 +659,8 @@ const ChatWindow = ({
                 <IoIosSend
                   size={24}
                   color={theme || "C2185B"}
-                  opacity={`${
-                    messageFlows?.length === currentStep ? "0.4" : "1"
-                  }`}
+                  opacity={`${messageFlows?.length === currentStep ? "0.4" : "1"
+                    }`}
                 />
               </span>
             </button>
