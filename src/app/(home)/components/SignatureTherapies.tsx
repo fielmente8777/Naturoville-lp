@@ -8,7 +8,13 @@ import {
   SwiperCarousel,
   TherapieCard,
 } from "@/components";
-import { BtnNextIcon, BtnNextIcon2, BtnPrevIcon, BtnPrevIcon2, FlowerIcon } from "@/utils/icons";
+import {
+  BtnNextIcon,
+  BtnNextIcon2,
+  BtnPrevIcon,
+  BtnPrevIcon2,
+  FlowerIcon,
+} from "@/utils/icons";
 import { useState } from "react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 
@@ -29,7 +35,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
     <SectionWithContainer>
       <div className="flex flex-col md:gap-14 gap-8">
         <div className="flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
-          <span >
+          <span>
             <FlowerIcon />
           </span>
           <SectionHeadingDesc
@@ -128,6 +134,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
           links.map((link, index) => (
             <LinkButton
               key={index}
+              target="_blank"
               {...link}
               className="bg-primary text-white border-primary w-fit mx-auto"
             />

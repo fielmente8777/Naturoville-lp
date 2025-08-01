@@ -79,6 +79,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           <LinkButton
             key={index}
             href={link.href}
+            target="_blank"
             label={link.label}
             className="w-fit bg-primary text-white mx-auto"
           />

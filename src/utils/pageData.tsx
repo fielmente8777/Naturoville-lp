@@ -163,7 +163,7 @@ export const pageData = {
         src: "/other/im7.webp",
       },
     ],
-    links: [{ label: "GET EXCLUSIVE OFFERS", href: "" }],
+    links: [{ label: "GET EXCLUSIVE OFFERS", href: `https://wa.me/${contact.phoneNumber.replace(/\s+/g, "")}?text=Hello` }],
   },
   facilities: {
     title: "Facilities & Activities",
@@ -176,7 +176,7 @@ export const pageData = {
       "Heated and normal swimming pools with private cabanas",
     ],
     src: "/facilities.webp",
-    links: [{ label: "GET EXCLUSIVE OFFERS", href: "" }],
+    links: [{ label: "GET EXCLUSIVE OFFERS", href: `https://wa.me/${contact.phoneNumber.replace(/\s+/g, "")}?text=Hello` }],
   },
   wellnessPrograms: {
     title: "Explore Our Wellness Programs",
@@ -198,7 +198,7 @@ export const pageData = {
       { title: "Natural Immunization Boosting", src: "/wellness/im9.webp" },
       { title: "Spine, Neck & Joint Care", src: "/wellness/im10.webp" },
     ],
-    links: [{ label: "GET EXCLUSIVE OFFERS", href: "" }],
+    links: [{ label: "GET EXCLUSIVE OFFERS", href: `https://wa.me/${contact.phoneNumber.replace(/\s+/g, "")}?text=Hello` }],
   },
   accommodation: {
     title: "Accommodation",
@@ -209,7 +209,7 @@ export const pageData = {
       { title: "Premium Nature View Room", src: "/rooms/im2.webp" },
       { title: "Executive Garden View Suite", src: "/rooms/im3.webp" },
     ],
-    links: [{ label: "BOOK NOW", href: "" }],
+    links: [{ label: "BOOK NOW", href: `https://wa.me/${contact.phoneNumber.replace(/\s+/g, "")}?text=Hello` }],
   },
   testimonials: {
     title: "Testimonials",

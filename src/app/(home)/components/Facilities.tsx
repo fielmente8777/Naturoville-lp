@@ -24,7 +24,7 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, list, links, src }) => {
       </div>
       <div className="md:mt-14 w-full flex flex-col items-center">
        {links.map((link, index) => (
-        <LinkButton key={index} href={link.href} label={link.label} className="mt-4 bg-primary text-white" />
+        <LinkButton target="_blank" key={index} href={link.href} label={link.label} className="mt-4 bg-primary text-white" />
        ))}
       </div>
     </SectionWithContainer>

@@ -58,6 +58,7 @@ const Accommodation: React.FC<AccommodationTypes> = ({
               <LinkButton
                 key={index}
                 href={link.href}
+                target="_blank"
                 label={link.label}
                 className="bg-primary text-white"
               />
