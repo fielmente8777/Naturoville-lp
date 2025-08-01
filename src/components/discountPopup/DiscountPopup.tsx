@@ -100,7 +100,7 @@ const DiscountPopup = ({
 
               {!content.discount && (
                 <div className="sm:col-span-12 flex flex-col gap-2 items-center">
-                  <p className="text-2xl">Contact for best price</p>
+                  <p className="text-2xl">Limited time exclusive offer</p>
                 </div>
               )}
               {/* <div className="sm:col-span-4 text-white">
