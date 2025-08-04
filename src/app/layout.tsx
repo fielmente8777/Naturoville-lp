@@ -220,14 +220,14 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
-        {/* <RenderChatBot /> */}
+        <RenderChatBot />
         <DiscountPopup {...discount} />
         {children}
         <Footer />
         <Call callNumber={contact.phoneNumber} />
         <Whatsapp whatsAppNumber={contact.phoneNumber} />
 
-        <Script
+        {/* <Script
           id="eazbot-config"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -239,7 +239,7 @@ export default function RootLayout({
             };`,
           }}
         />
-        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" />
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" /> */}
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import "./discount.css";
+import { usePathname } from "next/navigation";
 interface DiscountPopupProps {
   logo: {
     src: string;
@@ -37,7 +38,9 @@ const DiscountPopup = ({
   contact,
   content,
 }: DiscountPopupProps) => {
+  const pathName = usePathname();
   const [show, setShow] = useState(false);
+
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -46,11 +49,15 @@ const DiscountPopup = ({
 
     return () => clearTimeout(id);
   }, []);
+  if(pathName === "/thank-you/"){
+    return null;
+  }
+
   return (
     show && (
       <div className="fixed inset-0 bg-black/40 flex items-center z-50 px-4">
         <div
-          className="max-w-3xl after:absolute after:inset-0 after:backdrop-blur w-full overflow-hidden rounded-md p-6 mx-auto flex flex-col items-center justify-center bg-white bg-cover bg-center bg-no-repeat min-h-[540px] relative"
+          className="max-w-3xl after:absolute after:inset-0 after:backdrop-blur w-full overflow-hidden rounded-md p-6 mx-auto flex flex-col items-center justify-center bg-white bg-cover bg-center bg-no-repeat md:min-h-[540px] min-h-[400px] relative"
           style={{
             backgroundImage: `url(${image?.src})`,
           }}
@@ -68,7 +75,7 @@ const DiscountPopup = ({
             )}
             {/* main content  */}
             <div
-              className="grid relative sm:grid-cols-12 rounded-md border-2 border-[#9A846F] p-7 w-full sm:divide-x-2 divide-[#9A846F] gap-3 items-center text-white"
+              className="grid relative sm:grid-cols-12 rounded-md border-2 border-[#9A846F] md:p-7 p-3 w-full sm:divide-x-2 divide-[#9A846F] gap-3 items-center text-white"
               style={{
                 borderColor: content.borderColor || "#9A846F",
               }}
@@ -100,7 +107,7 @@ const DiscountPopup = ({
 
               {!content.discount && (
                 <div className="sm:col-span-12 flex flex-col gap-2 items-center">
-                  <p className="text-2xl">Limited time exclusive offer</p>
+                  <p className="md:text-2xl text-lg">Limited time exclusive offer</p>
                 </div>
               )}
               {/* <div className="sm:col-span-4 text-white">

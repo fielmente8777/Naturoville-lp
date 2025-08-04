@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import ChatbotWidget from "./ChatbotWidget";
 import axios from "axios";
 import { Option } from "./ChatWindow";
+import { usePathname } from "next/navigation";
 
 export interface FormData {
   name: string;
@@ -41,6 +42,7 @@ interface ChatbotDataFlow {
 }
 
 const RenderChatBot = () => {
+  const pathName = usePathname();
   const [eazbotConfig, setEazbotConfig] = useState<EazobotConfig | null>({
     hid: "35871148",
     ndid: "030384e0-2390-493f-996b-2fa116a6ae97",
@@ -121,7 +123,10 @@ const RenderChatBot = () => {
           },
         }
       );
-      console.log(data);
+
+       if (data?.Status) {
+        window.open("/thank-you/", "_blank");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -164,6 +169,10 @@ const RenderChatBot = () => {
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
   }, []);
+
+  if(pathName === "/thank-you/"){
+    return null;
+  }
 
   return (
     <>
