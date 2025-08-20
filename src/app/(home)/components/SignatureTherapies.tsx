@@ -1,12 +1,11 @@
 "use client";
 import { SignatureTherapiesTypes } from "@/@types/types";
 import {
-  LinkButton,
   OnlyButton,
   SectionHeadingDesc,
   SectionWithContainer,
   SwiperCarousel,
-  TherapieCard,
+  TherapieCard
 } from "@/components";
 import DataContext from "@/contextApi/DataContext";
 import {

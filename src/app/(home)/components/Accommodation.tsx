@@ -3,12 +3,14 @@ import { AccommodationTypes } from "@/@types/types";
 import {
   AccommodationCard,
   Container,
-  LinkButton,
+  OnlyButton,
   Section,
   SectionHeadingDesc,
-  SwiperCarousel,
+  SwiperCarousel
 } from "@/components";
+import DataContext from "@/contextApi/DataContext";
 import { FlowerIcon } from "@/utils/icons";
+import { useContext } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 
 const Accommodation: React.FC<AccommodationTypes> = ({
@@ -17,6 +19,7 @@ const Accommodation: React.FC<AccommodationTypes> = ({
   cards,
   links,
 }) => {
+  const { setIsOpen } = useContext(DataContext);
   return (
     <Section className="max-md:!py-0">
       <Section className="relative after:absolute after:content-[''] after:bg-[url(/bg.png)] after:bg-no-repeat after:bg-cover after:opacity-3.5 md:after:w-[614px] after:aspect-[4/2.5] after:left-0 after:-top-16 after:z-[-1]">
@@ -55,10 +58,9 @@ const Accommodation: React.FC<AccommodationTypes> = ({
           </div>
           <div className="flex justify-center mt-4 max-md:px-4">
             {links.map((link, index) => (
-              <LinkButton
+              <OnlyButton
                 key={index}
-                href={link.href}
-                target="_blank"
+                onclick={() => setIsOpen(true)}
                 label={link.label}
                 className="bg-primary text-white"
               />

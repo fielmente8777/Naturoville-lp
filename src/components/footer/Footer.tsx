@@ -1,17 +1,18 @@
 "use client";
-import Link from "next/link";
-import { Container } from "../sectionComponents";
-import Image from "next/image";
-import React from "react";
-import { usePathname } from "next/navigation";
 import { footerLinks, socialLinks } from "@/utils/pageData";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import OnlyButton from "../buttons/OnlyButton";
 import LazyLoadedMap from "../map/LazyLoadedMap";
-import LinkButton from "../buttons/LinkButton";
+import { Container } from "../sectionComponents";
+import { useContext } from "react";
+import DataContext from "@/contextApi/DataContext";
 
 const Footer = () => {
   const year = new Date().getFullYear();
   const pathName = usePathname();
-
+  const { setIsOpen } = useContext(DataContext);
   if (pathName === "/thank-you/") {
     return null;
   }
@@ -29,8 +30,8 @@ const Footer = () => {
                   className="object-contain"
                 />
               </div>
-              <LinkButton
-                href={footerLinks.link.href}
+              <OnlyButton
+                onclick={() => setIsOpen(true)}
                 label={footerLinks.link.label}
                 className="md:w-fit flex items-center justify-center bg-transparent text-white border border-white hover:bg-white hover:text-primary"
               />
