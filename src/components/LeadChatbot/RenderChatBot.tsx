@@ -71,7 +71,7 @@ const RenderChatBot = () => {
       },
     ],
     title: "",
-    theme: "",
+    theme: "#004C5B",
     logo: {
       url: "/logo.jpg",
     },
@@ -182,7 +182,7 @@ const RenderChatBot = () => {
         finalMessage={chatbotData?.thankYouMessage || ""}
         messageFlows={chatbotData?.messagesFlow}
         title={chatbotData?.title}
-        theme={chatbotData?.theme}
+        theme={"#004C5B"}
         openInterval={eazbotConfig?.interval}
         logo={chatbotData?.logo?.url}
       />

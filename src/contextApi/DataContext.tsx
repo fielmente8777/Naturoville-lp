@@ -8,11 +8,19 @@ export const DataContext = createContext<{
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
   isOpenNav?: boolean;
   setIsOpenNav?: React.Dispatch<React.SetStateAction<boolean>>;
+  gridView: boolean;
+  setGridView: React.Dispatch<React.SetStateAction<boolean>>;
+  isExtended: boolean;
+  setIsExtended: React.Dispatch<React.SetStateAction<boolean>>;
 }>({
   isOpen: false,
   setIsOpen: () => {},
   isOpenNav: false,
   setIsOpenNav: () => {},
+  gridView: false,
+  setGridView: () => {},
+  isExtended: false,
+  setIsExtended: () => {},
 });
 
 type DataProviderProps = {
@@ -22,9 +30,12 @@ type DataProviderProps = {
 export const DataProvider = ({ children }: DataProviderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenNav, setIsOpenNav] = useState(false);
+  const [gridView, setGridView] = useState(false);
+  const [isExtended, setIsExtended] = useState(false);
+
   return (
     <DataContext.Provider
-      value={{ isOpen, setIsOpen, isOpenNav, setIsOpenNav }}
+      value={{ isOpen, setIsOpen, isOpenNav, setIsOpenNav, gridView, setGridView, isExtended, setIsExtended }}
     >
       {children}
     </DataContext.Provider>

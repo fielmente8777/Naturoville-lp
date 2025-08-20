@@ -8,6 +8,7 @@ import {
   SwiperCarousel,
   TherapieCard,
 } from "@/components";
+import DataContext from "@/contextApi/DataContext";
 import {
   BtnNextIcon,
   BtnNextIcon2,
@@ -15,7 +16,7 @@ import {
   BtnPrevIcon2,
   FlowerIcon,
 } from "@/utils/icons";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 
 const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
@@ -30,6 +31,8 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
   const handleCategoryChange = (newCategory: string) => {
     setCategory(newCategory);
   };
+
+  const { setIsOpen } = useContext(DataContext);
 
   return (
     <SectionWithContainer>
@@ -132,10 +135,11 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
         {/* contact link */}
         {links &&
           links.map((link, index) => (
-            <LinkButton
+            <OnlyButton
               key={index}
-              target="_blank"
-              {...link}
+              // {...link}
+              label={link.label}
+              onclick={() => setIsOpen(true)}
               className="bg-primary text-white border-primary w-fit mx-auto"
             />
           ))}

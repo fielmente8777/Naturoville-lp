@@ -10,6 +10,8 @@ import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import { contact } from "../../Constent";
 import Script from "next/script";
+import { DataProvider } from "@/contextApi/DataContext";
+import PopForm from "@/components/pop-up/PopForm";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -220,12 +222,15 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
-        <RenderChatBot />
-        <DiscountPopup {...discount} />
-        {children}
-        <Footer />
-        <Call callNumber={contact.phoneNumber} />
-        <Whatsapp whatsAppNumber={contact.phoneNumber} />
+        <DataProvider>
+          <RenderChatBot />
+          <DiscountPopup {...discount} />
+          {children}
+          <Footer />
+          <Call callNumber={contact.phoneNumber} />
+          <Whatsapp whatsAppNumber={contact.phoneNumber} />
+          <PopForm />
+        </DataProvider>
 
         {/* <Script
           id="eazbot-config"

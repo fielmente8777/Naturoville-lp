@@ -1,16 +1,29 @@
 "use client";
 import axios from "axios";
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { countries } from "../chatbot/constant";
 import useClickOutside from "@/hocks/useClickOutside";
 import { DropDownIcon } from "@/utils/icons";
 import { contact } from "../../../Constent";
+import { getDateInputLimits } from "@/hocks/getDateInputLimits";
+import DatePicker from "react-datepicker";
+import DataContext from "@/contextApi/DataContext";
+import TimePicker from "react-time-picker";
+import "react-time-picker/dist/TimePicker.css";
+import "react-clock/dist/Clock.css";
 
 const Form1 = () => {
+  const { gridView, isExtended, setIsExtended } = useContext(DataContext);
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [countryCode, setCountryCode] = useState("+91");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [startDate, setStartDate] = useState<Date | null>(null);
+  const [endDate, setEndDate] = useState<Date | null>(null);
+  const { min } = getDateInputLimits({
+    showPast: false,
+  });
 
   const offers = [
     "Wellness Offers",
@@ -24,23 +37,39 @@ const Form1 = () => {
     email: "",
     phone: "",
     wellnessOffer: "",
+    checkIn: "",
+    checkOut: "",
+    preferTime: "",
   });
+
+  const handleTimeChange = (time: string | null) => {
+    setFormData((prev) => ({
+      ...prev,
+      preferTime: time || "",
+    }));
+
+    // Clear error when time is selected
+    if (errors.preferTime) {
+      setErrors((prev) => ({
+        ...prev,
+        preferTime: "",
+      }));
+    }
+  };
 
   const [errors, setErrors] = useState({
     name: "",
     email: "",
     phone: "",
     wellnessOffer: "",
+    checkIn: "",
+    checkOut: "",
+    preferTime: "",
   });
 
   // Regex patterns
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const phoneRegex = /^[0-9]{10}$/;
-
-  const dropDownRef = useRef<HTMLDivElement | null>(null);
-  useClickOutside(dropDownRef, () => {
-    setIsDropdownOpen(false);
-  });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -60,6 +89,34 @@ const Form1 = () => {
     }
   };
 
+  const handleDateChange = (
+    date: Date | null,
+    field: "checkIn" | "checkOut"
+  ) => {
+    const dateString = date ? date.toISOString().split("T")[0] : "";
+
+    setFormData((prev) => ({
+      ...prev,
+      [field]: dateString,
+    }));
+
+    if (field === "checkIn") {
+      setStartDate(date);
+      // Clear check-out error if both dates are selected
+      if (date && endDate && date > endDate) {
+        setEndDate(null);
+        setFormData((prev) => ({ ...prev, checkOut: "" }));
+      }
+    } else {
+      setEndDate(date);
+    }
+
+    // Clear error when date is selected
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: "" }));
+    }
+  };
+
   const validateForm = () => {
     let isValid = true;
     const newErrors = {
@@ -67,6 +124,9 @@ const Form1 = () => {
       email: "",
       phone: "",
       wellnessOffer: "",
+      checkIn: "",
+      checkOut: "",
+      preferTime: "",
     };
 
     // Name validation
@@ -99,6 +159,26 @@ const Form1 = () => {
       isValid = false;
     }
 
+    // Check-in validation
+    if (!formData.checkIn.trim()) {
+      newErrors.checkIn = "check-in date is required";
+      isValid = false;
+    }
+
+    if (!formData.checkOut.trim()) {
+      newErrors.checkOut = "check-out date is required";
+      isValid = false;
+    } else if (startDate && endDate && startDate > endDate) {
+      newErrors.checkOut = "Check-out must be after check-in";
+      isValid = false;
+    }
+
+    // Time validation
+    if (!formData.preferTime.trim()) {
+      newErrors.preferTime = "Preferred time is required";
+      isValid = false;
+    }
+
     setErrors(newErrors);
     return isValid;
   };
@@ -120,8 +200,10 @@ const Form1 = () => {
           email: formData.email,
           Name: formData.name,
           Contact: formData.phone,
-          Description: `Offer: ${formData.wellnessOffer}`,
-          created_from: "website",
+          check_in: formData.checkIn,
+          check_out: formData.checkOut,
+          Description: `Offer: ${formData.wellnessOffer}, Check-in: ${formData.checkIn}, Check-out: ${formData.checkOut}, Preferred Time: ${formData.preferTime}`,
+          created_from: "landing_page",
         },
         {
           headers: {
@@ -135,9 +217,13 @@ const Form1 = () => {
           name: "",
           email: "",
           phone: "",
-
+          checkIn: "",
+          checkOut: "",
+          preferTime: "",
           wellnessOffer: "",
         });
+        setStartDate(null);
+        setEndDate(null);
         setSubmitSuccess(true);
         window.open("/thank-you/", "_blank");
       } else {
@@ -176,39 +262,92 @@ const Form1 = () => {
       placeholder: "Wellness Offer*",
       required: true,
     },
+    {
+      name: "checkIn",
+      type: "date",
+      placeholder: "Check-in Date*",
+      required: true,
+      min: min,
+      onChange: (date: Date | null) => handleDateChange(date, "checkIn"),
+    },
+    {
+      name: "checkOut",
+      type: "date",
+      placeholder: "Check-out Date*",
+      required: true,
+      min: min,
+      onChange: (date: Date | null) => handleDateChange(date, "checkOut"),
+    },
+    {
+      name: "preferTime",
+      type: "time",
+      placeholder: "Preferred Time of Contact*",
+      required: true,
+    },
   ];
+  const dropDownRef = useRef<HTMLDivElement | null>(null);
+  useClickOutside(dropDownRef, () => {
+    setIsDropdownOpen(false);
+  });
+  // useClickOutside(formRef, () => {
+  //   if (isExtended) {
+  //     setIsExtended(false);
+  //   }
+  // });
+
   return (
     <div className="w-full">
-      <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-9 md:divide-x max-md:gap-2 md:divide-[#E0E0E0] w-full">
+      <form
+        ref={formRef}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsExtended(true);
+        }}
+        onSubmit={handleSubmit}
+        className={`${!gridView ? "grid md:divide-x md:divide-[#E0E0E0]" : "flex flex-col gap-2"} grid-cols-1 ${isExtended ? "md:grid-cols-8 md:gap-y-2" : "md:grid-cols-9"}  max-md:gap-2  w-full`}
+      >
         {inputFields.map((field) => (
           <React.Fragment key={field.name}>
             {field.type === "tel" ? (
-              <div className="flex items-center md:col-span-2 w-full h-full">
-                <select
-                  value={countryCode}
-                  onChange={(e) => setCountryCode(e.target.value)}
-                  className={`ps-3 py-3.5 bg-white focus:outline-none h-full`}
-                  aria-label="Country code"
-                  style={{ width: `${countryCode.length * 2.5}ch`,backgroundColor:"white" }}
-                >
-                  {countries.map((country) => (
-                    <option key={country.code} value={country.code}>
-                      {country.code}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder={field.placeholder}
-                  className="pe-4 py-3.5 bg-white outline-none w-full h-full focus:outline-none"
-                  aria-required={field.required}
-                />
+              <div className="md:col-span-2 w-full h-full flex flex-col bg-white">
+                <div className={`flex items-center w-full h-full `}>
+                  <select
+                    value={countryCode}
+                    onChange={(e) => setCountryCode(e.target.value)}
+                    className={`ps-3 py-3.5 bg-white focus:outline-none h-full`}
+                    aria-label="Country code"
+                    style={{
+                      width: `${countryCode.length * 2.5}ch`,
+                      backgroundColor: "white",
+                    }}
+                  >
+                    {countries.map((country) => (
+                      <option key={country.code} value={country.code}>
+                        {country.code}
+                      </option>
+                    ))}
+                  </select>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder={field.placeholder}
+                    className="pe-4 py-3.5 bg-white outline-none w-full h-full focus:outline-none"
+                    aria-required={field.required}
+                  />
+                </div>
+                {errors[field.name as keyof typeof errors] && (
+                  <p className="text-sm text-red-500 col-span-full">
+                    {errors[field.name as keyof typeof errors]}
+                  </p>
+                )}
               </div>
             ) : field.type === "select" ? (
-              <div className="relative md:col-span-2 w-full h-full" ref={dropDownRef}>
+              <div
+                className={`relative md:col-span-2 w-full h-full flex flex-col bg-white`}
+                ref={dropDownRef}
+              >
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -219,7 +358,9 @@ const Form1 = () => {
                   aria-expanded={isDropdownOpen}
                 >
                   {formData.wellnessOffer || field.placeholder}
-                  <span className={`${isDropdownOpen ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}>
+                  <span
+                    className={`${isDropdownOpen ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}
+                  >
                     <DropDownIcon />
                   </span>
                 </button>
@@ -252,22 +393,68 @@ const Form1 = () => {
                     ))}
                   </div>
                 )}
+                {errors[field.name as keyof typeof errors] && (
+                  <p className="text-sm text-red-500 col-span-full">
+                    {errors[field.name as keyof typeof errors]}
+                  </p>
+                )}
+              </div>
+            ) : field.type === "date" ? (
+              <div
+                className={`${isExtended ? "md:col-span-2" : gridView ? "" : "hidden"} flex flex-col bg-white`}
+              >
+                <DatePicker
+                  selected={field.name === "checkIn" ? startDate : endDate}
+                  onChange={(date) =>
+                    handleDateChange(date, field.name as "checkIn" | "checkOut")
+                  }
+                  placeholderText={field.placeholder}
+                  wrapperClassName="w-full !p-0 h-full bg-white"
+                  className="px-4 py-3.5 bg-white w-full h-full"
+                  aria-required={field.required}
+                  minDate={field.min ? new Date(field.min) : undefined}
+                />
+                {errors[field.name as keyof typeof errors] && (
+                  <p className="text-sm text-red-500 col-span-full">
+                    {errors[field.name as keyof typeof errors]}
+                  </p>
+                )}
+              </div>
+            ) : field.type === "time" ? (
+              <div
+                className={`${isExtended ? "md:col-span-2" : gridView ? "" : "hidden"} px-4 py-3.5 bg-white`}
+              >
+                <TimePicker
+                  onChange={handleTimeChange}
+                  value={formData.preferTime}
+                  disableClock={false}
+                  clearIcon={null}
+                  className="w-full outline-none focus:outline-none"
+                  format="h:mm a"
+                />
+                {errors[field.name as keyof typeof errors] && (
+                  <p className="text-sm text-red-500 col-span-full">
+                    {errors[field.name as keyof typeof errors]}
+                  </p>
+                )}
               </div>
             ) : (
-              <input
-                type={field.type}
-                name={field.name}
-                value={formData[field.name as keyof typeof formData]}
-                onChange={handleChange}
-                placeholder={field.placeholder}
-                className="px-4 py-3.5 bg-white md:col-span-2"
-                aria-required={field.required}
-              />
-            )}
-            {errors[field.name as keyof typeof errors] && (
-              <p className="text-sm text-red-500">
-                {errors[field.name as keyof typeof errors]}
-              </p>
+              <div className="md:col-span-2 flex flex-col bg-white">
+                <input
+                  type={field.type}
+                  name={field.name}
+                  value={formData[field.name as keyof typeof formData]}
+                  onChange={handleChange}
+                  placeholder={field.placeholder}
+                  className={`px-4 py-3.5 bg-white focus:outline-none w-full h-full `}
+                  aria-required={field.required}
+                />
+                {errors[field.name as keyof typeof errors] && (
+                  <p className="text-sm text-red-500 col-span-full">
+                    {errors[field.name as keyof typeof errors]}
+                  </p>
+                )}
+              </div>
             )}
           </React.Fragment>
         ))}
@@ -275,7 +462,7 @@ const Form1 = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`py-3 md:col-span-1 px-6 bg-primary text-white uppercase font-medium hover:bg-secondary transition-colors ${
+          className={`py-3 ${isExtended ? "md:col-span-2" : "md:col-span-1"} px-6 bg-primary text-white uppercase font-medium hover:bg-secondary transition-colors ${
             isSubmitting ? "opacity-70 cursor-not-allowed" : ""
           }`}
         >

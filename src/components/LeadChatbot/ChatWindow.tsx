@@ -399,7 +399,7 @@ const ChatWindow = ({
       <div
         className="p-4 flex justify-between items-center "
         style={{
-          background: theme,
+          backgroundColor: theme,
           color: "white",
         }}
       >
