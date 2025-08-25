@@ -5,13 +5,21 @@ import { countries } from "../chatbot/constant";
 import useClickOutside from "@/hocks/useClickOutside";
 import { DropDownIcon } from "@/utils/icons";
 import { contact } from "../../../Constent";
+import { getDateInputLimits } from "@/hocks/getDateInputLimits";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Form = () => {
   const [countryCode, setCountryCode] = useState("+91");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-
+  const [isTimeDropdownOpen, setIsTimeDropdownOpen] = useState(false);
+  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
+  const [startDate, endDate] = dateRange;
+  const { min } = getDateInputLimits({
+    showPast: false,
+  });
   const offers = [
     "Wellness Offers",
     "Rejuvenation Treatments",
@@ -19,20 +27,32 @@ const Form = () => {
     "Ailment Treatments",
   ];
 
+  // Time slots as shown in the reference image
+  const timeSlots = [
+    "10 AM to 12 PM IST",
+    "12 PM to 2 PM IST",
+    "2 PM to 4 PM IST",
+    "4 PM to 6 PM IST",
+    "6 PM to 8 PM IST",
+  ];
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
     wellnessOffer: "",
+    checkIn: "",
+    checkOut: "",
+    preferTime: "",
   });
 
   const [errors, setErrors] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
     wellnessOffer: "",
+    dateRange: "",
+    preferTime: "",
   });
 
   // Regex patterns
@@ -62,14 +82,34 @@ const Form = () => {
     }
   };
 
+  const handleDateRangeChange = (update: [Date | null, Date | null]) => {
+    setDateRange(update);
+    
+    const [start, end] = update;
+    const checkInString = start ? start.toISOString().split("T")[0] : "";
+    const checkOutString = end ? end.toISOString().split("T")[0] : "";
+    
+    setFormData((prev) => ({
+      ...prev,
+      checkIn: checkInString,
+      checkOut: checkOutString,
+    }));
+
+    // Clear error when date is selected
+    if (errors.dateRange) {
+      setErrors((prev) => ({ ...prev, dateRange: "" }));
+    }
+  };
+
   const validateForm = () => {
     let isValid = true;
     const newErrors = {
       name: "",
       email: "",
       phone: "",
-      message: "",
       wellnessOffer: "",
+      dateRange: "",
+      preferTime: "",
     };
 
     // Name validation
@@ -102,6 +142,21 @@ const Form = () => {
       isValid = false;
     }
 
+    // Date range validation
+    if (!formData.checkIn.trim() || !formData.checkOut.trim()) {
+      newErrors.dateRange = "Please select both check-in and check-out dates";
+      isValid = false;
+    } else if (startDate && endDate && startDate > endDate) {
+      newErrors.dateRange = "Check-out must be after check-in";
+      isValid = false;
+    }
+
+    // Time validation
+    if (!formData.preferTime.trim()) {
+      newErrors.preferTime = "Preferred time is required";
+      isValid = false;
+    }
+
     setErrors(newErrors);
     return isValid;
   };
@@ -123,8 +178,10 @@ const Form = () => {
           email: formData.email,
           Name: formData.name,
           Contact: formData.phone,
-          Description: formData.message,
-          created_from: "website",
+          check_in: formData.checkIn,
+          check_out: formData.checkOut,
+          Description: `Offer: ${formData.wellnessOffer}, Check-in: ${formData.checkIn}, Check-out: ${formData.checkOut}, Preferred Time: ${formData.preferTime}`,
+          created_from: "landing_page",
         },
         {
           headers: {
@@ -138,9 +195,12 @@ const Form = () => {
           name: "",
           email: "",
           phone: "",
-          message: "",
+          checkIn: "",
+          checkOut: "",
+          preferTime: "",
           wellnessOffer: "",
         });
+        setDateRange([null, null]);
         setSubmitSuccess(true);
         window.open("/thank-you/", "_blank");
       } else {
@@ -154,6 +214,8 @@ const Form = () => {
     }
   };
 
+  const timeDropDownRef = useRef<HTMLDivElement | null>(null);
+  
   const inputFields = [
     {
       name: "name",
@@ -180,13 +242,23 @@ const Form = () => {
       required: true,
     },
     {
-      name: "message",
-      type: "textarea",
-      placeholder: "Message",
-      required: false,
+      name: "dateRange",
+      type: "dateRange",
+      placeholder: "Check-in & Check-out Dates*",
+      required: true,
+    },
+    {
+      name: "preferTime",
+      type: "time",
+      placeholder: "Preferred Time of Contact*",
+      required: true,
     },
   ];
 
+  useClickOutside(timeDropDownRef, () => {
+    setIsTimeDropdownOpen(false);
+  });
+  
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -275,6 +347,74 @@ const Form = () => {
                   </div>
                 )}
               </div>
+            ) : field.type === "dateRange" ? (
+              <div className="bg-white border border-light rounded-lg">
+                <DatePicker
+                  selectsRange={true}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={handleDateRangeChange}
+                  minDate={new Date(min ?? Date.now())}
+                  placeholderText={field.placeholder}
+                  wrapperClassName="w-full !p-0 h-full bg-white border border-light rounded-lg"
+                  className="px-4 py-3.5 bg-white w-full h-full rounded-lg focus:outline-none"
+                  aria-required={field.required}
+                  isClearable={true}
+                />
+              </div>
+            ) : field.type === "time" ? (
+              <div className="bg-white border border-light rounded-lg">
+                <div
+                  className="relative w-full h-full flex flex-col"
+                  ref={timeDropDownRef}
+                >
+                  <button
+                    type="button"
+                    onClick={() => setIsTimeDropdownOpen(!isTimeDropdownOpen)}
+                    className={`w-full h-full px-4 py-3.5 text-left bg-white flex items-center justify-between rounded-lg ${
+                      !formData.preferTime ? "text-gray-400" : ""
+                    }`}
+                    aria-haspopup="listbox"
+                    aria-expanded={isTimeDropdownOpen}
+                  >
+                    {formData.preferTime || field.placeholder}
+                    <span
+                      className={`${isTimeDropdownOpen ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}
+                    >
+                      <DropDownIcon />
+                    </span>
+                  </button>
+                  {isTimeDropdownOpen && (
+                    <div
+                      role="listbox"
+                      className="absolute top-full left-0 right-0 z-10 bg-white border border-light shadow-lg max-h-60 overflow-y-auto rounded-b-lg"
+                    >
+                      {timeSlots.map((time) => (
+                        <button
+                          key={time}
+                          type="button"
+                          onClick={() => {
+                            setFormData((prev) => ({
+                              ...prev,
+                              preferTime: time,
+                            }));
+                            setIsTimeDropdownOpen(false);
+                            setErrors((prev) => ({
+                              ...prev,
+                              preferTime: "",
+                            }));
+                          }}
+                          className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                          role="option"
+                          aria-selected={formData.preferTime === time}
+                        >
+                          {time}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
             ) : (
               <input
                 type={field.type}
@@ -287,7 +427,7 @@ const Form = () => {
               />
             )}
             {errors[field.name as keyof typeof errors] && (
-              <p className="text-sm text-red-500">
+              <p className="text-sm text-red-500 col-span-full px-2">
                 {errors[field.name as keyof typeof errors]}
               </p>
             )}

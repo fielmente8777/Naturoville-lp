@@ -8,28 +8,36 @@ import { contact } from "../../../Constent";
 import { getDateInputLimits } from "@/hocks/getDateInputLimits";
 import DatePicker from "react-datepicker";
 import DataContext from "@/contextApi/DataContext";
-import TimePicker from "react-time-picker";
-import "react-time-picker/dist/TimePicker.css";
-import "react-clock/dist/Clock.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 const Form1 = () => {
   const { gridView, isExtended, setIsExtended } = useContext(DataContext);
-  const formRef = useRef<HTMLFormElement | null>(null);
+  const formRef = useRef<HTMLDivElement | null>(null);
   const [countryCode, setCountryCode] = useState("+91");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isOfferDropdownOpen, setIsOfferDropdownOpen] = useState(false);
+  const [isTimeDropdownOpen, setIsTimeDropdownOpen] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
+  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
+  const [startDate, endDate] = dateRange;
   const { min } = getDateInputLimits({
     showPast: false,
   });
 
   const offers = [
-    "Wellness Offers",
+    // "Wellness Offers",
     "Rejuvenation Treatments",
     "Lifestyle Treatments",
     "Ailment Treatments",
+  ];
+
+  // Time slots as shown in the reference image
+  const timeSlots = [
+    "10 AM to 12 PM IST",
+    "12 PM to 2 PM IST",
+    "2 PM to 4 PM IST",
+    "4 PM to 6 PM IST",
+    "6 PM to 8 PM IST",
   ];
 
   const [formData, setFormData] = useState({
@@ -42,28 +50,12 @@ const Form1 = () => {
     preferTime: "",
   });
 
-  const handleTimeChange = (time: string | null) => {
-    setFormData((prev) => ({
-      ...prev,
-      preferTime: time || "",
-    }));
-
-    // Clear error when time is selected
-    if (errors.preferTime) {
-      setErrors((prev) => ({
-        ...prev,
-        preferTime: "",
-      }));
-    }
-  };
-
   const [errors, setErrors] = useState({
     name: "",
     email: "",
     phone: "",
     wellnessOffer: "",
-    checkIn: "",
-    checkOut: "",
+    dateRange: "",
     preferTime: "",
   });
 
@@ -89,31 +81,22 @@ const Form1 = () => {
     }
   };
 
-  const handleDateChange = (
-    date: Date | null,
-    field: "checkIn" | "checkOut"
-  ) => {
-    const dateString = date ? date.toISOString().split("T")[0] : "";
-
+  const handleDateRangeChange = (update: [Date | null, Date | null]) => {
+    setDateRange(update);
+    
+    const [start, end] = update;
+    const checkInString = start ? start.toISOString().split("T")[0] : "";
+    const checkOutString = end ? end.toISOString().split("T")[0] : "";
+    
     setFormData((prev) => ({
       ...prev,
-      [field]: dateString,
+      checkIn: checkInString,
+      checkOut: checkOutString,
     }));
 
-    if (field === "checkIn") {
-      setStartDate(date);
-      // Clear check-out error if both dates are selected
-      if (date && endDate && date > endDate) {
-        setEndDate(null);
-        setFormData((prev) => ({ ...prev, checkOut: "" }));
-      }
-    } else {
-      setEndDate(date);
-    }
-
     // Clear error when date is selected
-    if (errors[field]) {
-      setErrors((prev) => ({ ...prev, [field]: "" }));
+    if (errors.dateRange) {
+      setErrors((prev) => ({ ...prev, dateRange: "" }));
     }
   };
 
@@ -124,8 +107,7 @@ const Form1 = () => {
       email: "",
       phone: "",
       wellnessOffer: "",
-      checkIn: "",
-      checkOut: "",
+      dateRange: "",
       preferTime: "",
     };
 
@@ -159,17 +141,12 @@ const Form1 = () => {
       isValid = false;
     }
 
-    // Check-in validation
-    if (!formData.checkIn.trim()) {
-      newErrors.checkIn = "check-in date is required";
-      isValid = false;
-    }
-
-    if (!formData.checkOut.trim()) {
-      newErrors.checkOut = "check-out date is required";
+    // Date range validation
+    if (!formData.checkIn.trim() || !formData.checkOut.trim()) {
+      newErrors.dateRange = "Please select both check-in and check-out dates";
       isValid = false;
     } else if (startDate && endDate && startDate > endDate) {
-      newErrors.checkOut = "Check-out must be after check-in";
+      newErrors.dateRange = "Check-out must be after check-in";
       isValid = false;
     }
 
@@ -200,8 +177,8 @@ const Form1 = () => {
           email: formData.email,
           Name: formData.name,
           Contact: formData.phone,
-          check_in: formData.checkIn,
-          check_out: formData.checkOut,
+          "check_in": formData.checkIn,
+          "check_out": formData.checkOut,
           Description: `Offer: ${formData.wellnessOffer}, Check-in: ${formData.checkIn}, Check-out: ${formData.checkOut}, Preferred Time: ${formData.preferTime}`,
           created_from: "landing_page",
         },
@@ -222,8 +199,7 @@ const Form1 = () => {
           preferTime: "",
           wellnessOffer: "",
         });
-        setStartDate(null);
-        setEndDate(null);
+        setDateRange([null, null]);
         setSubmitSuccess(true);
         window.open("/thank-you/", "_blank");
       } else {
@@ -259,24 +235,14 @@ const Form1 = () => {
     {
       name: "wellnessOffer",
       type: "select",
-      placeholder: "Wellness Offer*",
+      placeholder: "Select Offer*",
       required: true,
     },
     {
-      name: "checkIn",
-      type: "date",
-      placeholder: "Check-in Date*",
+      name: "dateRange",
+      type: "dateRange",
+      placeholder: "Check-in & Check-out Dates*",
       required: true,
-      min: min,
-      onChange: (date: Date | null) => handleDateChange(date, "checkIn"),
-    },
-    {
-      name: "checkOut",
-      type: "date",
-      placeholder: "Check-out Date*",
-      required: true,
-      min: min,
-      onChange: (date: Date | null) => handleDateChange(date, "checkOut"),
     },
     {
       name: "preferTime",
@@ -285,20 +251,21 @@ const Form1 = () => {
       required: true,
     },
   ];
-  const dropDownRef = useRef<HTMLDivElement | null>(null);
-  useClickOutside(dropDownRef, () => {
-    setIsDropdownOpen(false);
+  
+  const offerDropDownRef = useRef<HTMLDivElement | null>(null);
+  const timeDropDownRef = useRef<HTMLDivElement | null>(null);
+  
+  useClickOutside(offerDropDownRef, () => {
+    setIsOfferDropdownOpen(false);
   });
-  // useClickOutside(formRef, () => {
-  //   if (isExtended) {
-  //     setIsExtended(false);
-  //   }
-  // });
+  
+  useClickOutside(timeDropDownRef, () => {
+    setIsTimeDropdownOpen(false);
+  });
 
   return (
-    <div className="w-full">
+    <div className="w-full" ref={formRef} >
       <form
-        ref={formRef}
         onClick={(e) => {
           e.stopPropagation();
           setIsExtended(true);
@@ -346,25 +313,25 @@ const Form1 = () => {
             ) : field.type === "select" ? (
               <div
                 className={`relative md:col-span-2 w-full h-full flex flex-col bg-white`}
-                ref={dropDownRef}
+                ref={offerDropDownRef}
               >
                 <button
                   type="button"
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  onClick={() => setIsOfferDropdownOpen(!isOfferDropdownOpen)}
                   className={`w-full h-full px-4 py-3.5 text-left bg-white flex items-center justify-between ${
                     !formData.wellnessOffer ? "text-gray-400" : ""
                   }`}
                   aria-haspopup="listbox"
-                  aria-expanded={isDropdownOpen}
+                  aria-expanded={isOfferDropdownOpen}
                 >
                   {formData.wellnessOffer || field.placeholder}
                   <span
-                    className={`${isDropdownOpen ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}
+                    className={`${isOfferDropdownOpen ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}
                   >
                     <DropDownIcon />
                   </span>
                 </button>
-                {isDropdownOpen && (
+                {isOfferDropdownOpen && (
                   <div
                     role="listbox"
                     className="absolute top-full z-10 w-full bg-white border border-light shadow-lg"
@@ -378,7 +345,7 @@ const Form1 = () => {
                             ...prev,
                             wellnessOffer: offer,
                           }));
-                          setIsDropdownOpen(false);
+                          setIsOfferDropdownOpen(false);
                           setErrors((prev) => ({
                             ...prev,
                             wellnessOffer: "",
@@ -399,39 +366,78 @@ const Form1 = () => {
                   </p>
                 )}
               </div>
-            ) : field.type === "date" ? (
+            ) : field.type === "dateRange" ? (
               <div
                 className={`${isExtended ? "md:col-span-2" : gridView ? "" : "hidden"} flex flex-col bg-white`}
               >
                 <DatePicker
-                  selected={field.name === "checkIn" ? startDate : endDate}
-                  onChange={(date) =>
-                    handleDateChange(date, field.name as "checkIn" | "checkOut")
-                  }
+                  selectsRange={true}
+                  startDate={startDate}
+                  endDate={endDate}
+                  onChange={handleDateRangeChange}
+                  minDate={new Date(min ?? Date.now())}
                   placeholderText={field.placeholder}
                   wrapperClassName="w-full !p-0 h-full bg-white"
                   className="px-4 py-3.5 bg-white w-full h-full"
                   aria-required={field.required}
-                  minDate={field.min ? new Date(field.min) : undefined}
+                  isClearable={true}
                 />
-                {errors[field.name as keyof typeof errors] && (
+                {errors.dateRange && (
                   <p className="text-sm text-red-500 col-span-full">
-                    {errors[field.name as keyof typeof errors]}
+                    {errors.dateRange}
                   </p>
                 )}
               </div>
             ) : field.type === "time" ? (
               <div
-                className={`${isExtended ? "md:col-span-2" : gridView ? "" : "hidden"} px-4 py-3.5 bg-white`}
+                className={`relative ${isExtended ? "md:col-span-2" : gridView ? "" : "hidden"} w-full h-full flex flex-col bg-white`}
+                ref={timeDropDownRef}
               >
-                <TimePicker
-                  onChange={handleTimeChange}
-                  value={formData.preferTime}
-                  disableClock={false}
-                  clearIcon={null}
-                  className="w-full outline-none focus:outline-none"
-                  format="h:mm a"
-                />
+                <button
+                  type="button"
+                  onClick={() => setIsTimeDropdownOpen(!isTimeDropdownOpen)}
+                  className={`w-full h-full px-4 py-3.5 text-left bg-white flex items-center justify-between ${
+                    !formData.preferTime ? "text-gray-400" : ""
+                  }`}
+                  aria-haspopup="listbox"
+                  aria-expanded={isTimeDropdownOpen}
+                >
+                  {formData.preferTime || field.placeholder}
+                  <span
+                    className={`${isTimeDropdownOpen ? "rotate-180" : ""} transition-all duration-300 ease-in-out`}
+                  >
+                    <DropDownIcon />
+                  </span>
+                </button>
+                {isTimeDropdownOpen && (
+                  <div
+                    aria-label="Time selection"
+                    className="absolute top-full z-10 w-full bg-white border border-light shadow-lg max-h-60 overflow-y-auto"
+                  >
+                    {timeSlots.map((time) => (
+                      <button
+                        key={time}
+                        type="button"
+                        onClick={() => {
+                          setFormData((prev) => ({
+                            ...prev,
+                            preferTime: time,
+                          }));
+                          setIsTimeDropdownOpen(false);
+                          setErrors((prev) => ({
+                            ...prev,
+                            preferTime: "",
+                          }));
+                        }}
+                        className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                        role="option"
+                        aria-selected={formData.preferTime === time}
+                      >
+                        {time}
+                      </button>
+                    ))}
+                  </div>
+                )}
                 {errors[field.name as keyof typeof errors] && (
                   <p className="text-sm text-red-500 col-span-full">
                     {errors[field.name as keyof typeof errors]}

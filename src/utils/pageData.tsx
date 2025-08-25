@@ -61,7 +61,7 @@ export const pageData = {
       {
         category: "CORE AYURVEDIC THERAPIES",
         title: "Akshi Tarpan",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        description: "Soothing therapy to rejuvenate and heal tired eyes",
         src: "/core/im3.webp",
       },
       {

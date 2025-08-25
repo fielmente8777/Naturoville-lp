@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import "./style.scss";
-import { DiscountPopup, Footer } from "@/components";
+import { Footer } from "@/components";
 import RenderChatBot from "@/components/LeadChatbot/RenderChatBot";
 import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
@@ -117,29 +117,29 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
 };
 
-const discount = {
-  contact: {
-    href: "tel:" + contact.phoneNumber,
-    label: "Call Us",
-    bgColor: "#004C5B",
-    textColor: "#fff",
-  },
-  content: {
-    // discount: 10,
-    _html: `<p class="content-para">On same day <span class="purple-purse">booking</span></p>`,
-    // subTitle: "On same day booking",
-    title: "RESERVE TODAY",
-    borderColor: "#fff",
-  },
-  logo: {
-    alt: "Naturoville wellness",
-    src: "/logo.png",
-  },
-  image: {
-    alt: "Naturoville wellness",
-    src: "/cabanas.webp",
-  },
-};
+// const discount = {
+//   contact: {
+//     href: "tel:" + contact.phoneNumber,
+//     label: "Call Us",
+//     bgColor: "#004C5B",
+//     textColor: "#fff",
+//   },
+//   content: {
+//     // discount: 10,
+//     _html: `<p class="content-para">On same day <span class="purple-purse">booking</span></p>`,
+//     // subTitle: "On same day booking",
+//     title: "RESERVE TODAY",
+//     borderColor: "#fff",
+//   },
+//   logo: {
+//     alt: "Naturoville wellness",
+//     src: "/logo.png",
+//   },
+//   image: {
+//     alt: "Naturoville wellness",
+//     src: "/cabanas.webp",
+//   },
+// };
 
 export default function RootLayout({
   children,
@@ -224,7 +224,7 @@ export default function RootLayout({
         {/* <!-- End Google Tag Manager (noscript) --> */}
         <DataProvider>
           <RenderChatBot />
-          <DiscountPopup {...discount} />
+          {/* <DiscountPopup {...discount} /> */}
           {children}
           <Footer />
           <Call callNumber={contact.phoneNumber} />
