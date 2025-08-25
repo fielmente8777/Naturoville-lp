@@ -21,7 +21,7 @@ const Form = () => {
     showPast: false,
   });
   const offers = [
-    "Wellness Offers",
+    // "Wellness Offers",
     "Rejuvenation Treatments",
     "Lifestyle Treatments",
     "Ailment Treatments",
@@ -238,7 +238,7 @@ const Form = () => {
     {
       name: "wellnessOffer",
       type: "select",
-      placeholder: "Wellness Offer*",
+      placeholder: "Select Offer*",
       required: true,
     },
     {
