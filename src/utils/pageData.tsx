@@ -176,7 +176,7 @@ export const pageData = {
       "Heated and normal swimming pools with private cabanas",
     ],
     src: "/facilities.webp",
-    links: [{ label: "GET EXCLUSIVE OFFERS", href: `https://wa.me/${contact.phoneNumber.replace(/\s+/g, "")}?text=Hello` }],
+    links: [{ label: "Explore Activities Now", href: `https://wa.me/+919520890995?text=Hello` }],
   },
   wellnessPrograms: {
     title: "Explore Our Wellness Programs",
@@ -248,7 +248,7 @@ export const footerLinks = {
   src: "/logo.png",
   link: {
     label: "GET EXCLUSIVE OFFERS",
-    href: "tel:" + contact.phoneNumber,
+    href: "tel:" + "+919520890995",
   },
   data: [
     {

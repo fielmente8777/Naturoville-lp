@@ -10,6 +10,7 @@ import {
 } from "@/components";
 import DataContext from "@/contextApi/DataContext";
 import { FlowerIcon } from "@/utils/icons";
+import Link from "next/link";
 import { useContext } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 
@@ -57,14 +58,18 @@ const Accommodation: React.FC<AccommodationTypes> = ({
             {/* <div className="pagination flex items-center justify-center mt-8"></div> */}
           </div>
           <div className="flex justify-center mt-4 max-md:px-4">
-            {links.map((link, index) => (
+            {/* {links.map((link, index) => (
               <OnlyButton
                 key={index}
                 onclick={() => setIsOpen(true)}
                 label={link.label}
                 className="bg-primary text-white"
               />
-            ))}
+            ))} */}
+            <div className="flex justify-center">
+              <Link href="https://wa.me/+919520890995?text=Hello" target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Book Now</Link>
+
+            </div>
           </div>
         </div>
       </Section>

@@ -8,6 +8,7 @@ import {
 import DataContext from "@/contextApi/DataContext";
 import { FlowerIcon } from "@/utils/icons";
 import Image from "next/image";
+import Link from "next/link";
 import { useContext } from "react";
 
 const Facilities: React.FC<FacilitiesTypes> = ({ title, list, links, src }) => {
@@ -36,14 +37,15 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, list, links, src }) => {
         </div>
       </div>
       <div className="md:mt-14 w-full flex flex-col items-center">
-        {links.map((link, index) => (
+        {/* {links.map((link, index) => (
           <OnlyButton
             key={index}
             onclick={() => setIsOpen(true)}
             label={link.label}
             className="mt-4 bg-primary text-white"
           />
-        ))}
+        ))} */}
+        <Link href="https://wa.me/+919520890995?text=Hello" target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Explore Activities Now</Link>
       </div>
     </SectionWithContainer>
   );

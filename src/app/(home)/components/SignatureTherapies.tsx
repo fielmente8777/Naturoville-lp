@@ -15,6 +15,7 @@ import {
   BtnPrevIcon2,
   FlowerIcon,
 } from "@/utils/icons";
+import Link from "next/link";
 import { useContext, useState } from "react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 
@@ -132,7 +133,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
           </button>
         </div>
         {/* contact link */}
-        {links &&
+        {/* {links &&
           links.map((link, index) => (
             <OnlyButton
               key={index}
@@ -141,7 +142,11 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
               onclick={() => setIsOpen(true)}
               className="bg-primary text-white border-primary w-fit mx-auto"
             />
-          ))}
+          ))} */}
+          <div className="flex justify-center">
+          <Link href="https://wa.me/+919520890995?text=Hello" target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Start Your Therapy</Link>
+
+          </div>
       </div>
     </SectionWithContainer>
   );

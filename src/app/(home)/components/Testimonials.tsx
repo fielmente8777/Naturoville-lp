@@ -11,8 +11,8 @@ import Form from "../../../components/forms/Form";
 import Image from "next/image";
 
 const Testimonials: React.FC<TestimonialsTypes> = ({
-  title,
-  // description,
+  // title,
+  description,
   cards,
 }) => {
   return (
@@ -21,10 +21,10 @@ const Testimonials: React.FC<TestimonialsTypes> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div className="flex flex-col md:gap-7 gap-6 max-w-lg">
             <div className="md:space-y-4 space-y-2">
-              <h2 className="text-dark text-lg max-md:text-center">{title}</h2>
-              {/* <h3 className="md:text-5xl text-2xl text-primary abhayaLibre max-md:text-center">
+              {/* <h2 className="text-dark text-lg max-md:text-center">{title}</h2> */}
+              <h3 className="md:text-5xl text-2xl text-primary abhayaLibre max-md:text-center">
                 {description}
-              </h3> */}
+              </h3>
             </div>
             <div className="w-full max-w-[80px] relative aspect-square max-md:mx-auto">
               <Image

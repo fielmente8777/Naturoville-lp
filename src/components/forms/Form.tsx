@@ -25,6 +25,12 @@ const Form = () => {
     "Rejuvenation Treatments",
     "Lifestyle Treatments",
     "Ailment Treatments",
+    "Panchkarma",
+    "Ladies Shakti Special",
+    "Detoxification treatment",
+    "Ayurvedic Weight loss treatment",
+    "Stress Management"
+
   ];
 
   // Time slots as shown in the reference image
@@ -35,6 +41,8 @@ const Form = () => {
     "4 PM to 6 PM IST",
     "6 PM to 8 PM IST",
   ];
+
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -84,11 +92,11 @@ const Form = () => {
 
   const handleDateRangeChange = (update: [Date | null, Date | null]) => {
     setDateRange(update);
-    
+
     const [start, end] = update;
     const checkInString = start ? start.toISOString().split("T")[0] : "";
     const checkOutString = end ? end.toISOString().split("T")[0] : "";
-    
+
     setFormData((prev) => ({
       ...prev,
       checkIn: checkInString,
@@ -215,7 +223,7 @@ const Form = () => {
   };
 
   const timeDropDownRef = useRef<HTMLDivElement | null>(null);
-  
+
   const inputFields = [
     {
       name: "name",
@@ -258,7 +266,7 @@ const Form = () => {
   useClickOutside(timeDropDownRef, () => {
     setIsTimeDropdownOpen(false);
   });
-  
+
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -304,9 +312,8 @@ const Form = () => {
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className={`w-full px-4 py-3.5 text-left bg-white border border-light rounded-lg  flex items-center justify-between ${
-                    !formData.wellnessOffer ? "text-gray-400" : ""
-                  }`}
+                  className={`w-full px-4 py-3.5 text-left bg-white border border-light rounded-lg  flex items-center justify-between ${!formData.wellnessOffer ? "text-gray-400" : ""
+                    }`}
                   aria-haspopup="listbox"
                   aria-expanded={isDropdownOpen}
                 >
@@ -371,9 +378,8 @@ const Form = () => {
                   <button
                     type="button"
                     onClick={() => setIsTimeDropdownOpen(!isTimeDropdownOpen)}
-                    className={`w-full h-full px-4 py-3.5 text-left bg-white flex items-center justify-between rounded-lg ${
-                      !formData.preferTime ? "text-gray-400" : ""
-                    }`}
+                    className={`w-full h-full px-4 py-3.5 text-left bg-white flex items-center justify-between rounded-lg ${!formData.preferTime ? "text-gray-400" : ""
+                      }`}
                     aria-haspopup="listbox"
                     aria-expanded={isTimeDropdownOpen}
                   >
@@ -437,9 +443,8 @@ const Form = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`py-3 px-6 bg-primary text-white rounded-lg uppercase font-medium hover:bg-secondary transition-colors ${
-            isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-          }`}
+          className={`py-3 px-6 bg-primary text-white rounded-lg uppercase font-medium hover:bg-secondary transition-colors ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+            }`}
         >
           {isSubmitting ? (
             <span className="inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
