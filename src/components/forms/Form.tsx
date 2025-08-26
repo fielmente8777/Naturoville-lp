@@ -15,16 +15,24 @@ const Form = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [isTimeDropdownOpen, setIsTimeDropdownOpen] = useState(false);
-  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
+  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
+    null,
+    null,
+  ]);
   const [startDate, endDate] = dateRange;
   const { min } = getDateInputLimits({
     showPast: false,
   });
   const offers = [
     // "Wellness Offers",
-    "Rejuvenation Treatments",
+   "Rejuvenation Treatments",
     "Lifestyle Treatments",
     "Ailment Treatments",
+    "Panchkarma",
+    "Ladies Shakti Special",
+    "Detoxification Treatments",
+    "Ayurvedic Weight loss Treatments",
+    "Stress Management",
   ];
 
   // Time slots as shown in the reference image
@@ -84,11 +92,11 @@ const Form = () => {
 
   const handleDateRangeChange = (update: [Date | null, Date | null]) => {
     setDateRange(update);
-    
+
     const [start, end] = update;
     const checkInString = start ? start.toISOString().split("T")[0] : "";
     const checkOutString = end ? end.toISOString().split("T")[0] : "";
-    
+
     setFormData((prev) => ({
       ...prev,
       checkIn: checkInString,
@@ -215,7 +223,7 @@ const Form = () => {
   };
 
   const timeDropDownRef = useRef<HTMLDivElement | null>(null);
-  
+
   const inputFields = [
     {
       name: "name",
@@ -258,7 +266,7 @@ const Form = () => {
   useClickOutside(timeDropDownRef, () => {
     setIsTimeDropdownOpen(false);
   });
-  
+
   return (
     <div className="w-full">
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
