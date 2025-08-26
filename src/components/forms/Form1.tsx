@@ -18,7 +18,10 @@ const Form1 = () => {
   const [isOfferDropdownOpen, setIsOfferDropdownOpen] = useState(false);
   const [isTimeDropdownOpen, setIsTimeDropdownOpen] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
+  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
+    null,
+    null,
+  ]);
   const [startDate, endDate] = dateRange;
   const { min } = getDateInputLimits({
     showPast: false,
@@ -29,6 +32,11 @@ const Form1 = () => {
     "Rejuvenation Treatments",
     "Lifestyle Treatments",
     "Ailment Treatments",
+    "Panchkarma",
+    "Ladies Shakti Special",
+    "Detoxification Treatments",
+    "Ayurvedic Weight loss Treatments",
+    "Stress Management",
   ];
 
   // Time slots as shown in the reference image
@@ -83,11 +91,11 @@ const Form1 = () => {
 
   const handleDateRangeChange = (update: [Date | null, Date | null]) => {
     setDateRange(update);
-    
+
     const [start, end] = update;
     const checkInString = start ? start.toISOString().split("T")[0] : "";
     const checkOutString = end ? end.toISOString().split("T")[0] : "";
-    
+
     setFormData((prev) => ({
       ...prev,
       checkIn: checkInString,
@@ -177,8 +185,8 @@ const Form1 = () => {
           email: formData.email,
           Name: formData.name,
           Contact: formData.phone,
-          "check_in": formData.checkIn,
-          "check_out": formData.checkOut,
+          check_in: formData.checkIn,
+          check_out: formData.checkOut,
           Description: `Offer: ${formData.wellnessOffer}, Check-in: ${formData.checkIn}, Check-out: ${formData.checkOut}, Preferred Time: ${formData.preferTime}`,
           created_from: "landing_page",
         },
@@ -251,20 +259,20 @@ const Form1 = () => {
       required: true,
     },
   ];
-  
+
   const offerDropDownRef = useRef<HTMLDivElement | null>(null);
   const timeDropDownRef = useRef<HTMLDivElement | null>(null);
-  
+
   useClickOutside(offerDropDownRef, () => {
     setIsOfferDropdownOpen(false);
   });
-  
+
   useClickOutside(timeDropDownRef, () => {
     setIsTimeDropdownOpen(false);
   });
 
   return (
-    <div className="w-full" ref={formRef} >
+    <div className="w-full" ref={formRef}>
       <form
         onClick={(e) => {
           e.stopPropagation();

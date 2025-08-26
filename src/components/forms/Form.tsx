@@ -15,7 +15,10 @@ const Form = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [isTimeDropdownOpen, setIsTimeDropdownOpen] = useState(false);
-  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([null, null]);
+  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
+    null,
+    null,
+  ]);
   const [startDate, endDate] = dateRange;
   const { min } = getDateInputLimits({
     showPast: false,
@@ -27,10 +30,9 @@ const Form = () => {
     "Ailment Treatments",
     "Panchkarma",
     "Ladies Shakti Special",
-    "Detoxification treatment",
-    "Ayurvedic Weight loss treatment",
-    "Stress Management"
-
+    "Detoxification Treatments",
+    "Ayurvedic Weight loss Treatments",
+    "Stress Management",
   ];
 
   // Time slots as shown in the reference image
