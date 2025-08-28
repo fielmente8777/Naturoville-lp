@@ -228,7 +228,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <Call callNumber={contact.phoneNumber} />
-          <Whatsapp whatsAppNumber={contact.phoneNumber} />
+          <Whatsapp whatsAppNumber={"+919520890995"} />
           <PopForm />
         </DataProvider>
 
