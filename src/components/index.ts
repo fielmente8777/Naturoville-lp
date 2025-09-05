@@ -17,6 +17,7 @@ import DiscountPopup from "./discountPopup/DiscountPopup";
 import Banner from "./banner/Banner";
 import SwiperCarousel from "./SwiperCarousel";
 import { LazyLoadedVideo } from "./Video";
+import OfferSlider from "./OfferSlider";
 export {
   WellnesCard,
   TherapieCard,
@@ -39,4 +40,5 @@ export {
   SwiperCarousel,
   LazyLoadedVideo,
   TestimonialCard,
+  OfferSlider,
 };
