@@ -40,13 +40,18 @@ const Form1 = () => {
   ];
 
   // Time slots as shown in the reference image
+  // const timeSlots = [
+  //   "10 AM to 12 PM IST",
+  //   "12 PM to 2 PM IST",
+  //   "2 PM to 4 PM IST",
+  //   "4 PM to 6 PM IST",
+  //   "6 PM to 8 PM IST",
+  // ];
   const timeSlots = [
-    "10 AM to 12 PM IST",
-    "12 PM to 2 PM IST",
-    "2 PM to 4 PM IST",
-    "4 PM to 6 PM IST",
-    "6 PM to 8 PM IST",
-  ];
+    "Whatsapp",
+    "Call",
+    "Email",
+  ]
 
   const [formData, setFormData] = useState({
     name: "",
@@ -181,13 +186,14 @@ const Form1 = () => {
       const { data } = await axios.post(
         "https://nexon.eazotel.com/eazotel/addcontacts",
         {
-          Domain: contact.formDomain,
+          Domain: "testmulti",
+          // Domain: contact.formDomain,
           email: formData.email,
           Name: formData.name,
           Contact: formData.phone,
           check_in: formData.checkIn,
           check_out: formData.checkOut,
-          Description: `Offer: ${formData.wellnessOffer}, Check-in: ${formData.checkIn}, Check-out: ${formData.checkOut}, Preferred Time: ${formData.preferTime}`,
+          Description: `Offer: ${formData.wellnessOffer}, Check-in: ${formData.checkIn}, Check-out: ${formData.checkOut}, Preferred Way to contact: ${formData.preferTime}`,
           created_from: "landing_page",
         },
         {
@@ -255,7 +261,7 @@ const Form1 = () => {
     {
       name: "preferTime",
       type: "time",
-      placeholder: "Preferred Time of Contact*",
+      placeholder: "Preferred Way of Contact*",
       required: true,
     },
   ];

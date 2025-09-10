@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 // local font import
-import localFont from "next/font/local";
-import "./globals.css";
-import "./style.scss";
 import { Footer } from "@/components";
-import RenderChatBot from "@/components/LeadChatbot/RenderChatBot";
 import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
-import { contact } from "../../Constent";
-import Script from "next/script";
-import { DataProvider } from "@/contextApi/DataContext";
 import PopForm from "@/components/pop-up/PopForm";
+import { DataProvider } from "@/contextApi/DataContext";
+import localFont from "next/font/local";
+import Script from "next/script";
+import { contact } from "../../Constent";
+import "./globals.css";
+import "./style.scss";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -223,7 +222,7 @@ export default function RootLayout({
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         <DataProvider>
-          <RenderChatBot />
+          {/* <RenderChatBot /> */}
           {/* <DiscountPopup {...discount} /> */}
           {children}
           <Footer />
@@ -232,7 +231,7 @@ export default function RootLayout({
           <PopForm />
         </DataProvider>
 
-        {/* <Script
+        <Script
           id="eazbot-config"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -244,7 +243,7 @@ export default function RootLayout({
             };`,
           }}
         />
-        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" /> */}
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" />
       </body>
     </html>
   );
