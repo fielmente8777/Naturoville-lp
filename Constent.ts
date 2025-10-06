@@ -1,6 +1,7 @@
 export const contact = {
   phoneNumber: "+91 95208 90993",
   phoneNumber2: "+91 91493 61935",
+  phoneNumber3: "+91 95208 90995",
   email: "marketing@naturovillespa.com",
   email2: "sales@naturovillespa.com",
   address:

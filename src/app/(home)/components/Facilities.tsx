@@ -1,7 +1,6 @@
 "use client"
 import { FacilitiesTypes } from "@/@types/types";
 import {
-  OnlyButton,
   SectionHeadingDesc,
   SectionWithContainer
 } from "@/components";
@@ -45,7 +44,7 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, list, links, src }) => {
             className="mt-4 bg-primary text-white"
           />
         ))} */}
-        <Link href="https://wa.me/+919520890995?text=Hello" target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Explore Activities Now</Link>
+        <Link href={links[0].href} target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Explore Activities Now</Link>
       </div>
     </SectionWithContainer>
   );

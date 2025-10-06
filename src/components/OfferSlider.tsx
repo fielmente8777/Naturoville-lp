@@ -4,7 +4,7 @@ import { Section } from "./sectionComponents";
 import SwiperCarousel from "./SwiperCarousel";
 
 const OfferSlider = () => {
-  const offersTitle = ["LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS SEPTEMBER!"];
+  const offersTitle = ["LIMITED TIME OFFER: Fill The Form & Get Upto 10% Off This October!"];
 
   const data = offersTitle.length > 5 ? offersTitle : [...offersTitle, ...offersTitle, ...offersTitle];
   return (
@@ -31,7 +31,7 @@ const OfferSlider = () => {
         renderSlide={(item, index) => (
           <div key={index} className="py-3 w-full">
             <div className="relative">
-              <p className="text-white text-wrap text-xl text-center max-sm:px-12">{item}</p>
+              <p className="text-white text-wrap text-xl text-center max-sm:px-12 uppercase">{item}</p>
               <span className="text-white absolute right-[-3.5px] top-1/2 translate-y-[-50%]">
                 •
               </span>
