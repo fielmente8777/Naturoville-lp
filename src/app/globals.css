@@ -58,7 +58,7 @@ a {
 
   /* font-family */
   .abhayaLibre {
-    font-family: "Abhaya Libre";
+    font-family: "Abhaya Libre" !important;
     font-weight: 500;
   }
 

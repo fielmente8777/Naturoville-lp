@@ -4,7 +4,7 @@ import { Section } from "./sectionComponents";
 import SwiperCarousel from "./SwiperCarousel";
 
 const OfferSlider = () => {
-  const offersTitle = ["LIMITED TIME OFFER: Fill The Form & Get Upto 10% Off This October!"];
+  const offersTitle = ["Stay Longer, Save More Extended-stay wellness programs now come with special discounted rates."];
 
   const data = offersTitle.length > 5 ? offersTitle : [...offersTitle, ...offersTitle, ...offersTitle];
   return (

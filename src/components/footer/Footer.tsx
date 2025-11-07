@@ -39,7 +39,7 @@ const Footer = () => {
             {footerLinks.data.map((link, index) => (
               <div key={index} className="w-full flex flex-col gap-4">
                 {link.title && (
-                  <h3 className="text-white md:text-[2rem]/[2.5rem] text-2xl mb-2 abhayaLibre">
+                  <h3 className="text-white! md:text-[2rem]/[2.5rem]! text-2xl! mb-2 abhayaLibre">
                     {link.title}
                   </h3>
                 )}

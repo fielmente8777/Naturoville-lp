@@ -163,7 +163,12 @@ export const pageData = {
         src: "/other/im7.webp",
       },
     ],
-    links: [{ label: "GET EXCLUSIVE OFFERS", href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello` }],
+    links: [
+      {
+        label: "GET EXCLUSIVE OFFERS",
+        href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+      },
+    ],
   },
   facilities: {
     title: "Facilities & Activities",
@@ -175,8 +180,73 @@ export const pageData = {
       "Wellness Library, Gymnasium, Gazebo",
       "Heated and normal swimming pools with private cabanas",
     ],
+    cards: [
+      {
+        title: "What Your Stay Includes",
+        list: [
+          "Welcome drink on arrival",
+          "Comfortable stay (Single/Double occupancy)",
+          "Personalized lifestyle and wellness evaluation",
+          "Consultation with Ayurveda, Naturopathy, and Yoga experts",
+          "Sattvik meals throughout the day (Breakfast, Lunch & Dinner – Vegetarian only)",
+        ],
+        link: {
+          label: "Book Now",
+          href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+        },
+      },
+      {
+        title: "Ayurvedic Therapies Daily ",
+        subTitle: "(1 before lunch + 1 after)",
+        list: [
+          "Twice-daily Yoga sessions and daily Meditation",
+          "Weekly workshops: Ayurveda Talk, Yoga Talk, Cooking Demo, and Aqua Yoga",
+          "Access to pools, gym, and all recreation areas",
+          "Airport pick-up and drop for stays of one week and above",
+        ],
+        link: {
+          label: "Book Now",
+          href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+        },
+      },
+      {
+        title: "Experiences & Spaces",
+        list: [
+          "Ayurveda Treatment & Healing Center",
+          "Yoga and Meditation Pavilions",
+          "Heated and outdoor swimming pools with private cabanas",
+          "Wellness library, gym, and gazebo",
+          "Organic farm, musical garden, and open lawns",
+          "Cycling, indoor, and outdoor games",
+        ],
+        link: {
+          label: "Book Now",
+          href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+        },
+      },
+      {
+        title: "Signature Wellness Experiences",
+        list: [
+          "Ayurveda Treatment & Healing Center",
+          "Yoga and Meditation Pavilions",
+          "Heated and outdoor swimming pools with private cabanas",
+          "Wellness library, gym, and gazebo",
+          "Organic farm, musical garden, and open lawns",
+          "Cycling, indoor, and outdoor games",
+        ],
+        link: {
+          label: "Book Now",
+          href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+        },
+      },
+    ],
     src: "/facilities.webp",
-    links: [{ label: "Explore Activities Now", href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello` }],
+    links: [
+      {
+        label: "Explore Activities Now",
+        href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+      },
+    ],
   },
   wellnessPrograms: {
     title: "Explore Our Wellness Programs",
@@ -184,21 +254,63 @@ export const pageData = {
       "We offer Wellness Programs in 2, 3, 7, 14, 21, and 28-night packages.",
     icon: <FlowerIcon />,
     cards: [
-      { title: "Detox & Panchakarma Therapy", src: "/wellness/im1.webp" },
-      { title: "Weight Management Program", src: "/wellness/im2.webp" },
-      { title: "Diabetes Management", src: "/wellness/im3.webp" },
-      { title: "Arthritis & Pain Relief", src: "/wellness/im4.webp" },
-      { title: "Depression & Stress Management", src: "/wellness/im5.webp" },
-      { title: "Anti-Ageing & Skin Rejuvenation", src: "/wellness/im6.webp" },
-      { title: "Shakti – Women’s Wellness", src: "/wellness/im7.webp" },
+      {
+        title: "Detox & Panchakarma Therapy",
+        desc: "A refined Ayurvedic cleansing ritual that removes deep-rooted toxins, rebalances the body’s natural energies, and restores clarity, vitality, and lightness from within preparing you for deeper healing and renewal.",
+        src: "/wellness/im1.webp",
+      },
+      {
+        title: "Weight Management Program",
+        desc: "A premium, holistic approach to achieving a balanced and sustainable body composition. With diagnostic insights, therapeutic treatments, mindful movement, and nourishing cuisine, this program encourages transformation that feels natural and lasting.",
+        src: "/wellness/im2.webp",
+      },
+      {
+        title: "Diabetes Management",
+        desc: "A curated wellness program designed to elevate metabolic health. Through therapeutic Ayurveda, tailored nutrition, yoga, and lifestyle refinement, this treatment supports stable blood sugar levels while restoring overall strength and vitality.",
+        src: "/wellness/im3.webp",
+      },
+      {
+        title: "Arthritis & Pain Relief",
+        desc: "Thoughtfully designed to ease chronic pain and restore effortless movement. Using healing oils, specialized therapies, and supportive strengthening practices, this program nurtures the joints and brings comfort back into everyday life.",
+        src: "/wellness/im4.webp",
+      },
+      {
+        title: "Depression & Stress Management",
+        desc: "A serene, deeply restorative healing journey. Ayurveda, breathwork, yoga, and reflective practices come together to calm the mind, uplift the spirit, and re-establish inner balance and peace.",
+        src: "/wellness/im5.webp",
+      },
+      {
+        title: "Anti-Ageing & Skin Rejuvenation",
+        desc: "A luxurious rejuvenation experience that softens signs of ageing, enhances skin tone, and elevates natural glow. This program revitalizes both appearance and inner vitality for timeless, graceful beauty.",
+        src: "/wellness/im6.webp",
+      },
+      {
+        title: "Shakti – Women’s Wellness",
+        desc: "A transformative journey designed exclusively for women. This program harmonizes hormonal balance, nurtures emotional well-being, rejuvenates the skin, and reconnects each guest with her innate feminine power, grace, and radiance.",
+        src: "/wellness/im7.webp",
+      },
       {
         title: "Geriatric Wellness (Senior Citizen Focused)",
+        desc: "A personalized wellness journey for graceful ageing. With gentle therapies, balanced nutrition, and supportive practices, this program enhances mobility, digestion, sleep, and emotional ease for renewed daily comfort.",
         src: "/wellness/im8.webp",
       },
-      { title: "Natural Immunization Boosting", src: "/wellness/im9.webp" },
-      { title: "Spine, Neck & Joint Care", src: "/wellness/im10.webp" },
+      {
+        title: "Natural Immunization Boosting",
+        desc: "An elegant wellness program that fortifies the body’s inherent defense system. Through detoxification, herbal medicine, and restorative daily routines, the body is strengthened, energized, and made resilient from within.",
+        src: "/wellness/im9.webp",
+      },
+      {
+        title: "Spine, Neck & Joint Care",
+        desc: "A specialized therapeutic program designed to release deep-seated tension, correct postural strain, and restore natural alignment. Through targeted Ayurvedic therapies, neuromuscular relaxation, and supportive strengthening techniques, this treatment relieves chronic back, neck, and spine discomfort while rebuilding stability and ease of movement.",
+        src: "/wellness/im10.webp",
+      },
     ],
-    links: [{ label: "GET EXCLUSIVE OFFERS", href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello` }],
+    links: [
+      {
+        label: "GET EXCLUSIVE OFFERS",
+        href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+      },
+    ],
   },
   accommodation: {
     title: "Accommodation",
@@ -206,10 +318,18 @@ export const pageData = {
       "Thoughtfully Designed for Deep Rest, Holistic Rejuvenation, and Serenity",
     cards: [
       { title: "Garden View Room with Balcony", src: "/rooms/im1.webp" },
-      { title: "Premium Nature View Room", src: "/rooms/im2.webp" },
+      {
+        title: "Premium Nature View Room",
+        src: "/rooms/Premium-Nature-view-Room.jpg",
+      },
       { title: "Executive Garden View Suite", src: "/rooms/im3.webp" },
     ],
-    links: [{ label: "BOOK NOW", href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello` }],
+    links: [
+      {
+        label: "BOOK NOW",
+        href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+      },
+    ],
   },
   testimonials: {
     title: "Testimonials",

@@ -2,13 +2,11 @@
 import { WellnessProgramsTypes } from "@/@types/types";
 import {
   Container,
-  OnlyButton,
   Section,
   SectionHeadingDesc,
   SwiperCarousel,
   WellnesCard
 } from "@/components";
-import DataContext from "@/contextApi/DataContext";
 import {
   BtnNextIcon,
   BtnNextIcon2,
@@ -16,7 +14,6 @@ import {
   BtnPrevIcon2,
 } from "@/utils/icons";
 import Link from "next/link";
-import { useContext } from "react";
 import { Navigation } from "swiper/modules";
 
 const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
@@ -26,7 +23,6 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
   cards,
   links,
 }) => {
-  const { setIsOpen } = useContext(DataContext);
   return (
     <Section className="flex flex-col md:gap-14 gap-8 w-full bg-bg1">
       <Container className="flex items-center justify-between w-full">

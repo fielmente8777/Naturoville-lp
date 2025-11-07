@@ -5,6 +5,7 @@ import { Headings } from "../typography";
 const WellnesCard: React.FC<WellnessProgramsTypes["cards"][0]> = ({
   title,
   src,
+  desc
 }) => {
   return (
     <div className="md:space-y-6 space-y-3">
@@ -20,6 +21,7 @@ const WellnesCard: React.FC<WellnessProgramsTypes["cards"][0]> = ({
       <Headings level={3} className="md:text-[1.75rem]/[2rem] text-[1.5rem] max-md:text-center font-medium abhayaLibre text-primary">
         {title}
       </Headings>
+      <p className="text-light md:text-lg">{desc}</p>
     </div>
   );
 };

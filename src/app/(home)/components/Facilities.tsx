@@ -1,53 +1,109 @@
-"use client"
+"use client";
 import { FacilitiesTypes } from "@/@types/types";
 import {
+  Container,
+  LinkButton,
+  Section,
   SectionHeadingDesc,
-  SectionWithContainer
+  SwiperCarousel,
 } from "@/components";
-import DataContext from "@/contextApi/DataContext";
-import { FlowerIcon } from "@/utils/icons";
-import Image from "next/image";
-import Link from "next/link";
-import { useContext } from "react";
+import { FlowerIcon2 } from "@/utils/icons";
+import { Autoplay, Navigation } from "swiper/modules";
 
-const Facilities: React.FC<FacilitiesTypes> = ({ title, list, links, src }) => {
-  const { setIsOpen } = useContext(DataContext);
+const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
   return (
-    <SectionWithContainer sectionClassName="relative after:absolute after:bg-[url(/bg.png)] after:bg-no-repeat after:bg-contain after:opacity-5 md:after:w-[680px] after:w-[400px] max-md:after:mx-4 md:after:h-[480px] after:h-[400px] after:right-0 md:after:top-0 after:bottom-0 after:z-[-1]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        <div className="relative md:aspect-[4/2.3] aspect-[4/3] w-full">
-          <Image
-            src={src}
-            alt={title}
-            fill
-            className="object-cover rounded-sm"
-          />
-        </div>
-        <div className="space-y-4">
-          <FlowerIcon />
-          <SectionHeadingDesc title={title} />
-          <ul className="list-disc pl-5 space-y-4 pt-2">
-            {list.map((item, index) => (
-              <li key={index} className="text-lg text-dark mb-2">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+    <Section className="facilities">
+      <span className="span"></span>
+      <div className="space-y-4 flex flex-col items-center justify-center">
+        <FlowerIcon2 />
+        <SectionHeadingDesc title={title} textcenter titleColor="white" />
       </div>
-      <div className="md:mt-14 w-full flex flex-col items-center">
-        {/* {links.map((link, index) => (
-          <OnlyButton
-            key={index}
-            onclick={() => setIsOpen(true)}
-            label={link.label}
-            className="mt-4 bg-primary text-white"
+      <div className="flex items-center justify-center gap-8 mt-10 lg:px-10 py-6">
+        <button className="prev max-lg:hidden">
+          <PrevIcon />
+        </button>
+
+        <Container>
+          <SwiperCarousel
+            data={cards}
+            slidesPerView={1}
+            spaceBetween={24}
+            loop={true}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+            }}
+            modules={[Autoplay, Navigation]}
+            autoplay={{ delay: 2500 }}
+            navigation={{
+              nextEl: ".next",
+              prevEl: ".prev",
+            }}
+            renderSlide={(card) => (
+              <div className="card px-6 py-10 grid grid-rows-[4rem_17rem_auto] gap-6 shadow-lg">
+                <div className="space-y-1.5">
+                  <h3 className="text-[2rem]/[2.5rem] text-primary abhayaLibre">
+                    {card.title}
+                  </h3>
+                  <p className="text-lg text-primary">{card.subTitle}</p>
+                </div>
+                <ul className="list-disc pl-6">
+                  {card.list.map((item, index) => (
+                    <li key={index} className="text-light md:text-lg">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <LinkButton
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={card.link.href}
+                  label={card.link.label}
+                  className="bg-primary"
+                />
+              </div>
+            )}
           />
-        ))} */}
-        <Link href={links[0].href} target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Explore Activities Now</Link>
+        </Container>
+        <button className="next max-lg:hidden">
+          <NextIcon />
+        </button>
       </div>
-    </SectionWithContainer>
+    </Section>
   );
 };
 
 export default Facilities;
+
+export const NextIcon = () => (
+  <svg
+    width={73}
+    height={15}
+    viewBox="0 0 73 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M72.7071 6.65691C73.0976 7.04743 73.0976 7.6806 72.7071 8.07112L66.3431 14.4351C65.9526 14.8256 65.3195 14.8256 64.9289 14.4351C64.5384 14.0446 64.5384 13.4114 64.9289 13.0209L70.5858 7.36401L64.9289 1.70716C64.5384 1.31664 64.5384 0.68347 64.9289 0.292946C65.3195 -0.0975785 65.9526 -0.0975785 66.3431 0.292946L72.7071 6.65691ZM0 7.36401L0 6.36401L72 6.36401V7.36401V8.36401L0 8.36401L0 7.36401Z"
+      fill="white"
+    />
+  </svg>
+);
+export const PrevIcon = () => (
+  <svg
+    width={73}
+    height={15}
+    viewBox="0 0 73 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0.292892 6.65691C-0.0976334 7.04743 -0.0976334 7.6806 0.292892 8.07112L6.65685 14.4351C7.04738 14.8256 7.68054 14.8256 8.07107 14.4351C8.46159 14.0446 8.46159 13.4114 8.07107 13.0209L2.41422 7.36401L8.07107 1.70716C8.46159 1.31664 8.46159 0.68347 8.07107 0.292946C7.68054 -0.0975785 7.04738 -0.0975785 6.65685 0.292946L0.292892 6.65691ZM73 7.36401V6.36401L1 6.36401V7.36401V8.36401L73 8.36401V7.36401Z"
+      fill="white"
+    />
+  </svg>
+);

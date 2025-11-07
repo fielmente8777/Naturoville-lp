@@ -117,3 +117,74 @@
     transition-timing-function: linear !important;
   }
 }
+
+.facilities {
+  position: relative;
+  .span,
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    inset: 0;
+    background-color: var(--primary);
+    z-index: -2;
+  }
+  &::after {
+    background-image: url("/group4.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 65px;
+    z-index: -1;
+    @media (width < 780px) {
+      width: 25px;
+      height: 30px;
+    }
+  }
+  .span {
+    background-image: url("/Group7.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    right: 0;
+    width: 113px;
+    height: 74px;
+    z-index: 1;
+    @media (width < 780px) {
+      width: 50px;
+      height: 30px;
+    }
+  }
+  .card {
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+    }
+    &::before {
+      inset: 0;
+      background-color: #fff;
+      z-index: -2;
+    }
+    &::after {
+      background-image: url("/lotus.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 95%;
+      height: 50%;
+      z-index: -1;
+      @media (width < 780px) {
+        width: 25px;
+        height: 30px;
+      }
+    }
+  }
+}

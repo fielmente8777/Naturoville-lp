@@ -33,6 +33,15 @@ export interface SignatureTherapiesTypes {
 export interface FacilitiesTypes {
   title: string;
   list: string[];
+  cards: {
+    title: string;
+    subTitle?: string;
+    list: string[];
+    link: {
+      label: string;
+      href: string;
+    };
+  }[];
   src: string;
   links: {
     label: string;
@@ -46,6 +55,7 @@ export interface WellnessProgramsTypes {
   icon: JSX.Element;
   cards: {
     title: string;
+    desc: string;
     src: string;
   }[];
   links: {

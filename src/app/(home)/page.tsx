@@ -14,9 +14,9 @@ export default function Home() {
       </Container>
     </Section>
     <HolisticHealing {...pageData.holisticHealing} />
-    <SignatureTherapies {...pageData.signatureTherapies} />
     <Facilities {...pageData.facilities} />
     <WellnessPrograms {...pageData.wellnessPrograms} />
+    <SignatureTherapies {...pageData.signatureTherapies} />
     <Accommodation {...pageData.accommodation} />
     <Testimonials {...pageData.testimonials} />
    </main>
