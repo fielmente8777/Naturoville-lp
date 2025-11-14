@@ -7,7 +7,6 @@ import {
   SwiperCarousel,
   TherapieCard
 } from "@/components";
-import DataContext from "@/contextApi/DataContext";
 import {
   BtnNextIcon,
   BtnNextIcon2,
@@ -16,7 +15,7 @@ import {
   FlowerIcon,
 } from "@/utils/icons";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 
 const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
@@ -32,7 +31,6 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
     setCategory(newCategory);
   };
 
-  const { setIsOpen } = useContext(DataContext);
 
   return (
     <SectionWithContainer>

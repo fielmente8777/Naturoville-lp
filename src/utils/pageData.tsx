@@ -166,7 +166,7 @@ export const pageData = {
     links: [
       {
         label: "GET EXCLUSIVE OFFERS",
-        href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+        href: `https://wa.me/${contact.WhatsappNumber.replace(/\s+/g, "")}?text=Hello`,
       },
     ],
   },
@@ -192,7 +192,7 @@ export const pageData = {
         ],
         link: {
           label: "Book Now",
-          href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+          href: `https://wa.me/${contact.WhatsappNumber.replace(/\s+/g, "")}?text=Hello`,
         },
       },
       {
@@ -206,7 +206,7 @@ export const pageData = {
         ],
         link: {
           label: "Book Now",
-          href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+          href: `https://wa.me/${contact.WhatsappNumber.replace(/\s+/g, "")}?text=Hello`,
         },
       },
       {
@@ -221,7 +221,7 @@ export const pageData = {
         ],
         link: {
           label: "Book Now",
-          href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+          href: `https://wa.me/${contact.WhatsappNumber.replace(/\s+/g, "")}?text=Hello`,
         },
       },
       {
@@ -236,7 +236,7 @@ export const pageData = {
         ],
         link: {
           label: "Book Now",
-          href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+          href: `https://wa.me/${contact.WhatsappNumber.replace(/\s+/g, "")}?text=Hello`,
         },
       },
     ],
@@ -244,7 +244,7 @@ export const pageData = {
     links: [
       {
         label: "Explore Activities Now",
-        href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+        href: `https://wa.me/${contact.WhatsappNumber.replace(/\s+/g, "")}?text=Hello`,
       },
     ],
   },
@@ -308,7 +308,7 @@ export const pageData = {
     links: [
       {
         label: "GET EXCLUSIVE OFFERS",
-        href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+        href: `https://wa.me/${contact.WhatsappNumber.replace(/\s+/g, "")}?text=Hello`,
       },
     ],
   },
@@ -327,7 +327,7 @@ export const pageData = {
     links: [
       {
         label: "BOOK NOW",
-        href: `https://wa.me/${contact.phoneNumber3.replace(/\s+/g, "")}?text=Hello`,
+        href: `https://wa.me/${contact.WhatsappNumber.replace(/\s+/g, "")}?text=Hello`,
       },
     ],
   },

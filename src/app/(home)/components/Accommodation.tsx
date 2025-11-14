@@ -3,15 +3,12 @@ import { AccommodationTypes } from "@/@types/types";
 import {
   AccommodationCard,
   Container,
-  OnlyButton,
   Section,
   SectionHeadingDesc,
   SwiperCarousel
 } from "@/components";
-import DataContext from "@/contextApi/DataContext";
 import { FlowerIcon } from "@/utils/icons";
 import Link from "next/link";
-import { useContext } from "react";
 import { Autoplay, Pagination } from "swiper/modules";
 
 const Accommodation: React.FC<AccommodationTypes> = ({
@@ -20,7 +17,6 @@ const Accommodation: React.FC<AccommodationTypes> = ({
   cards,
   links,
 }) => {
-  const { setIsOpen } = useContext(DataContext);
   return (
     <Section className="max-md:!py-0">
       <Section className="relative after:absolute after:content-[''] after:bg-[url(/bg.png)] after:bg-no-repeat after:bg-cover after:opacity-3.5 md:after:w-[614px] after:aspect-[4/2.5] after:left-0 after:-top-16 after:z-[-1]">
