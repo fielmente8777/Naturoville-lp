@@ -68,7 +68,12 @@ const OfferPopup = () => {
       >
         <div className="flex flex-col items-center justify-center w-[250px] gap-4 px-4 py-5">
           <div className="relative w-32 aspect-[4/2]">
-            <Image src={"/lOGO 1.png"} alt="Logo" fill className="object-cover" />
+            <Image
+              src={"/LOGO 1.png"}
+              alt="Logo"
+              fill
+              className="object-cover"
+            />
           </div>
 
           {/* <h2 className="text-white text-center font-semibold tracking-wider">

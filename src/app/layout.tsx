@@ -234,7 +234,7 @@ export default function RootLayout({
           <ImageGalleryPopup />
         </DataProvider>
 
-        {/* <Script
+        <Script
           id="eazbot-config"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -246,7 +246,7 @@ export default function RootLayout({
             };`,
           }}
         />
-        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" /> */}
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" />
       </body>
     </html>
   );
