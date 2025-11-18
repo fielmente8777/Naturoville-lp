@@ -1,12 +1,8 @@
 "use client";
 import { useState } from "react";
 import { Headings } from "../typography";
-import { TestimonialsTypes } from "@/@types/types";
 
-const TestimonialCard: React.FC<TestimonialsTypes["cards"][0]> = ({
-  author: title,
-  review: desc,
-}) => {
+const TestimonialCard: React.FC<{ author: string; review: string }> = ({ author: title, review: desc }) => {
   const [readMore, setReadMore] = useState(false);
   return (
     <div className="w-full flex flex-col gap-6">

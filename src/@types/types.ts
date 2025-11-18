@@ -36,6 +36,7 @@ export interface FacilitiesTypes {
   cards: {
     title: string;
     subTitle?: string;
+    images: string[];
     list: string[];
     link: {
       label: string;
@@ -79,9 +80,13 @@ export interface AccommodationTypes {
 
 export interface TestimonialsTypes {
   title: string;
-  description: string;
-  cards: {
+  description?: string;
+  cards?: {
     author: string;
     review: string;
+  }[];
+  review: {
+    videoSrc: string;
+    thumbnail: string;
   }[];
 }

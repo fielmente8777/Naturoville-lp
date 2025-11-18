@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import React, { ReactNode } from "react";
 
 export const DataContext = createContext<{
@@ -12,6 +12,8 @@ export const DataContext = createContext<{
   setGridView: React.Dispatch<React.SetStateAction<boolean>>;
   isExtended: boolean;
   setIsExtended: React.Dispatch<React.SetStateAction<boolean>>;
+  isImageGalleryOpen?: boolean;
+  setIsImageGalleryOpen?: React.Dispatch<React.SetStateAction<boolean>>;
 }>({
   isOpen: false,
   setIsOpen: () => {},
@@ -21,6 +23,8 @@ export const DataContext = createContext<{
   setGridView: () => {},
   isExtended: false,
   setIsExtended: () => {},
+  isImageGalleryOpen: false,
+  setIsImageGalleryOpen: () => {},
 });
 
 type DataProviderProps = {
@@ -32,10 +36,22 @@ export const DataProvider = ({ children }: DataProviderProps) => {
   const [isOpenNav, setIsOpenNav] = useState(false);
   const [gridView, setGridView] = useState(false);
   const [isExtended, setIsExtended] = useState(false);
+  const [isImageGalleryOpen, setIsImageGalleryOpen] = useState(true);
 
   return (
     <DataContext.Provider
-      value={{ isOpen, setIsOpen, isOpenNav, setIsOpenNav, gridView, setGridView, isExtended, setIsExtended }}
+      value={{
+        isOpen,
+        setIsOpen,
+        isOpenNav,
+        setIsOpenNav,
+        gridView,
+        setGridView,
+        isExtended,
+        setIsExtended,
+        isImageGalleryOpen,
+        setIsImageGalleryOpen,
+      }}
     >
       {children}
     </DataContext.Provider>
@@ -43,3 +59,5 @@ export const DataProvider = ({ children }: DataProviderProps) => {
 };
 
 export default DataContext;
+
+export const useDataContext = () => useContext(DataContext);

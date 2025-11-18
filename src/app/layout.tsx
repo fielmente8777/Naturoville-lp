@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 // local font import
-import { Footer } from "@/components";
+import { Footer, Navbar } from "@/components";
 import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
+import OfferPopup from "@/components/pop-up/OfferPopup";
 import PopForm from "@/components/pop-up/PopForm";
 import { DataProvider } from "@/contextApi/DataContext";
 import localFont from "next/font/local";
@@ -11,6 +12,7 @@ import Script from "next/script";
 import { contact } from "../../Constent";
 import "./globals.css";
 import "./style.scss";
+import ImageGalleryPopup from "@/components/pop-up/ImageGalleryPopup";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -222,16 +224,17 @@ export default function RootLayout({
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         <DataProvider>
-          {/* <RenderChatBot /> */}
-          {/* <DiscountPopup {...discount} /> */}
+          <Navbar />
           {children}
           <Footer />
           <Call callNumber={contact.phoneNumber} />
           <Whatsapp whatsAppNumber={contact.WhatsappNumber} />
           <PopForm />
+          <OfferPopup />
+          <ImageGalleryPopup />
         </DataProvider>
 
-        <Script
+        {/* <Script
           id="eazbot-config"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
@@ -243,7 +246,7 @@ export default function RootLayout({
             };`,
           }}
         />
-        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" />
+        <Script src="https://cb-script.dyq28lyxrazm2.amplifyapp.com/widget/lead-chatbot.js" /> */}
       </body>
     </html>
   );

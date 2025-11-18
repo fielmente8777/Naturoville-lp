@@ -1,0 +1,95 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { FaGift } from "react-icons/fa6";
+import { IoIosArrowDown } from "react-icons/io";
+import { contact } from "../../../Constent";
+
+const OfferPopup = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const text = "limited time discount upto 20% off this November.";
+
+  // Auto-close panel after 5 seconds (show tab only)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsOpen(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleToggle = () => setIsOpen(!isOpen);
+
+  // Detect mobile once & on resize
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  return (
+    <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50">
+      {/* Toggle Button */}
+      <button
+        type="button"
+        onClick={handleToggle}
+        className="bg-primary border border-white relative z-40 cursor-pointer flex items-center gap-6 text-white font-semibold tracking-wider py-3 px-5 shadow-lg transition-all duration-300"
+        style={{ writingMode: "vertical-rl" }}
+      >
+        {/* Show Gift Icon Only on Mobile & When Closed */}
+        {isMobile && !isOpen ? (
+          <FaGift size={20} />
+        ) : (
+          <IoIosArrowDown
+            className={`transition-transform duration-300 ${
+              isOpen ? "rotate-90" : "-rotate-90"
+            }`}
+          />
+        )}
+
+        {/* Hide text when gift icon appears */}
+        {!(isMobile && !isOpen) && "CURRENT OFFERS"}
+      </button>
+
+      {/* Slide Panel */}
+      <div
+        className={`
+    absolute top-0 h-full border border-white bg-primary/80 backdrop-blur-md z-20
+    transition-all duration-700 ease-in-out
+    ${isOpen ? "translate-x-0 left-[3.1rem]" : "-translate-x-[250px]"}
+  `}
+      >
+        <div className="flex flex-col items-center justify-center w-[250px] gap-4 px-4 py-5">
+          <div className="relative w-32 aspect-[4/2]">
+            <Image src={"/lOGO 1.png"} alt="Logo" fill className="object-cover" />
+          </div>
+
+          {/* <h2 className="text-white text-center font-semibold tracking-wider">
+            Direct Booking Offer
+          </h2> */}
+
+          <p className="text-white text-center">{text}</p>
+
+          <Link
+            href={contact.WhatsappEmbadedLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center bg-white px-3 py-2 rounded-full gap-2 text-sm text-primary uppercase"
+          >
+            Book Now
+            {/* <ArrowUpIcons /> */}
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default OfferPopup;

@@ -12,7 +12,7 @@ import {
   BtnNextIcon2,
   BtnPrevIcon,
   BtnPrevIcon2,
-  FlowerIcon,
+  FlowerIcon3
 } from "@/utils/icons";
 import Link from "next/link";
 import { useState } from "react";
@@ -33,11 +33,11 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
 
 
   return (
-    <SectionWithContainer>
+    <SectionWithContainer sectionClassName="bg-[#FFFCF8]">
       <div className="flex flex-col md:gap-14 gap-8">
         <div className="flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
           <span>
-            <FlowerIcon />
+            <FlowerIcon3 />
           </span>
           <SectionHeadingDesc
             title={title}
@@ -52,7 +52,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
               label={cat}
               key={index}
               onclick={() => handleCategoryChange(cat)}
-              className={`!px-[1.375rem] !py-2.5 max-md:w-[18rem] rounded-full hover:scale-[1.01] ${category === cat ? "bg-primary text-white" : "bg-white text-primary"} border border-primary transition-colors duration-300 hover:bg-primary hover:text-white active:bg-primary/90 active:text-white`}
+              className={`!px-[1.375rem] !py-2.5 max-md:w-[18rem] !rounded-full hover:scale-[1.01] ${category === cat ? "bg-primary text-white" : "bg-transparent box-shadow text-primary"} border border-primary transition-colors duration-300 hover:bg-primary hover:text-white active:bg-primary/90 active:text-white`}
             />
           ))}
         </div>

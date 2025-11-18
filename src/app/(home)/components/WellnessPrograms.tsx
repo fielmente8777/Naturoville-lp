@@ -5,7 +5,7 @@ import {
   Section,
   SectionHeadingDesc,
   SwiperCarousel,
-  WellnesCard
+  WellnesCard,
 } from "@/components";
 import {
   BtnNextIcon,
@@ -84,8 +84,17 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           />
         ))} */}
         <div className="flex justify-center">
-          <Link href={links[0].href} target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Choose Your Program</Link>
-
+          <Link
+            href={links[0].href}
+            target="_blank"
+            rel="noopener noreferrer"
+            download={true}
+            className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white"
+          >
+            <DownloadIcon />
+            &nbsp;
+            {links[0].label}
+          </Link>
         </div>
       </Container>
     </Section>
@@ -93,3 +102,18 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
 };
 
 export default WellnessPrograms;
+
+export const DownloadIcon = () => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 16L7 11L8.4 9.55L11 12.15V4H13V12.15L15.6 9.55L17 11L12 16ZM6 20C5.45 20 4.97917 19.8042 4.5875 19.4125C4.19583 19.0208 4 18.55 4 18V15H6V18H18V15H20V18C20 18.55 19.8042 19.0208 19.4125 19.4125C19.0208 19.8042 18.55 20 18 20H6Z"
+      fill="white"
+    />
+  </svg>
+);

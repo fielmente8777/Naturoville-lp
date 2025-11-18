@@ -5,11 +5,16 @@ import {
   Container,
   Section,
   SectionHeadingDesc,
-  SwiperCarousel
+  SwiperCarousel,
 } from "@/components";
-import { FlowerIcon } from "@/utils/icons";
+import {
+  BtnNextIcon2,
+  BtnPrevIcon,
+  BtnPrevIcon2,
+  FlowerIcon3,
+} from "@/utils/icons";
 import Link from "next/link";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 const Accommodation: React.FC<AccommodationTypes> = ({
   title,
@@ -19,15 +24,21 @@ const Accommodation: React.FC<AccommodationTypes> = ({
 }) => {
   return (
     <Section className="max-md:!py-0">
-      <Section className="relative after:absolute after:content-[''] after:bg-[url(/bg.png)] after:bg-no-repeat after:bg-cover after:opacity-3.5 md:after:w-[614px] after:aspect-[4/2.5] after:left-0 after:-top-16 after:z-[-1]">
+      <Section className="">
         <div className="w-full md:space-y-14 space-y-8">
-          <Container className="flex flex-col items-center justify-center w-full">
-            <FlowerIcon />
-            <SectionHeadingDesc
-              title={title}
-              description={description}
-              textcenter
-            />
+          <Container className="flex items-center justify-between w-full">
+            <div className="flex flex-col">
+              <FlowerIcon3 />
+              <SectionHeadingDesc title={title} description={description} />
+            </div>
+            <div className="flex items-center justify-center gap-4">
+              <button className="accommodation-prev flex items-center justify-center w-12 aspect-square bg-primary text-white rounded-full">
+                <BtnPrevIcon2 />
+              </button>
+              <button className="accommodation-next flex items-center justify-center w-12 aspect-square bg-primary text-white rounded-full">
+                <BtnNextIcon2 />
+              </button>
+            </div>
           </Container>
           <div className="common max-md:px-4">
             <SwiperCarousel
@@ -37,9 +48,11 @@ const Accommodation: React.FC<AccommodationTypes> = ({
               loop={true}
               centeredSlides={true}
               grabCursor={true}
-              modules={[Autoplay, Pagination]}
-              autoplay={{ delay: 3000 }}
-              pagination={{ clickable: true, el: ".pagination" }}
+              modules={[Navigation]}
+              navigation={{
+                nextEl: ".accommodation-next",
+                prevEl: ".accommodation-prev",
+              }}
               className="w-full"
               breakpoints={{
                 768: {
@@ -63,8 +76,13 @@ const Accommodation: React.FC<AccommodationTypes> = ({
               />
             ))} */}
             <div className="flex justify-center">
-              <Link href={links[0].href} target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Book Now</Link>
-
+              <Link
+                href={links[0].href}
+                target="_blank"
+                className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white"
+              >
+                Book Now
+              </Link>
             </div>
           </div>
         </div>

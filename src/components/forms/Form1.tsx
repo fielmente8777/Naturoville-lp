@@ -301,8 +301,8 @@ const Form1 = () => {
                       backgroundColor: "white",
                     }}
                   >
-                    {countries.map((country) => (
-                      <option key={country.code} value={country.code}>
+                    {countries.map((country, index) => (
+                      <option key={index} value={country.code}>
                         {country.code}
                       </option>
                     ))}

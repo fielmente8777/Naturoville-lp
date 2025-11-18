@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
         </Container>
       </section>
-      <div className="bg-dark">
+      <div className="bg-[#282B32]">
         <Container>
           <div className="py-4 flex max-md:flex-col max-md:gap-3 items-center justify-center text-white relative">
             <span className="md:px-6 px-4 text-nowrap">
