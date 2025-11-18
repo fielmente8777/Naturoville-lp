@@ -36,7 +36,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
   const [isOpenNav, setIsOpenNav] = useState(false);
   const [gridView, setGridView] = useState(false);
   const [isExtended, setIsExtended] = useState(false);
-  const [isImageGalleryOpen, setIsImageGalleryOpen] = useState(true);
+  const [isImageGalleryOpen, setIsImageGalleryOpen] = useState(false);
 
   return (
     <DataContext.Provider

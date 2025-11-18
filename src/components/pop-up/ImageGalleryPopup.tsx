@@ -76,7 +76,7 @@ const ImageGalleryPopup = () => {
               </div>
             ))}
           </div>
-          <div className="">
+          <div className="lg:hidden block w-full">
             <SwiperCarousel
               data={data?.images}
               slidesPerView={1}

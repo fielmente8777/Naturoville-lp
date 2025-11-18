@@ -9,9 +9,8 @@ import {
 } from "@/components";
 import {
   BtnNextIcon2,
-  BtnPrevIcon,
   BtnPrevIcon2,
-  FlowerIcon3,
+  FlowerIcon3
 } from "@/utils/icons";
 import Link from "next/link";
 import { Navigation } from "swiper/modules";

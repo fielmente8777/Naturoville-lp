@@ -4,10 +4,8 @@ import Form1 from "../../components/forms/Form1";
 import {
   Accommodation,
   Facilities,
-  HolisticHealing,
   SignatureTherapies,
-  Testimonials,
-  WellnessPrograms,
+  WellnessPrograms
 } from "./components";
 
 export default function Home() {

@@ -21,7 +21,7 @@ const WellnesCard: React.FC<WellnessProgramsTypes["cards"][0]> = ({
       <Headings level={3} className="md:text-[1.75rem]/[2rem] text-[1.5rem] max-md:text-center font-medium abhayaLibre text-primary">
         {title}
       </Headings>
-      <p className="text-light md:text-lg">{desc}</p>
+      <p className="text-light md:text-lg max-md:text-center">{desc}</p>
     </div>
   );
 };
