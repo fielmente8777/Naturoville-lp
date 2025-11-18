@@ -9,7 +9,7 @@ import {
 } from "@/components";
 import { FlowerIcon3 } from "@/utils/icons";
 import Image from "next/image";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
   return (
@@ -30,10 +30,19 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
             slidesPerView={1}
             spaceBetween={24}
             loop={true}
-            modules={[Navigation]}
+            modules={[Navigation,Autoplay]}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
             navigation={{
               nextEl: ".next",
               prevEl: ".prev",
+            }}
+            breakpoints={{
+              1024:{
+                autoplay:false
+              }
             }}
             renderSlide={(card) => (
               <div className="grid lg:grid-cols-2 grid-cols-1 shadow-lg border border-primary overflow-hidden">
