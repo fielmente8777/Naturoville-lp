@@ -71,6 +71,7 @@ export interface AccommodationTypes {
   cards: {
     title: string;
     src: string;
+    images: string[];
   }[];
   links: {
     label: string;

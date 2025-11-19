@@ -128,21 +128,21 @@
   }
   &::before {
     inset: 0;
-    background-color: #FFFCF8;
+    background-color: #fffcf8;
     z-index: -2;
   }
   &::after {
-    background-image: url("/group4.png");
+    background-image: url("/layer.png");
     background-repeat: no-repeat;
     background-size: contain;
     top: 0;
     left: 0;
-    width: 60px;
-    height: 65px;
+    width: 399px;
+    height: 399px;
     z-index: -1;
     @media (width < 780px) {
-      width: 25px;
-      height: 30px;
+      width: 200px;
+      height: 200px;
     }
   }
   // .span {
@@ -185,6 +185,61 @@
         width: 25px;
         height: 30px;
       }
+    }
+  }
+}
+.pop-up-modal {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    inset: 0;
+    background-color: #fffcf8;
+    z-index: -2;
+  }
+  &::after {
+    background-image: url("/layer.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    left: 0;
+    width: 299px;
+    height: 299px;
+    z-index: -1;
+    @media (width < 780px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
+.room-card {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    box-shadow: 0 7px 29px 0 rgba(100, 100, 111, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &::after {
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    &:disabled {
+      display: none;
+    }
+
+    @media (width < 768px) {
+      width: 30px;
+      height: 30px;
     }
   }
 }

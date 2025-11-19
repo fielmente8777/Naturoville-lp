@@ -1,15 +1,15 @@
 "use client";
 
 import { useDataContext } from "@/contextApi/DataContext";
-import { FlowerIcon } from "@/utils/icons";
+import Image from "next/image";
 import { useEffect } from "react";
 import { MdClose } from "react-icons/md";
-import { contact } from "../../../Constent";
-import LinkButton from "../buttons/LinkButton";
-import { SectionHeadingDesc } from "../typography";
-import Image from "next/image";
-import SwiperCarousel from "../SwiperCarousel";
 import { Autoplay, Pagination } from "swiper/modules";
+import { contact } from "../../../Constent";
+import { FlowerIcon3 } from '../../utils/icons';
+import LinkButton from "../buttons/LinkButton";
+import SwiperCarousel from "../SwiperCarousel";
+import { SectionHeadingDesc } from "../typography";
 
 const ImageGalleryPopup = () => {
   const { isImageGalleryOpen, setIsImageGalleryOpen } = useDataContext();
@@ -41,7 +41,7 @@ const ImageGalleryPopup = () => {
     ${isImageGalleryOpen ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"}`}
     >
       <div
-        className={`${isImageGalleryOpen ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"} bg-white max-w-4xl w-full relative`}
+        className={`${isImageGalleryOpen ? "opacity-100 scale-100 visible" : "opacity-0 scale-95 invisible"} bg-white max-w-4xl w-full relative pop-up-modal`}
       >
         <button
           onClick={closePopup}
@@ -51,7 +51,7 @@ const ImageGalleryPopup = () => {
         </button>
         <div className="max-w-3xl mx-auto py-4 px-4 flex flex-col gap-4 h-full">
           <div className="flex gap-px items-center justify-center flex-col">
-            <FlowerIcon />
+            <FlowerIcon3 />
             <SectionHeadingDesc
               title={data?.title}
               textcenter
