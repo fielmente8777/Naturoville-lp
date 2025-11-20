@@ -12,8 +12,6 @@ import Script from "next/script";
 import { contact } from "../../Constent";
 import "./globals.css";
 import "./style.scss";
-import ImageGalleryPopup from "@/components/pop-up/ImageGalleryPopup";
-
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins",
@@ -231,7 +229,7 @@ export default function RootLayout({
           <Whatsapp whatsAppNumber={contact.WhatsappNumber} />
           <PopForm />
           <OfferPopup />
-          <ImageGalleryPopup />
+          {/* <ImageGalleryPopup /> */}
         </DataProvider>
 
         <Script

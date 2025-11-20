@@ -19,7 +19,7 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
         <FlowerIcon3 />
         <SectionHeadingDesc title={title} textcenter />
       </div>
-      <div className="flex items-center justify-center gap-8 mt-10 lg:px-10 py-6">
+      <div className="flex items-center justify-center gap-2 mt-10 lg:px-24 py-6">
         <button className="prev max-lg:hidden">
           <PrevIcon />
         </button>
@@ -46,7 +46,7 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
             }}
             renderSlide={(card) => (
               <div className="grid lg:grid-cols-2 grid-cols-1 shadow-lg border border-primary overflow-hidden">
-                <div className="w-full relative aspect-[4/2.5]">
+                <div className="w-full relative aspect-[4/2.6]">
                   <Image
                     src={card.images[0]}
                     alt={card.title}

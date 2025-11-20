@@ -7,11 +7,7 @@ import {
   SectionHeadingDesc,
   SwiperCarousel,
 } from "@/components";
-import {
-  BtnNextIcon2,
-  BtnPrevIcon2,
-  FlowerIcon3
-} from "@/utils/icons";
+import { BtnNextIcon, BtnNextIcon2, BtnPrevIcon, BtnPrevIcon2, FlowerIcon3 } from "@/utils/icons";
 import Link from "next/link";
 import { Navigation } from "swiper/modules";
 
@@ -25,19 +21,9 @@ const Accommodation: React.FC<AccommodationTypes> = ({
     <Section className="max-md:!py-0">
       <Section className="">
         <div className="w-full md:space-y-14 space-y-8">
-          <Container className="flex items-center justify-between w-full">
-            <div className="flex flex-col">
+          <Container className="flex flex-col items-center justify-center w-full">
               <FlowerIcon3 />
-              <SectionHeadingDesc title={title} description={description} />
-            </div>
-            <div className="flex items-center justify-center gap-4">
-              <button className="accommodation-prev flex items-center justify-center w-12 aspect-square bg-primary text-white rounded-full">
-                <BtnPrevIcon2 />
-              </button>
-              <button className="accommodation-next flex items-center justify-center w-12 aspect-square bg-primary text-white rounded-full">
-                <BtnNextIcon2 />
-              </button>
-            </div>
+              <SectionHeadingDesc title={title} description={description} textcenter/>
           </Container>
           <div className="common max-md:px-4">
             <SwiperCarousel
@@ -65,7 +51,15 @@ const Accommodation: React.FC<AccommodationTypes> = ({
             />
             {/* <div className="pagination flex items-center justify-center mt-8"></div> */}
           </div>
-          <div className="flex justify-center mt-4 max-md:px-4">
+          <div className="flex items-center justify-center gap-4">
+            <button className="accommodation-prev flex items-center justify-center text-primary rounded-full">
+              <BtnPrevIcon/>
+            </button>
+            <button className="accommodation-next flex items-center justify-center text-primary rounded-full">
+              <BtnNextIcon/>
+            </button>
+          </div>
+          <div className="flex justify-center max-md:px-4">
             {/* {links.map((link, index) => (
               <OnlyButton
                 key={index}

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { FaGift } from "react-icons/fa6";
 import { IoIosArrowDown } from "react-icons/io";
 import { contact } from "../../../Constent";
+import { MdClose } from "react-icons/md";
 
 const OfferPopup = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -40,33 +41,33 @@ const OfferPopup = () => {
       <button
         type="button"
         onClick={handleToggle}
-        className="bg-primary border border-white relative z-40 cursor-pointer flex items-center gap-6 text-white font-semibold tracking-wider py-3 px-5 shadow-lg transition-all duration-300"
+        className="bg-primary border border-white relative z-40 cursor-pointer flex items-center gap-6 text-white font-semibold tracking-wider p-2 shadow-lg transition-all duration-300"
         style={{ writingMode: "vertical-rl" }}
       >
         {/* Show Gift Icon Only on Mobile & When Closed */}
-        {isMobile && !isOpen ? (
-          <FaGift size={20} />
-        ) : (
+        {/* {isMobile && !isOpen ? ( */}
+          {isOpen ? <MdClose size={24} /> : <FaGift size={24} />}
+        {/* ) : (
           <IoIosArrowDown
             className={`transition-transform duration-300 ${
               isOpen ? "rotate-90" : "-rotate-90"
             }`}
           />
-        )}
+        )} */}
 
         {/* Hide text when gift icon appears */}
-        {!(isMobile && !isOpen) && "CURRENT OFFERS"}
+        {/* {!(isMobile && !isOpen) && "CURRENT OFFERS"} */}
       </button>
 
       {/* Slide Panel */}
       <div
         className={`
-    absolute top-0 h-full border border-white bg-primary/80 backdrop-blur-md z-20
+    absolute top-0 h-full border border-white  z-20
     transition-all duration-700 ease-in-out
-    ${isOpen ? "translate-x-0 left-[3.1rem]" : "-translate-x-[250px]"}
+    ${isOpen ? "translate-x-0 " : "-translate-x-[250px]"}
   `}
       >
-        <div className="flex flex-col items-center justify-center w-[250px] gap-4 px-4 py-5">
+        <div className="flex flex-col items-center bg-primary/80 backdrop-blur-md justify-center w-[250px] gap-4 px-4 py-5">
           <div className="relative w-32 aspect-[4/2]">
             <Image
               src={"/LOGO 1.png"}

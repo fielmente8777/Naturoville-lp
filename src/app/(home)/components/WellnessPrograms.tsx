@@ -25,24 +25,13 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
 }) => {
   return (
     <Section className="flex flex-col md:gap-14 gap-8 w-full bg-bg1">
-      <Container className="flex items-center justify-between w-full">
-        <div className="w-full flex flex-col max-md:items-center max-md:justify-center">
-          {icon}
-          <SectionHeadingDesc
-            title={title}
-            description={description}
-            smTextCenter
-          />
-        </div>
-        {/* slider buttons */}
-        <div className="flex items-center justify-center gap-8 max-md:hidden">
-          <button className="wellness-prev flex items-center justify-center w-8">
-            <BtnPrevIcon />
-          </button>
-          <button className="wellness-next flex items-center justify-center w-8">
-            <BtnNextIcon />
-          </button>
-        </div>
+      <Container className="flex items-center justify-center flex-col w-full">
+        {icon}
+        <SectionHeadingDesc
+          title={title}
+          description={description}
+          textcenter
+        />
       </Container>
       <div className="max-w-[1410px] max-md:px-5 ml-auto w-full relative">
         <SwiperCarousel
@@ -67,6 +56,15 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           }}
           renderSlide={(card) => <WellnesCard {...card} />}
         />
+        {/* slider buttons */}
+        <div className="flex items-center justify-center gap-8 max-md:hidden">
+          <button className="wellness-prev flex items-center justify-center w-8">
+            <BtnPrevIcon />
+          </button>
+          <button className="wellness-next flex items-center justify-center w-8">
+            <BtnNextIcon />
+          </button>
+        </div>
         <button className="wellness-prev px-4 flex md:hidden items-center justify-center w-10 aspect-square rounded-full bg-white absolute left-0 box-shadow top-[35%] -translate-y-[35%] z-10">
           <BtnPrevIcon2 />
         </button>

@@ -183,7 +183,7 @@ export const pageData = {
     cards: [
       {
         title: "What Your Stay Includes",
-        images: ["/im.png"],
+        images: ["/im.jpg"],
         list: [
           // "Welcome drink on arrival",
           // "Comfortable stay (Single/Double occupancy)",
@@ -201,10 +201,15 @@ export const pageData = {
         subTitle: "(1 before lunch + 1 after)",
         images: ["/fa1.jpg"],
         list: [
-          "Twice-daily Yoga sessions and daily Meditation",
-          "Weekly workshops: Ayurveda Talk, Yoga Talk, Cooking Demo, and Aqua Yoga",
-          "Access to pools, gym, and all recreation areas",
-          "Airport pick-up and drop for stays of one week and above",
+          // "Twice-daily Yoga sessions and daily Meditation",
+          // "Weekly workshops: Ayurveda Talk, Yoga Talk, Cooking Demo, and Aqua Yoga",
+          // "Access to pools, gym, and all recreation areas",
+          // "Airport pick-up and drop for stays of one week and above",
+          "Two ayurvedic therapies daily",
+          "Daily Yoga and meditation classes",
+          "Weekly workshops - Cooking classes, Aqua Yoga, Sound healing, Mandala arts etc.",
+          "heated swimming pools with private cabanas",
+          "Gym, badminton , cycling, walking trails.",
         ],
         link: {
           label: "Book Now",
@@ -357,6 +362,19 @@ export const pageData = {
           "/Executive-Garden/executive suite washroom 2.jpg",
         ],
       },
+      {
+        title: "New Luxury Suites",
+        src: "/rooms/im1.webp",
+        images: [
+          "/popimg/popimg7.jpg",
+          "/popimg/popimg1.jpg",
+          "/popimg/popimg5.jpg",
+          "/popimg/popimg3.jpg",
+          "/popimg/popimg6.jpg",
+          "/popimg/popimg4.jpg",
+          "/popimg/popimg2.jpg",
+        ],
+      },
     ],
     links: [
       {
@@ -369,11 +387,13 @@ export const pageData = {
     title: "Real Stays. Real Stories. Real Reviews",
     review: [
       {
-        videoSrc: "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/With-warmth-and-gratitude.mp4",
+        videoSrc:
+          "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/With-warmth-and-gratitude.mp4",
         thumbnail: "/With-warmth-and-gratitude.png",
       },
       {
-        videoSrc: "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/NV.mp4",
+        videoSrc:
+          "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/NV.mp4",
         thumbnail: "/NV.png",
       },
     ],
