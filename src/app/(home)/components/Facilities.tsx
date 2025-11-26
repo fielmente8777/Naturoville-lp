@@ -30,7 +30,7 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
             slidesPerView={1}
             spaceBetween={24}
             loop={true}
-            modules={[Navigation,Autoplay]}
+            modules={[Navigation, Autoplay]}
             autoplay={{
               delay: 5000,
               disableOnInteraction: false,
@@ -40,8 +40,8 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
               prevEl: ".prev",
             }}
             breakpoints={{
-              1024:{
-                autoplay:false
+              1024: {
+                autoplay: false
               }
             }}
             renderSlide={(card) => (
@@ -51,7 +51,7 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
                     src={card.images[0]}
                     alt={card.title}
                     fill
-                    className="object-cover"
+                    className={`object-cover object-[50%_bottom]`}
                   />
                 </div>
                 <div className="card px-6 py-10 flex flex-col gap-6">
