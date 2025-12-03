@@ -1,4 +1,10 @@
-import { LinkButton, Section, SectionHeadingDesc } from "@/components";
+import {
+  Container,
+  LinkButton,
+  Section,
+  SectionHeadingDesc,
+} from "@/components";
+import { FlowerIcon3 } from "@/utils/icons";
 import Image from "next/image";
 import React from "react";
 
@@ -20,43 +26,51 @@ interface RestaurantProps {
 const Restaurant = ({ title, subTitle, cards }: RestaurantProps) => {
   return (
     <Section>
-      <SectionHeadingDesc title={title} description={subTitle} textcenter />
+      <Container className="flex flex-col items-center justify-center w-full">
+        <FlowerIcon3 />
+        <SectionHeadingDesc title={title} description={subTitle} textcenter />
+      </Container>
 
-      <div className="mt-12 space-y-16">
+      <div className="mt-12 md:space-y-16 space-y-6">
         {cards.map((card, index) => (
           <div
-            className={`flex gap-8 items-center max-w-[1330px] bg-black ${index % 2 === 0 ? "flex-row-reverse" : "lg:flex-row"}`}
             key={index}
+            className={`flex ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
           >
             <div
-              className={`flex-5 items-center ${index % 2 === 0 ? "order-1" : "order-2"}`}
+              className={`grid md:grid-cols-12 grid-cols-1 gap-8 items-center max-w-[1330px] `}
+              key={index}
             >
-              <div className="relative w-full aspect-4/2">
-                <Image
-                  src={card.src[0]}
-                  alt="restaurant-image"
-                  fill
-                  className="object-cover"
-                />
+              <div
+                className={`md:col-span-8 items-center ${index % 2 === 0 ? "order-1" : "order-2"}`}
+              >
+                <div className="relative w-full aspect-4/2">
+                  <Image
+                    src={card.src[0]}
+                    alt="restaurant-image"
+                    fill
+                    className="object-cover"
+                  />
 
-                <div className="absolute inset-2 border border-white z-10 flex items-end justify-center" />
+                  <div className="absolute inset-2 border border-white z-10 flex items-end justify-center" />
+                </div>
               </div>
-            </div>
 
-            <div
-              className={`col-span-4 space-y-4 ${index % 2 === 0 ? "order-2" : "order-1"}`}
-            >
-              <h1 className="md:text-3xl text-2xl text-primary abhayaLibre">
-                {card.title}
-              </h1>
-              <p className="text-lg/relaxed">{card.description}</p>
+              <div
+                className={`md:col-span-4 space-y-4 md:p-0 p-3 ${index % 2 === 0 ? "order-2" : "order-1"}`}
+              >
+                <h1 className="md:text-3xl text-2xl text-primary abhayaLibre">
+                  {card.title}
+                </h1>
+                <p className="text-lg/relaxed">{card.description}</p>
 
-              <div>
-                <LinkButton
-                  label={card.link.label}
-                  href={card.link.href}
-                  className="w-fit bg-primary text-white rounded-full!"
-                />
+                <div>
+                  <LinkButton
+                    label={card.link.label}
+                    href={card.link.href}
+                    className="w-fit bg-primary text-white rounded-full!"
+                  />
+                </div>
               </div>
             </div>
           </div>

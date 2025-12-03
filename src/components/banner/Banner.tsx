@@ -14,6 +14,7 @@ const Banner: React.FC<BannerType> = ({ title, src, videoSrc }) => {
             autoPlay
             loop
             controls={false}
+            poster="/HeroBanner.jpg"
           />
         ) : (
           <Image

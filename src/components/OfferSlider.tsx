@@ -4,9 +4,16 @@ import { Section } from "./sectionComponents";
 import SwiperCarousel from "./SwiperCarousel";
 
 const OfferSlider = () => {
-  const offersTitle = ["Stay Longer, Save More Extended-stay wellness programs now come with special discounted rates."];
+  const offersTitle = [
+    "LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS DECEMBER",
+    "LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS DECEMBER",
+    "LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS DECEMBER",
+  ];
 
-  const data = offersTitle.length > 5 ? offersTitle : [...offersTitle, ...offersTitle, ...offersTitle];
+  const data =
+    offersTitle.length > 5
+      ? offersTitle
+      : [...offersTitle, ...offersTitle, ...offersTitle];
   return (
     <Section className="bg-primary demo !py-0">
       <SwiperCarousel
@@ -20,8 +27,7 @@ const OfferSlider = () => {
           disableOnInteraction: false,
           pauseOnMouseEnter: false,
         }}
-
-        slidesPerView={1}
+        slidesPerView={0.4}
         spaceBetween={0}
         breakpoints={{
           768: {
@@ -31,7 +37,9 @@ const OfferSlider = () => {
         renderSlide={(item, index) => (
           <div key={index} className="py-3 w-full">
             <div className="relative">
-              <p className="text-white text-wrap text-xl text-center max-sm:px-12 uppercase">{item}</p>
+              <p className="text-white text-nowrap text-xl text-center max-sm:px-12 uppercase">
+                {item}
+              </p>
               <span className="text-white absolute right-[-3.5px] top-1/2 translate-y-[-50%]">
                 •
               </span>
@@ -41,6 +49,6 @@ const OfferSlider = () => {
       />
     </Section>
   );
-}
+};
 
 export default OfferSlider;

@@ -1,7 +1,13 @@
 "use client";
 import { ExperiencesProps } from "@/@types/types";
-import { Section, SectionHeadingDesc, SwiperCarousel } from "@/components";
+import {
+  Container,
+  Section,
+  SectionHeadingDesc,
+  SwiperCarousel,
+} from "@/components";
 import ExperienceCard from "@/components/cards/ExperienceCard";
+import { FlowerIcon3 } from "@/utils/icons";
 import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 
 interface ExperiencesSlidersProps {
@@ -17,7 +23,10 @@ const ExperiencesSliders: React.FC<ExperiencesSlidersProps> = ({
 }) => {
   return (
     <Section>
-      <SectionHeadingDesc title={title} description={subTitle} textcenter />
+      <Container className="flex flex-col items-center justify-center w-full">
+        <FlowerIcon3 />
+        <SectionHeadingDesc title={title} description={subTitle} textcenter />
+      </Container>
       <div className="w-full mt-8">
         <SwiperCarousel
           data={cards || []}

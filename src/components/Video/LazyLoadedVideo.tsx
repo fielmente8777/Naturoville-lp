@@ -4,12 +4,7 @@ import Image from "next/image";
 
 const LazyLoadedVideo = dynamic(() => import("./SEOVideo"), {
   loading: () => (
-    <Image
-      src="/bnr.png"
-      alt="banner"
-      fill
-      className="object-cover"
-    />
+    <Image src="/bnr.png" alt="banner" fill className="object-cover" />
   ),
 });
 

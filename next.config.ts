@@ -7,6 +7,16 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/resort",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
