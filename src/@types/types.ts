@@ -17,12 +17,16 @@ export interface HolisticHealingTypes {
 
 export interface SignatureTherapiesTypes {
   title: string;
-  description: string;
+  description?: string;
+  description2?: string[];
+  button?: boolean;
+  showDetails?: boolean;
   cards: {
     category: string;
     title: string;
     description: string;
     src: string;
+    showDetails?: boolean;
   }[];
   links: {
     label: string;
@@ -89,5 +93,16 @@ export interface TestimonialsTypes {
   review: {
     videoSrc: string;
     thumbnail: string;
+  }[];
+}
+
+export interface ExperiencesProps {
+  src: string;
+  title: string;
+  subTitle: string;
+  cards: {
+    title?: string;
+    alt?: string;
+    src: string;
   }[];
 }

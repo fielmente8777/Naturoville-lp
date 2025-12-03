@@ -5,14 +5,14 @@ import {
   SectionHeadingDesc,
   SectionWithContainer,
   SwiperCarousel,
-  TherapieCard
+  TherapieCard,
 } from "@/components";
 import {
   BtnNextIcon,
   BtnNextIcon2,
   BtnPrevIcon,
   BtnPrevIcon2,
-  FlowerIcon3
+  FlowerIcon3,
 } from "@/utils/icons";
 import Link from "next/link";
 import { useState } from "react";
@@ -21,8 +21,11 @@ import { EffectCoverflow, Navigation } from "swiper/modules";
 const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
   title,
   description,
+  description2,
   cards,
   links,
+  button = true,
+  showDetails = true,
 }) => {
   const categories = Array.from(new Set(cards.map((card) => card.category)));
   const [category, setCategory] = useState(categories[0]);
@@ -30,7 +33,6 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
   const handleCategoryChange = (newCategory: string) => {
     setCategory(newCategory);
   };
-
 
   return (
     <SectionWithContainer sectionClassName="bg-[#FFFCF8]">
@@ -46,16 +48,18 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
           />
         </div>
         {/* buttons for categories */}
-        <div className="flex flex-wrap gap-4 md:gap-6 items-center justify-center w-full">
-          {categories.map((cat, index) => (
-            <OnlyButton
-              label={cat}
-              key={index}
-              onclick={() => handleCategoryChange(cat)}
-              className={`!px-[1.375rem] !py-2.5 max-md:w-[18rem] !rounded-full hover:scale-[1.01] ${category === cat ? "bg-primary text-white" : "bg-transparent box-shadow text-primary"} border border-primary transition-colors duration-300 hover:bg-primary hover:text-white active:bg-primary/90 active:text-white`}
-            />
-          ))}
-        </div>
+        {button && (
+          <div className="flex flex-wrap gap-4 md:gap-6 items-center justify-center w-full">
+            {categories.map((cat, index) => (
+              <OnlyButton
+                label={cat}
+                key={index}
+                onclick={() => handleCategoryChange(cat)}
+                className={`!px-[1.375rem] !py-2.5 max-md:w-[18rem] !rounded-full hover:scale-[1.01] ${category === cat ? "bg-primary text-white" : "bg-transparent box-shadow text-primary"} border border-primary transition-colors duration-300 hover:bg-primary hover:text-white active:bg-primary/90 active:text-white`}
+              />
+            ))}
+          </div>
+        )}
         {/* cards sliders */}
         <div className="w-full  md:block hidden">
           <SwiperCarousel
@@ -93,10 +97,11 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
               },
             }}
             renderSlide={(card, index) => (
-              <TherapieCard key={index} {...card} />
+              <TherapieCard key={index} {...card} showDetails={showDetails} />
             )}
           />
         </div>
+
         <div className="w-full  block md:hidden relative">
           <SwiperCarousel
             data={[...filteredCards, ...filteredCards]}
@@ -141,10 +146,22 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
               className="bg-primary text-white border-primary w-fit mx-auto"
             />
           ))} */}
-          <div className="flex justify-center">
-          <Link href={links[0].href} target="_blank" className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white">Start Your Therapy</Link>
-
+        {description2 && description2?.length > 0 && (
+          <div className="flex flex-col items-center justify-center gap-6">
+            {description2?.map((d, idx) => (
+              <p key={idx}>{d}</p>
+            ))}
           </div>
+        )}
+        <div className="flex justify-center">
+          <Link
+            href={links[0].href}
+            target="_blank"
+            className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white"
+          >
+            Start Your Therapy
+          </Link>
+        </div>
       </div>
     </SectionWithContainer>
   );
