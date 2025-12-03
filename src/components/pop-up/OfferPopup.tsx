@@ -4,15 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaGift } from "react-icons/fa6";
-import { IoIosArrowDown } from "react-icons/io";
-import { contact } from "../../../Constent";
 import { MdClose } from "react-icons/md";
+import { contact } from "../../../Constent";
 
 const OfferPopup = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
-  const text = "limited time discount upto 20% off this November.";
+  const currentMonth = new Date().toLocaleString(undefined, { month: "long" });
+
+  const text = `limited time discount upto 20% off this ${currentMonth}.`;
 
   // Auto-close panel after 5 seconds (show tab only)
   useEffect(() => {
