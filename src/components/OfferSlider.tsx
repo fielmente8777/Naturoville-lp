@@ -4,14 +4,13 @@ import { Section } from "./sectionComponents";
 import SwiperCarousel from "./SwiperCarousel";
 
 const OfferSlider = () => {
+  const currentMonth = new Date().toLocaleDateString("en-US", { month: "long" });
   const offersTitle = [
-    "LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS DECEMBER",
-    "LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS DECEMBER",
-    "LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS DECEMBER",
+    `LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS ${currentMonth}`,
   ];
 
   const data =
-    offersTitle.length > 5
+    offersTitle.length > 2
       ? offersTitle
       : [...offersTitle, ...offersTitle, ...offersTitle];
   return (

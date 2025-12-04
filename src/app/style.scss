@@ -243,3 +243,42 @@
     }
   }
 }
+
+.gallery-bg{
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+  &::before {
+    inset: 0;
+    background-color: var(--primary);
+    z-index: -2;
+  }
+  &::after {
+    background-image: url("/Mask group (1).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: -1;
+    @media (width < 780px) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
+
+.custom-swiper {
+  .swiper-slide-next {
+    margin-top: 4.5rem !important;
+    transition: margin-top 0.3s ease-in-out;
+    @media (width <= 768px) {
+      margin-top: 0 !important;
+    }
+  }
+}

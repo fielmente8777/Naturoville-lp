@@ -20,7 +20,7 @@ const Navbar = () => {
       const timeout = setTimeout(() => controller.abort(), 5000); // Set a timeout for the request
 
       const response = await axios.get(
-        `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=30.116354761705797, 78.1664741693149&days=1&aqi=no&alerts=no`,
+        `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=30.116354761705797, 78.1664741693149`,
         { signal: controller.signal }
       );
 

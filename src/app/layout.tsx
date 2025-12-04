@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 // local font import
-import { Footer, Navbar } from "@/components";
+import { Footer } from "@/components";
 import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
+import Header from "@/components/navbar/Header";
 import OfferPopup from "@/components/pop-up/OfferPopup";
 import PopForm from "@/components/pop-up/PopForm";
 import { DataProvider } from "@/contextApi/DataContext";
@@ -222,7 +223,7 @@ export default function RootLayout({
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         <DataProvider>
-          <Navbar />
+          <Header />
           {children}
           <Footer />
           <Call callNumber={contact.phoneNumber} />

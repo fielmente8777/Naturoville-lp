@@ -13,7 +13,7 @@ interface VideoProps {
   preload?: "auto" | "metadata" | "none";
 }
 
-const SEOVideo: React.FC<VideoProps> = ({
+const LazyLoadedVideo: React.FC<VideoProps> = ({
   src,
   poster,
   width,
@@ -21,22 +21,12 @@ const SEOVideo: React.FC<VideoProps> = ({
   controls = true,
   autoPlay = true,
   loop = true,
-  muted = false,
+  muted = true,           // 👈 default muted so autoplay works
   preload = "auto",
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
-
-  // Pause other videos on play
-  const handlePlay = () => {
-    const videos = document.querySelectorAll("video");
-    videos.forEach((video) => {
-      if (video !== videoRef.current) {
-        video.pause();
-      }
-    });
-  };
 
   // Handle scroll-based visibility
   useEffect(() => {
@@ -63,11 +53,17 @@ const SEOVideo: React.FC<VideoProps> = ({
     if (!video) return;
 
     if (isInView) {
-      video.play().catch(() => {});
+      if (autoPlay) {
+        video
+          .play()
+          .catch(() => {
+            // ignore autoplay error
+          });
+      }
     } else {
       video.pause();
     }
-  }, [isInView]);
+  }, [isInView, autoPlay]);
 
   return (
     <div ref={containerRef} className="w-full h-full">
@@ -84,7 +80,6 @@ const SEOVideo: React.FC<VideoProps> = ({
         autoPlay={autoPlay}
         controlsList="nodownload"
         className="w-full h-full object-cover overflow-hidden"
-        onPlay={handlePlay}
         playsInline
       >
         Sorry, your browser doesn&apos;t support embedded videos.
@@ -93,4 +88,5 @@ const SEOVideo: React.FC<VideoProps> = ({
   );
 };
 
-export default SEOVideo;
+export default LazyLoadedVideo;
+export { LazyLoadedVideo };

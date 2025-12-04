@@ -21,13 +21,14 @@ export interface SignatureTherapiesTypes {
   description2?: string[];
   button?: boolean;
   showDetails?: boolean;
-  cards: {
+  cards?: {
     category: string;
     title: string;
     description: string;
     src: string;
     showDetails?: boolean;
   }[];
+  images?: string[];
   links: {
     label: string;
     href: string;

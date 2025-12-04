@@ -8,7 +8,7 @@ interface LinkButtonProps {
 }
 const LinkButton: React.FC<LinkButtonProps> = ({href, label, className="",...props}) => {
     return (
-        <Link href={href} {...props} className={`transition-all rounded-lg max-md:w-full flex items-center justify-center text-white font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3  ${className}`}>
+        <Link href={href} {...props} target="_blank" rel="noopener noreferrer" className={`transition-all rounded-lg max-md:w-full flex items-center justify-center  font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3  ${className}`}>
             {label}
         </Link>
     );

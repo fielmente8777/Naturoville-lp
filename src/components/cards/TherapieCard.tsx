@@ -1,7 +1,7 @@
 import { SignatureTherapiesTypes } from "@/@types/types";
 import Image from "next/image";
 
-const TherapieCard: React.FC<SignatureTherapiesTypes["cards"][0]> = ({
+const TherapieCard: React.FC<SignatureTherapiesTypes["cards"] extends Array<infer T> ? T : never> = ({
   title,
   description,
   src,

@@ -33,7 +33,7 @@ const Celebrate = ({
           />
         </div>
 
-        <div className="flex flex-col justify-center shadow-inner items-center space-y-4 px-4">
+        <div className="flex flex-col justify-center shadow-inner items-center space-y-4 px-4 py-8">
           <FlowerIcon3 />
           <SectionHeadingDesc title={title} description={subTitle} textcenter />
 
