@@ -1,11 +1,10 @@
-import { Banner, Container, Form1, OfferSlider, Section } from "@/components";
-import React from "react";
-import { resortPageData } from "./resortPageData";
+import { Banner, OfferSlider, Section } from "@/components";
+import Form2 from "@/components/forms/Form2";
 import { Accommodation, SignatureTherapies } from "../(home)/components";
+import Celebrate from "./components/Celebrate";
 import ExperiencesSliders from "./components/ExperiencesSliders";
 import Restaurant from "./components/Restaurant";
-import Celebrate from "./components/Celebrate";
-import Form2 from "@/components/forms/Form2";
+import { resortPageData } from "./resortPageData";
 
 const page = () => {
   return (

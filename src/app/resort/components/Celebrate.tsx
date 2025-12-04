@@ -22,8 +22,8 @@ const Celebrate = ({
   link,
 }: CelebrateProps) => {
   return (
-    <Section>
-      <div className="grid lg:grid-cols-[1.6fr_1.5fr_1.6fr] gap-8">
+    <Section className="!py-0">
+      <div className="grid lg:grid-cols-[1.6fr_1.5fr_1.6fr]">
         <div className="relative w-full aspect-[2/2.5]">
           <Image
             src={images[0].src}
@@ -33,7 +33,7 @@ const Celebrate = ({
           />
         </div>
 
-        <div className="flex flex-col justify-center items-center space-y-4">
+        <div className="flex flex-col justify-center shadow-inner items-center space-y-4 px-4">
           <FlowerIcon3 />
           <SectionHeadingDesc title={title} description={subTitle} textcenter />
 
