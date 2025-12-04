@@ -3,12 +3,17 @@ import { AccommodationTypes } from "@/@types/types";
 import {
   AccommodationCard,
   Container,
+  LinkButton,
   Section,
   SectionHeadingDesc,
   SwiperCarousel,
 } from "@/components";
-import { BtnNextIcon, BtnNextIcon2, BtnPrevIcon, BtnPrevIcon2, FlowerIcon3 } from "@/utils/icons";
-import Link from "next/link";
+import {
+  BtnNextIcon,
+  BtnPrevIcon,
+  FlowerIcon3
+} from "@/utils/icons";
+import { usePathname } from "next/navigation";
 import { Navigation } from "swiper/modules";
 
 const Accommodation: React.FC<AccommodationTypes> = ({
@@ -17,13 +22,18 @@ const Accommodation: React.FC<AccommodationTypes> = ({
   cards,
   links,
 }) => {
+  const pathName = usePathname();
   return (
     <Section className="max-md:!py-0">
       <Section className="">
         <div className="w-full md:space-y-14 space-y-8">
           <Container className="flex flex-col items-center justify-center w-full">
-              <FlowerIcon3 />
-              <SectionHeadingDesc title={title} description={description} textcenter/>
+            <FlowerIcon3 />
+            <SectionHeadingDesc
+              title={title}
+              description={description}
+              textcenter
+            />
           </Container>
           <div className="common max-md:px-4">
             <SwiperCarousel
@@ -53,10 +63,10 @@ const Accommodation: React.FC<AccommodationTypes> = ({
           </div>
           <div className="flex items-center justify-center gap-4">
             <button className="accommodation-prev flex items-center justify-center text-primary rounded-full">
-              <BtnPrevIcon/>
+              <BtnPrevIcon />
             </button>
             <button className="accommodation-next flex items-center justify-center text-primary rounded-full">
-              <BtnNextIcon/>
+              <BtnNextIcon />
             </button>
           </div>
           <div className="flex justify-center max-md:px-4">
@@ -69,13 +79,12 @@ const Accommodation: React.FC<AccommodationTypes> = ({
               />
             ))} */}
             <div className="flex justify-center">
-              <Link
+              <LinkButton
+                showIcon={pathName !== "/"}
                 href={links[0].href}
-                target="_blank"
-                className="transition-all rounded-lg max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white"
-              >
-                Book Now
-              </Link>
+                label={links[0].label}
+                className="transition-all max-md:w-full flex items-center justify-center font-medium border duration-300 ease-in-out hover:scale-x-105 active:scale-95 hover:shadow-2xl px-6 py-3 mt-4 bg-primary text-white"
+              />
             </div>
           </div>
         </div>

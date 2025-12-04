@@ -16,7 +16,24 @@ export const OutLineLocation = ({ ...props }) => (
     />
   </svg>
 );
-
+export const ArrowUpIcons = ({ ...props }) => (
+  <svg
+    width={14}
+    height={16}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <path
+      d="M13.706 1.293a1 1 0 010 1.414L2.373 14.04A1 1 0 01.96 12.626L12.292 1.293a1 1 0 011.414 0z"
+      fill="currentColor"
+    />
+    <path
+      d="M0 2a1 1 0 011-1h12a1 1 0 011 1v12a1 1 0 11-2 0V3H1a1 1 0 01-1-1z"
+      fill="currentColor"
+    />
+  </svg>
+);
 export const OutLinePhone = ({ ...props }) => (
   <svg
     width={24}

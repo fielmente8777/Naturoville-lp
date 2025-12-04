@@ -139,7 +139,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
         )}
         <div className="flex justify-center">
          
-          <LinkButton href={links[0].href} label={links[0].label} className="bg-primary text-white" />
+          <LinkButton showIcon href={links[0].href} label={links[0].label} className="bg-primary text-white" />
         </div>
       </div>
     </SectionWithContainer>

@@ -73,7 +73,7 @@ const Facilities: React.FC<FacilitiesTypes> = ({ title, cards }) => {
                     rel="noopener noreferrer"
                     href={card.link.href}
                     label={card.link.label}
-                    className="bg-primary"
+                    className="bg-primary text-white"
                   />
                 </div>
               </div>

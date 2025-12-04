@@ -43,6 +43,7 @@ const Celebrate = ({
             <LinkButton
               href={link.href}
               label={link.label}
+              showIcon
               className="bg-primary text-white rounded-full!"
             />
           </div>

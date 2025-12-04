@@ -1,10 +1,10 @@
+import { Section } from "@/components";
 import Banner3 from "@/components/banner/Banner3";
-import { CabanaPageData } from "./cabanaPageData";
-import { OfferSlider, Section } from "@/components";
+import Form2New from "@/components/forms/Form2new";
 import SignatureTherapies from "@/components/sectionComponents/SignatureTherapies";
 import Celebrate from "../resort/components/Celebrate";
+import { CabanaPageData } from "./cabanaPageData";
 import Gallery from "./components/Gallery";
-import Form2New from "@/components/forms/Form2new";
 
 export default function CabanaLandingPage() {
   return (

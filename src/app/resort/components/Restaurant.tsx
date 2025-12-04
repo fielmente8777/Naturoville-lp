@@ -68,6 +68,7 @@ const Restaurant = ({ title, subTitle, cards }: RestaurantProps) => {
                   <LinkButton
                     label={card.link.label}
                     href={card.link.href}
+                    showIcon
                     className="w-fit bg-primary text-white rounded-full!"
                   />
                 </div>

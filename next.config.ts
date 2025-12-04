@@ -8,15 +8,15 @@ const nextConfig: NextConfig = {
   },
   trailingSlash: true,
 
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/resort",
-        permanent: true,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: "/resort",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

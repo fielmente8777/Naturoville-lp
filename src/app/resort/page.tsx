@@ -1,10 +1,11 @@
 import { Banner, OfferSlider, Section } from "@/components";
 import Form2 from "@/components/forms/Form2";
-import { Accommodation, SignatureTherapies } from "../(home)/components";
+import { Accommodation } from "../(home)/components";
 import Celebrate from "./components/Celebrate";
 import ExperiencesSliders from "./components/ExperiencesSliders";
 import Restaurant from "./components/Restaurant";
 import { resortPageData } from "./resortPageData";
+import SignatureTherapies from "@/components/sectionComponents/SignatureTherapies";
 
 const page = () => {
   return (
