@@ -41,6 +41,7 @@ const Gallery: React.FC<SignatureTherapiesTypes> = ({
           <LinkButton
             href={links[1].href}
             label={links[1].label}
+            showIcon
             className="text-black bg-white"
           />
         </div>

@@ -9,7 +9,6 @@ import { contact } from "../../../Constent";
 
 const OfferPopup = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
 
   const currentMonth = new Date().toLocaleString(undefined, { month: "long" });
 
@@ -25,16 +24,6 @@ const OfferPopup = () => {
   }, []);
 
   const handleToggle = () => setIsOpen(!isOpen);
-
-  // Detect mobile once & on resize
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   return (
     <div className="fixed left-0 top-1/2 -translate-y-1/2 z-50">

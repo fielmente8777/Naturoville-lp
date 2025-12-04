@@ -1,7 +1,13 @@
 "use client";
 import { getDateInputLimits } from "@/hocks/getDateInputLimits";
 import useClickOutside from "@/hocks/useClickOutside";
-import { DropDownIcon2, FillMail, FillPhoneIcon, UserIcon } from "@/utils/icons";
+import {
+  ArrowUpIcons,
+  DropDownIcon2,
+  FillMail,
+  FillPhoneIcon,
+  UserIcon,
+} from "@/utils/icons";
 import axios from "axios";
 import { ChangeEvent, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
@@ -454,7 +460,7 @@ const Form2New: React.FC<formProps> = ({
         <button
           type="submit"
           aria-label="Book Now"
-          className="text-center bg-primary py-4 w-full  text-white md:rounded-lg hover:bg-secondary duration-300 transition-all ease-in-out uppercase"
+          className="text-center bg-primary py-4 w-full h-full text-white md:rounded-full hover:bg-primary/95 duration-300 transition-all ease-in-out capitalize"
           disabled={isSubmitting}
         >
           {isSubmitting ? (
@@ -462,7 +468,12 @@ const Form2New: React.FC<formProps> = ({
           ) : submitSuccess ? (
             "Thank You!"
           ) : (
-            "Book Now"
+            <span className="flex items-center justify-center gap-2">
+              Book Now
+              <span>
+                <ArrowUpIcons />
+              </span>
+            </span>
           )}
         </button>
       </div>

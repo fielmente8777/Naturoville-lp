@@ -1,7 +1,14 @@
 import { SignatureTherapiesTypes } from "@/@types/types";
 import Image from "next/image";
+import React from "react";
 
-const TherapieCard: React.FC<SignatureTherapiesTypes["cards"] extends Array<infer T> ? T : never> = ({
+type CardType = NonNullable<SignatureTherapiesTypes["cards"]>[number];
+
+interface TherapieCardProps extends CardType {
+  showDetails?: boolean;
+}
+
+const TherapieCard: React.FC<TherapieCardProps> = ({
   title,
   description,
   src,
@@ -18,7 +25,7 @@ const TherapieCard: React.FC<SignatureTherapiesTypes["cards"] extends Array<infe
           sizes="100vw"
         />
         {showDetails && (
-          <div className="absolute md:block hidden bottom-6 left-6 right-6  bg-black/50 px-6 py-2 rounded-sm">
+          <div className="absolute md:block hidden bottom-6 left-6 right-6 bg-black/50 px-6 py-2 rounded-sm">
             <h3 className="text-[2rem]/[2.5rem] text-white abhayaLibre">
               {title}
             </h3>
