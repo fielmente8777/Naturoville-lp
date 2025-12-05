@@ -42,7 +42,7 @@ const Restaurant = ({ title, subTitle, cards }: RestaurantProps) => {
               key={index}
             >
               <div
-                className={`md:col-span-4 items-center ${index % 2 === 0 ? "order-1" : "order-2"}`}
+                className={`md:col-span-4 items-center ${index % 2 === 0 ? "md:order-1" : "md:order-2"}`}
               >
                 <div className="relative w-full aspect-[4/2.2]">
                   <Image
@@ -57,7 +57,7 @@ const Restaurant = ({ title, subTitle, cards }: RestaurantProps) => {
               </div>
 
               <div
-                className={`md:col-span-2 space-y-4 md:p-0 p-3 ${index % 2 === 0 ? "order-2" : "order-1"}`}
+                className={`md:col-span-2 space-y-4 md:p-0 p-3 ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}
               >
                 <h1 className="md:text-3xl text-2xl text-primary abhayaLibre">
                   {card.title}
