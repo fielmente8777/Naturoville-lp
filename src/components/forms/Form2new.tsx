@@ -36,8 +36,8 @@ const Form2New: React.FC<formProps> = ({
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const PACKAGEs = [
-    "Day cabana",
-    "Sunset cabana",
+    // "Day cabana",
+    // "Sunset cabana",
     "Private group cabana",
     "Birthdays",
     "Kitty parties",
@@ -47,23 +47,16 @@ const Form2New: React.FC<formProps> = ({
   ];
   const [isPACKAGEDropdownOpen, setIsPACKAGEDropdownOpen] = useState(false);
   const [formData, setFormData] = useState({
-    checkIn: "",
-    checkOut: "",
+    
     fullName: "",
     PhoneNumber: "",
     EmailId: "",
     PACKAGE: "",
   });
-  const [dateRange, setDateRange] = useState<[Date | null, Date | null]>([
-    null,
-    null,
-  ]);
-
-  const [startDate, endDate] = dateRange;
+  
 
   const [error, setError] = useState({
-    checkIn: "",
-    checkOut: "",
+   
     fullName: "",
     PhoneNumber: "",
     EmailId: "",
@@ -93,30 +86,12 @@ const Form2New: React.FC<formProps> = ({
     }
   };
 
-  const handleDateChange = (update: [Date | null, Date | null]) => {
-    setDateRange(update);
 
-    const [start, end] = update;
-    const checkInString = start ? start.toISOString().split("T")[0] : "";
-    const checkOutString = end ? end.toISOString().split("T")[0] : "";
-
-    setFormData((prev) => ({
-      ...prev,
-      checkIn: checkInString,
-      checkOut: checkOutString,
-    }));
-
-    // Clear date errors when date is selected
-    if (error.checkIn || error.checkOut) {
-      setError((prev) => ({ ...prev, checkIn: "", checkOut: "" }));
-    }
-  };
 
   const validateForm = () => {
     let isValid = true;
     const newErrors = {
-      checkIn: "",
-      checkOut: "",
+      
       fullName: "",
       PhoneNumber: "",
       EmailId: "",
@@ -144,18 +119,7 @@ const Form2New: React.FC<formProps> = ({
       isValid = false;
     }
 
-    if (!formData.checkIn.trim()) {
-      newErrors.checkIn = "Check-in date is required";
-      isValid = false;
-    }
-
-    if (!formData.checkOut.trim()) {
-      newErrors.checkOut = "Check-out date is required";
-      isValid = false;
-    } else if (startDate && endDate && startDate > endDate) {
-      newErrors.checkOut = "Check-out must be after check-in";
-      isValid = false;
-    }
+    
 
     if (!formData.PACKAGE.trim()) {
       newErrors.PACKAGE = "PACKAGE is required";
@@ -183,9 +147,9 @@ const Form2New: React.FC<formProps> = ({
           email: formData?.EmailId,
           Name: formData?.fullName,
           Contact: formData?.PhoneNumber,
-          Description: `Check-in ${formData?.checkIn}, Check-out: ${formData?.checkOut}, PACKAGE: ${formData?.PACKAGE}`,
-          check_in: `${formData?.checkIn}`,
-          check_out: `${formData?.checkOut}`,
+          Description: ` PACKAGE: ${formData?.PACKAGE}`,
+          // check_in: `${formData?.checkIn}`,
+          // check_out: `${formData?.checkOut}`,
           created_from: "web-form",
           source_url: window.location.href,
         },
@@ -199,17 +163,13 @@ const Form2New: React.FC<formProps> = ({
       if (data.Status) {
         // Reset form completely
         setFormData({
-          checkIn: "",
-          checkOut: "",
+          
           fullName: "",
           PhoneNumber: "",
           EmailId: "",
           PACKAGE: "",
         });
-        setDateRange([null, null]);
         setError({
-          checkIn: "",
-          checkOut: "",
           fullName: "",
           PhoneNumber: "",
           EmailId: "",
@@ -245,7 +205,7 @@ const Form2New: React.FC<formProps> = ({
     <form
       onSubmit={handleFormSubmit}
       className={`grid ${
-        !gridView ? "md:grid-cols-12" : "gap-2 bg-transparent"
+        !gridView ? "md:grid-cols-10" : "gap-2 bg-transparent"
       } grid-cols-2 max-md:gap-2  lg:divide-x max-md:divide-y divide-[#E0E0E0]`}
       ref={formRef}
     >
@@ -287,7 +247,7 @@ const Form2New: React.FC<formProps> = ({
           htmlFor="PhoneNumber"
           className="text-sm max-md:py-3 uppercase text-[#343434]"
         >
-          Phone Number
+          Phone Number*
         </label>
         <div className="flex relative items-center w-full">
           <select
@@ -337,7 +297,7 @@ const Form2New: React.FC<formProps> = ({
           htmlFor="EmailId"
           className="text-sm uppercase max-md:py-3 text-[#343434]"
         >
-          Email Id
+          Email Id*
         </label>
         <input
           type="text"
@@ -366,7 +326,7 @@ const Form2New: React.FC<formProps> = ({
           htmlFor="PACKAGE"
           className="text-sm max-md:py-2 uppercase text-[#343434] px-4"
         >
-          PACKAGE
+          PACKAGE*
         </label>
         <button
           type="button"
@@ -421,35 +381,7 @@ const Form2New: React.FC<formProps> = ({
           </span>
         )}
       </div>
-      {/* Date Picker Field */}
-      <div className={`col-span-2 flex flex-col px-4 bg-[#fff] relative`}>
-        <label
-          htmlFor="checkIn"
-          className="text-sm uppercase max-md:py-3 text-[#343434]"
-        >
-          Check In & Check Out*
-        </label>
-        <DatePicker
-          selected={startDate}
-          onChange={handleDateChange}
-          selectsStart
-          selectsRange
-          startDate={startDate}
-          endDate={endDate}
-          minDate={new Date(min || Date.now())}
-          placeholderText="Select Date"
-          className="outline-none  w-full h-full bg-transparent text-base text-[#343434] placeholder:text-[#9C9C9C]"
-          wrapperClassName="w-full h-full !flex items-center"
-        />
-        <div className="absolute md:right-2 right-6 bottom-4 pointer-events-none">
-          <CalenderIcon />
-        </div>
-        {(error.checkIn || error.checkOut) && (
-          <span className="text-red-500 text-xs px-1 w-full">
-            {error.checkIn || error.checkOut}
-          </span>
-        )}
-      </div>
+     
 
       {/* Submit Button */}
       <div

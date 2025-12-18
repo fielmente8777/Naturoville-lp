@@ -6,7 +6,7 @@ import SwiperCarousel from "./SwiperCarousel";
 const OfferSlider = () => {
   const currentMonth = new Date().toLocaleDateString("en-US", { month: "long" });
   const offersTitle = [
-    `LIMITED TIME OFFER: UP TO 10% OFF – ENDS THIS ${currentMonth}`,
+    `LIMITED TIME OFFER: UP TO 20% OFF – ENDS THIS ${currentMonth}`,
   ];
 
   const data =

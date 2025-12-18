@@ -7,22 +7,34 @@ export const CabanaPageData = {
     videos: [
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/NV-Drone+(2).mp4",
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/what-to-expect_1.mp4",
-      "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/a-day-at-cabana.mp4",
+      // "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/a-day-at-cabana.mp4",
+      "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Christmas+at+Naturoville+celebrations.mp4",
     ],
   },
   signatureTherapies: {
     title: "Experience Serenity at Naturoville Wellness Resort!",
     description2: [
-      "Escape to Naturoville, Rishikesh a luxurious resort surrounded by lush greenery and the calm of the Himalayan foothills. Enjoy expansive lawns, premium rooms, and modern amenities in a nature-inspired setting. Whether it’s a getaway, family vacation, wedding, or corporate event, we ensure warm, seamless hospitality.",
-      "Rejuvenate at our Ayurvedic wellness centre, breathe in clean mountain air, and experience a space designed for complete relaxation.",
+      "Step into a space where time slows down.",
+      "At Cabanas by the Pool, mornings turn into lazy brunches, afternoons drift by with sun-soaked conversations, and evenings glow with soft lights and laughter. Designed for comfort and calm, our private poolside cabanas are perfect for everything from intimate kitty parties and relaxed brunches to sunset celebrations, cocktail nights, and wedding gatherings.",
+      "Whether you’re hosting a special occasion or simply unwinding with good food, handcrafted drinks, and gentle mountain air, this is where moments feel effortless. Surrounded by nature and quiet luxury, every gathering here feels personal, unhurried, and beautifully memorable.",
     ],
     images: [
-      "/1.webp",
-      "/Artboard14.webp",
-      "/Artboard15.webp",
-      "/Artboard22.webp",
-      "/Artboard36.webp",
-      "/DSC09158.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DJI_0534-HDR-Edit.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DJI_0539-HDR.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01715-HDR.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01764.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01803.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01819.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01830.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01864.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01870-HDR.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01885-HDR.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01894-HDR.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01900-HDR.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01909-HDR.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01912-HDR.webp",
+      "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01993-HDR.webp",
+
     ],
     links: [
       {

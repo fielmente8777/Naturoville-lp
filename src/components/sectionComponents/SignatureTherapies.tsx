@@ -133,7 +133,7 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
         {description2 && description2?.length > 0 && (
           <div className="flex flex-col items-center justify-center gap-6">
             {description2?.map((d, idx) => (
-              <p key={idx}>{d}</p>
+              <p key={idx} className="text-center">{d}</p>
             ))}
           </div>
         )}
