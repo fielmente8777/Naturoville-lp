@@ -1,7 +1,6 @@
 "use client";
 import axios from "axios";
 import React, { useContext, useRef, useState } from "react";
-import { countries } from "../chatbot/constant";
 import useClickOutside from "@/hocks/useClickOutside";
 import { DropDownIcon } from "@/utils/icons";
 import { contact } from "../../../Constent";
@@ -9,6 +8,7 @@ import { getDateInputLimits } from "@/hocks/getDateInputLimits";
 import DatePicker from "react-datepicker";
 import DataContext from "@/contextApi/DataContext";
 import "react-datepicker/dist/react-datepicker.css";
+import { countries } from "@/utils/constant";
 
 const Form1 = () => {
   const { gridView, isExtended, setIsExtended } = useContext(DataContext);
@@ -392,7 +392,7 @@ const Form1 = () => {
                   placeholderText={field.placeholder}
                   wrapperClassName="w-full !p-0 h-full bg-white"
                   className="px-4 py-3.5 bg-white w-full h-full"
-                  aria-required={field.required}
+                  // aria-required={field.required}
                   isClearable={true}
                 />
                 {errors.dateRange && (

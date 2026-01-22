@@ -10,10 +10,9 @@ import {
 } from "@/utils/icons";
 import axios from "axios";
 import { ChangeEvent, useRef, useState } from "react";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { contact } from "../../../Constent";
-import { countries } from "../chatbot/constant";
+import { countries } from "@/utils/constant";
 
 interface formProps {
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;

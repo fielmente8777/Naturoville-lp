@@ -1,13 +1,13 @@
 "use client";
 import axios from "axios";
 import { useRef, useState } from "react";
-import { countries } from "../chatbot/constant";
 import useClickOutside from "@/hocks/useClickOutside";
 import { DropDownIcon } from "@/utils/icons";
 import { contact } from "../../../Constent";
 import { getDateInputLimits } from "@/hocks/getDateInputLimits";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { countries } from "@/utils/constant";
 
 const Form = () => {
   const [countryCode, setCountryCode] = useState("+91");
@@ -43,13 +43,7 @@ const Form = () => {
   //   "4 PM to 6 PM IST",
   //   "6 PM to 8 PM IST",
   // ];
-  const timeSlots = [
-    "Whatsapp",
-    "Call",
-    "Email",
-  ]
-
-
+  const timeSlots = ["Whatsapp", "Call", "Email"];
 
   const [formData, setFormData] = useState({
     name: "",
@@ -288,7 +282,7 @@ const Form = () => {
                   aria-label="Country code"
                   style={{ width: `${countryCode.length * 2.5}ch` }}
                 >
-                  {countries.map((country) => (
+                  {countries.map((country: { code: string }) => (
                     <option key={country.code} value={country.code}>
                       {country.code}
                     </option>
@@ -319,8 +313,9 @@ const Form = () => {
                 <button
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className={`w-full px-4 py-3.5 text-left bg-white border border-light rounded-lg  flex items-center justify-between ${!formData.wellnessOffer ? "text-gray-400" : ""
-                    }`}
+                  className={`w-full px-4 py-3.5 text-left bg-white border border-light rounded-lg  flex items-center justify-between ${
+                    !formData.wellnessOffer ? "text-gray-400" : ""
+                  }`}
                   aria-haspopup="listbox"
                   aria-expanded={isDropdownOpen}
                 >
@@ -372,7 +367,6 @@ const Form = () => {
                   placeholderText={field.placeholder}
                   wrapperClassName="w-full !p-0 h-full bg-white border border-light rounded-lg"
                   className="px-4 py-3.5 bg-white w-full h-full rounded-lg focus:outline-none"
-                  aria-required={field.required}
                   isClearable={true}
                 />
               </div>
@@ -385,8 +379,9 @@ const Form = () => {
                   <button
                     type="button"
                     onClick={() => setIsTimeDropdownOpen(!isTimeDropdownOpen)}
-                    className={`w-full h-full px-4 py-3.5 text-left bg-white flex items-center justify-between rounded-lg ${!formData.preferTime ? "text-gray-400" : ""
-                      }`}
+                    className={`w-full h-full px-4 py-3.5 text-left bg-white flex items-center justify-between rounded-lg ${
+                      !formData.preferTime ? "text-gray-400" : ""
+                    }`}
                     aria-haspopup="listbox"
                     aria-expanded={isTimeDropdownOpen}
                   >
@@ -450,8 +445,9 @@ const Form = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`py-3 px-6 bg-primary text-white rounded-lg uppercase font-medium hover:bg-secondary transition-colors ${isSubmitting ? "opacity-70 cursor-not-allowed" : ""
-            }`}
+          className={`py-3 px-6 bg-primary text-white rounded-lg uppercase font-medium hover:bg-secondary transition-colors ${
+            isSubmitting ? "opacity-70 cursor-not-allowed" : ""
+          }`}
         >
           {isSubmitting ? (
             <span className="inline-block h-5 w-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
