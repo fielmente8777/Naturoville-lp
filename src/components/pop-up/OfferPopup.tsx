@@ -10,9 +10,13 @@ import { contact } from "../../../Constent";
 const OfferPopup = () => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const currentMonth = new Date().toLocaleString(undefined, { month: "long" });
+  const date = new Date();
+date.setDate(date.getDate() - 7);
 
-  const text = `limited time discount upto 20% off this ${currentMonth}.`;
+const currentMonth = date.toLocaleString(undefined, { month: "long" });
+
+const text = `limited time discount upto 20% off this ${currentMonth}.`;
+
 
   // Auto-close panel after 5 seconds (show tab only)
   useEffect(() => {
