@@ -10,12 +10,22 @@ import { contact } from "../../../Constent";
 const OfferPopup = () => {
   const [isOpen, setIsOpen] = useState(true);
 
-  const date = new Date();
-date.setDate(date.getDate() - 7);
+  const today = new Date();
 
-const currentMonth = date.toLocaleString(undefined, { month: "long" });
-
-const text = `limited time discount upto 20% off this ${currentMonth}.`;
+  // RULE: from 25th onward → next month
+  const shouldShift = today.getDate() >= 25;
+  
+  const monthIndex = shouldShift
+    ? today.getMonth() + 1
+    : today.getMonth();
+  
+  const month = new Date(
+    today.getFullYear(),
+    monthIndex,
+    1
+  ).toLocaleString(undefined, { month: "long" });
+  
+  const text = `limited time discount upto 20% off this ${month}.`;
 
 
   // Auto-close panel after 5 seconds (show tab only)
