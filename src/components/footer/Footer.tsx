@@ -100,12 +100,19 @@ const Footer = () => {
             <span className="max-md:hidden text-xl">|</span>
             <span className="px-6">
               Designed & Developed by{" "}
-              <Link
+              {/* <Link
                 href={"https://www.eazotel.com/"}
                 className="font-medium"
                 target="_blank"
               >
                 Eazotel
+              </Link> */}
+               <Link
+                href="https://www.fielmente.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fielmente
               </Link>
             </span>
             <ul className="md:absolute right-4 flex items-center justify-center gap-4 max-md:border-t max-md:border-white max-md:pt-4 max-md:w-full">
