@@ -5,8 +5,10 @@ import {
   FreeWifiIcon,
   GardenViewIcon,
   LoungeIcon,
+  TrulyPurifiedAirIcon,
 } from "@/utils/amenityIcons";
 import { contact } from "../../../Constent";
+import { SpaciousIcon } from "../../utils/amenityIcons";
 
 export const resortPageData = {
   bannerData: {
@@ -177,16 +179,16 @@ export const resortPageData = {
             title: "Free, Fast, & Reliable Wi-Fi",
           },
           {
-            icon: <BathTubIcon />,
-            title: "Bathtub & Powder Area",
+            icon: <SpaciousIcon />,
+            title: "Spacious Balcony",
           },
           {
             icon: <GardenViewIcon />,
             title: "Garden View",
           },
           {
-            icon: <LoungeIcon />,
-            title: "Lounge",
+            icon: <TrulyPurifiedAirIcon />,
+            title: "Truly Purified Air",
           },
         ],
         popUpAmities: [
