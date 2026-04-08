@@ -1,7 +1,17 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, JSX, useContext, useState } from "react";
 import React, { ReactNode } from "react";
+
+type AmenityItem = {
+  title: string;
+  icon?: JSX.Element;
+};
+
+type PopUpAmenity = {
+  title: string;
+  amities: AmenityItem[];
+};
 
 export const DataContext = createContext<{
   isOpen: boolean;
@@ -14,6 +24,12 @@ export const DataContext = createContext<{
   setIsExtended: React.Dispatch<React.SetStateAction<boolean>>;
   isImageGalleryOpen?: boolean;
   setIsImageGalleryOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+  isAmenityOpen: boolean;
+  setIsAmenityOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  roomName: string;
+  setRoomName: React.Dispatch<React.SetStateAction<string>>;
+  popUpAminityData: PopUpAmenity[];
+  setPopUpAminityData: React.Dispatch<React.SetStateAction<PopUpAmenity[]>>;
 }>({
   isOpen: false,
   setIsOpen: () => {},
@@ -25,6 +41,12 @@ export const DataContext = createContext<{
   setIsExtended: () => {},
   isImageGalleryOpen: false,
   setIsImageGalleryOpen: () => {},
+  isAmenityOpen: false,
+  setIsAmenityOpen: () => {},
+  roomName: "",
+  setRoomName: () => {},
+  popUpAminityData: [],
+  setPopUpAminityData: () => {},
 });
 
 type DataProviderProps = {
@@ -37,10 +59,19 @@ export const DataProvider = ({ children }: DataProviderProps) => {
   const [gridView, setGridView] = useState(false);
   const [isExtended, setIsExtended] = useState(false);
   const [isImageGalleryOpen, setIsImageGalleryOpen] = useState(false);
+  const [isAmenityOpen, setIsAmenityOpen] = useState(false);
+  const [roomName, setRoomName] = useState("Room 1");
+  const [popUpAminityData, setPopUpAminityData] = useState<PopUpAmenity[]>([]);
 
   return (
     <DataContext.Provider
       value={{
+        roomName,
+        setRoomName,
+        popUpAminityData,
+        setPopUpAminityData,
+        isAmenityOpen,
+        setIsAmenityOpen,
         isOpen,
         setIsOpen,
         isOpenNav,

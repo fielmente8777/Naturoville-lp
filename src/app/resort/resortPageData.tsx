@@ -1,3 +1,11 @@
+import {
+  BathTubIcon,
+  ComplimentaryBreakfastIcon,
+  EarlyCheckInIcon,
+  FreeWifiIcon,
+  GardenViewIcon,
+  LoungeIcon,
+} from "@/utils/amenityIcons";
 import { contact } from "../../../Constent";
 
 export const resortPageData = {
@@ -30,7 +38,231 @@ export const resortPageData = {
       },
     ],
   },
+  luxurySuites: {
+    title: "Our Luxury Suites & Rooms",
+    subTitle: "DESIGNED FOR LUXURY STAYS & HOLISTIC SERENITY",
+    cards: [
+      {
+        title: "Luxury Suites",
+        roomType: ["2 Pax", "1 King Bed"],
+        description:
+          "Our Luxury Suites redefine indulgence with expansive layouts and elevated design, crafted for guests who seek more space, privacy, and a truly immersive stay experience.",
+        amities: [
+          {
+            icon: <EarlyCheckInIcon />,
+            title: "Early Check-in *",
+          },
+          {
+            icon: <ComplimentaryBreakfastIcon />,
+            title: "Complimentary Breakfast",
+          },
+          {
+            icon: <FreeWifiIcon />,
+            title: "Free, Fast, & Reliable Wi-Fi",
+          },
+          {
+            icon: <BathTubIcon />,
+            title: "Bathtub & Powder Area",
+          },
+          {
+            icon: <GardenViewIcon />,
+            title: "Garden View",
+          },
+          {
+            icon: <LoungeIcon />,
+            title: "Lounge",
+          },
+        ],
+        popUpAmities: [
+          {
+            title: "Additional amenities",
+            amities: [
+              { title: "Separate Badroom and Lounge area" },
+              {
+                title: "Sofa cum bed in Lounge, to complete the two bed setup",
+              },
+              { title: "TVs in both bedroom and Lounge" },
+              { title: "Separately dressing area with Dressing units" },
+              { title: "Separate powder washroom" },
+              { title: "Bathtub and shower cabins" },
+            ],
+          },
+          {
+            title: "Technology & Connectivity",
+            amities: [
+              { title: "Free, fast, and reliable Wi-Fi" },
+              { title: "Modern charging sockets" },
+              { title: "Smart TV with streaming capabilities" },
+              { title: "Digital room keys" },
+            ],
+          },
+          {
+            title: "Comfort & Sleep Experience",
+            amities: [
+              { title: "High-quality bedding, linens, and pillows" },
+              { title: "Quiet, restful environment" },
+              {
+                title:
+                  "VRV system integrated with TFA for enhanced indoor air quality",
+              },
+            ],
+          },
+          {
+            title: "Essential Amenities",
+            amities: [
+              { title: "A well-stocked coffee/tea bar" },
+              { title: "Mini-fridge" },
+              { title: "Iron/ironing board" },
+              { title: "Safe box" },
+              { title: "Intercom system" },
+            ],
+          },
+          {
+            title: "Bathroom & Personal Care",
+            amities: [
+              { title: "Luxury toiletries" },
+              { title: "Hairdryers" },
+              { title: "Bathrobes" },
+              { title: "Slippers" },
+            ],
+          },
+          {
+            title: "Design & Functionality",
+            amities: [
+              { title: "Functional and ergonomic furniture" },
+              { title: "Dedicated workspace" },
+              { title: "Adequate lighting" },
+              { title: "Ample, accessible storage for luggage" },
+            ],
+          },
+          {
+            title: "Safety & Security",
+            amities: [
+              { title: "Double-locking systems" },
+              { title: "Peepholes" },
+              { title: "Fire safety systems and clear exit routes" },
+              { title: "High quality lockable balcony windows" },
+            ],
+          },
+        ],
+        cta: {
+          label: "Book Now",
+          href: `tel:${contact.phoneNumber}`,
+        },
+        images: [
+          "/Luxury-Suite/_storage_emulated_0_Android_data_com.adobe.reader_files_Pictures_Adobe Acrobat Exports_Page from Pages from Suite Room_Renders(2)_0.jpg",
+          "/Luxury-Suite/_storage_emulated_0_Android_data_com.adobe.reader_files_Pictures_Adobe Acrobat Exports_Page from Pages from Suite Room_Renders_0.jpg",
+          "/Luxury-Suite/_storage_emulated_0_Android_data_com.adobe.reader_files_Pictures_Adobe Acrobat Exports_Page from Pages from Suite Room_Renders(1)_0.jpg",
 
+          "/Luxury-Suite/_storage_emulated_0_Android_data_com.adobe.reader_files_Pictures_Adobe Acrobat Exports_Page from Pages from Suite Room_Renders(4)_0.jpg",
+          "/Luxury-Suite/_storage_emulated_0_Android_data_com.adobe.reader_files_Pictures_Adobe Acrobat Exports_Page from Pages from Suite Room_Renders(5)_0.jpg",
+        ],
+      },
+      {
+        title: "Luxury Rooms",
+        roomType: ["2 Pax", "1 King Bed"],
+        description:
+          "Our Luxury Rooms are thoughtfully designed to offer a seamless blend of comfort, functionality, and modern elegance ideal for guests who value both relaxation and efficiency.",
+        amities: [
+          {
+            icon: <EarlyCheckInIcon />,
+            title: "Early Check-in *",
+          },
+          {
+            icon: <ComplimentaryBreakfastIcon />,
+            title: "Complimentary Breakfast",
+          },
+          {
+            icon: <FreeWifiIcon />,
+            title: "Free, Fast, & Reliable Wi-Fi",
+          },
+          {
+            icon: <BathTubIcon />,
+            title: "Bathtub & Powder Area",
+          },
+          {
+            icon: <GardenViewIcon />,
+            title: "Garden View",
+          },
+          {
+            icon: <LoungeIcon />,
+            title: "Lounge",
+          },
+        ],
+        popUpAmities: [
+          {
+            title: "Technology & Connectivity",
+            amities: [
+              { title: "Free, fast, and reliable Wi-Fi" },
+              { title: "Modern charging sockets" },
+              { title: "Smart TV with streaming capabilities" },
+              { title: "Digital room keys" },
+            ],
+          },
+          {
+            title: "Comfort & Sleep Experience",
+            amities: [
+              { title: "High-quality bedding, linens, and pillows" },
+              { title: "Quiet, restful environment" },
+              {
+                title:
+                  "VRV system integrated with TFA for enhanced indoor air quality",
+              },
+            ],
+          },
+          {
+            title: "Essential Amenities",
+            amities: [
+              { title: "A well-stocked coffee/tea bar" },
+              { title: "Mini-fridge" },
+              { title: "Iron/ironing board" },
+              { title: "Safe box" },
+              { title: "Intercom system" },
+            ],
+          },
+          {
+            title: "Bathroom & Personal Care",
+            amities: [
+              { title: "Luxury toiletries" },
+              { title: "Hairdryers" },
+              { title: "Bathrobes" },
+              { title: "Slippers" },
+            ],
+          },
+          {
+            title: "Design & Functionality",
+            amities: [
+              { title: "Functional and ergonomic furniture" },
+              { title: "Dedicated workspace" },
+              { title: "Adequate lighting" },
+              { title: "Ample, accessible storage for luggage" },
+            ],
+          },
+          {
+            title: "Safety & Security",
+            amities: [
+              { title: "Double-locking systems" },
+              { title: "Peepholes" },
+              { title: "Fire safety systems and clear exit routes" },
+              { title: "High quality lockable balcony windows" },
+            ],
+          },
+        ],
+        cta: {
+          label: "Book Now",
+          href: `tel:${contact.phoneNumber}`,
+        },
+        images: [
+          "/Luxury-Room/IMG-20250527-WA0035.jpg",
+          "/Luxury-Room/IMG-20250527-WA0036.jpg",
+          "/Luxury-Room/IMG-20250527-WA0039.jpg",
+          "/Luxury-Room/IMG-20250527-WA0040.jpg",
+          "/Luxury-Room/IMG-20250527-WA0041.jpg",
+          "/Luxury-Room/IMG-20250527-WA0034.jpg",
+        ],
+      },
+    ],
+  },
   accommodation: {
     title: "Explore Our Luxury Accommodations",
     description: "DESIGNED FOR LUXURY STAYS & HOLISTIC SERENITY",
@@ -141,7 +373,7 @@ export const resortPageData = {
         title: "Prana",
         description:
           "Our indoor multicuisine restaurant offers Indian, Asian, Continental, and organic wellness cuisine. Surrounded by lush gardens, it’s the perfect place to enjoy wholesome meals in a beautiful natural setting.",
-        src: ["/Restaurant1.jpg", "/Restaurnat1.jpg", "/Restaurnat1.jpg"],
+        src: ["/Frame-1707.png"],
         link: {
           label: "BOOK NOW",
           href: `tel:${contact.phoneNumber}`,
@@ -161,21 +393,21 @@ export const resortPageData = {
   },
 
   celebratePageData: {
-    title: "Celebrate in Style with Naturoville Wellness Resort",
-    subTitle: "EXCLUSIVE CHRISTMASS & NEW YEAR CELEBRATION",
+    title: "A Perfect Start to Your Foreverat Naturoville Wellness Resort",
+    subTitle: "EXCLUSIVE WELLNESS DESTINATION WEDDING",
     description:
-      "Celebrate Christmas with live music, a bonfire, a 5-course menu, games & gifts, and welcome the New Year with a Gala Dinner, DJ & bonfire — book your festive celebrations now!",
+      "From serene pre-wedding spa rituals to breathtaking outdoor receptions, we blend luxury with holistic well-being. Exchange your vows in nature’s lap and celebrate a love that nourishes the soul.",
     link: {
-      label: "BOOK NOW",
+      label: "PLAN YOUR WEDDING",
       href: `tel:${contact.phoneNumber}`,
     },
     images: [
       {
-        src: "/Celebrate1.jpg",
+        src: "/b1.png",
         alt: "Celebrate",
       },
       {
-        src: "/Celebrate2.jpg",
+        src: "/b2.png",
         alt: "Celebrate",
       },
     ],

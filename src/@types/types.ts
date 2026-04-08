@@ -107,3 +107,30 @@ export interface ExperiencesProps {
     src: string;
   }[];
 }
+
+
+export interface LuxurySuitesSectionProps {
+  title: string;
+  subTitle: string;
+  cards: {
+    title: string;
+    roomType: string[];
+    description: string;
+    amities: {
+      icon: JSX.Element;
+      title: string;
+    }[];
+    popUpAmities: {
+      title: string;
+      amities: {
+        icon?: JSX.Element;
+        title: string;
+      }[];
+    }[];
+    cta: {
+      label: string;
+      href: string;
+    };
+    images: string[];
+  }[];
+}

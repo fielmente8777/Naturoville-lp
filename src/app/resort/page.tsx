@@ -6,6 +6,7 @@ import ExperiencesSliders from "./components/ExperiencesSliders";
 import Restaurant from "./components/Restaurant";
 import { resortPageData } from "./resortPageData";
 import SignatureTherapies from "@/components/sectionComponents/SignatureTherapies";
+import LuxurySuitesSection from "./components/LuxurySuitesSection";
 
 const page = () => {
   return (
@@ -23,7 +24,7 @@ const page = () => {
         showDetails={false}
       />
       <Accommodation {...resortPageData.accommodation} />
-
+      <LuxurySuitesSection {...resortPageData?.luxurySuites} />
       <ExperiencesSliders {...resortPageData?.experienceData} />
       <Restaurant {...resortPageData?.restaurantPageData} />
       <Celebrate {...resortPageData?.celebratePageData} />

@@ -1,7 +1,6 @@
 import { LinkButton, Section, SectionHeadingDesc } from "@/components";
 import { FlowerIcon3 } from "@/utils/icons";
 import Image from "next/image";
-import React from "react";
 
 interface CelebrateProps {
   title: string;
@@ -23,8 +22,8 @@ const Celebrate = ({
 }: CelebrateProps) => {
   return (
     <Section className="!py-0">
-      <div className="grid lg:grid-cols-[1.6fr_1.5fr_1.6fr]">
-        <div className="relative w-full aspect-[2/2.5]">
+      <div className="grid lg:grid-cols-[1.6fr_1.2fr_1.6fr]">
+        <div className="relative w-full aspect-[2/3]">
           <Image
             src={images[0].src}
             alt={images[0].alt}
@@ -49,7 +48,7 @@ const Celebrate = ({
           </div>
         </div>
 
-        <div className="relative w-full aspect-[2/2.5]">
+        <div className="relative w-full aspect-[2/3]">
           <Image
             src={images[1].src}
             alt={images[1].alt}

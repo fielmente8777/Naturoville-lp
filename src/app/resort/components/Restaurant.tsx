@@ -6,7 +6,6 @@ import {
 } from "@/components";
 import { FlowerIcon3 } from "@/utils/icons";
 import Image from "next/image";
-import React from "react";
 
 interface RestaurantProps {
   title: string;
