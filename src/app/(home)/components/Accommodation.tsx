@@ -61,7 +61,7 @@ const Accommodation: React.FC<AccommodationTypes> = ({
             />
             {/* <div className="pagination flex items-center justify-center mt-8"></div> */}
           </div>
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-4 max-sm:gap-16">
             <button className="accommodation-prev flex items-center justify-center text-primary rounded-full">
               <BtnPrevIcon />
             </button>

@@ -14,7 +14,6 @@ import {
   FlowerIcon3,
 } from "@/utils/icons";
 import Image from "next/image";
-import Link from "next/link";
 import { EffectCoverflow, Navigation } from "swiper/modules";
 
 const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
@@ -113,10 +112,10 @@ const SignatureTherapies: React.FC<SignatureTherapiesTypes> = ({
               </div>
             )}
           />
-          <button className="about-prev px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute -left-4 box-shadow top-[30%] -translate-y-[30%] z-10">
+          <button className="about-prev px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute -left-3 box-shadow top-[50%] -translate-y-[50%] z-10">
             <BtnPrevIcon2 />
           </button>
-          <button className="about-next px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute -right-4 box-shadow top-[30%] -translate-y-[30%] z-10">
+          <button className="about-next px-4 flex items-center justify-center w-10 aspect-square rounded-full bg-white absolute -right-3 box-shadow top-[50%] -translate-y-[50%] z-10">
             <BtnNextIcon2 />
           </button>
         </div>

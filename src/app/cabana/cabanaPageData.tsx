@@ -34,7 +34,6 @@ export const CabanaPageData = {
       "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01909-HDR.webp",
       "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01912-HDR.webp",
       "https://eazotel-client-webp-image.s3.ap-south-1.amazonaws.com/naturoville/cabana/DSC01993-HDR.webp",
-
     ],
     links: [
       {
@@ -72,21 +71,21 @@ export const CabanaPageData = {
     ],
   },
   celebratePageData: {
-    title: "Celebrate in Style with Naturoville Wellness Resort",
-    subTitle: "EXCLUSIVE CHRISTMASS & NEW YEAR CELEBRATION",
+    title: "A Perfect Start to Your Foreverat Naturoville Wellness Resort",
+    subTitle: "EXCLUSIVE WELLNESS DESTINATION WEDDING",
     description:
-      "Celebrate Christmas with live music, a bonfire, a 5-course menu, games & gifts, and welcome the New Year with a Gala Dinner, DJ & bonfire — book your festive celebrations now!",
+      "From serene pre-wedding spa rituals to breathtaking outdoor receptions, we blend luxury with holistic well-being. Exchange your vows in nature’s lap and celebrate a love that nourishes the soul.",
     link: {
-      label: "BOOK NOW",
+      label: "PLAN YOUR WEDDING",
       href: `tel:${contact.phoneNumber}`,
     },
     images: [
       {
-        src: "/Celebrate1.jpg",
+        src: "/b1.png",
         alt: "Celebrate",
       },
       {
-        src: "/Celebrate2.jpg",
+        src: "/b2.png",
         alt: "Celebrate",
       },
     ],

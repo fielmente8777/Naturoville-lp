@@ -9,7 +9,7 @@ const AccommodationCard: React.FC<AccommodationTypes["cards"][0]> = ({
   images,
 }) => {
   return (
-    <div className="md:space-y-10 space-y-2 room-card">
+    <div className="md:space-y-10 space-y-2 room-card-2">
       <SwiperCarousel
         data={images || []}
         slidesPerView={1}
@@ -17,7 +17,7 @@ const AccommodationCard: React.FC<AccommodationTypes["cards"][0]> = ({
         modules={[Navigation]}
         navigation={true}
         renderSlide={(src) => (
-          <div className="relative md:aspect-[4/3] aspect-[4/2.2] w-full">
+          <div className="relative md:aspect-[4/3] aspect-[4/2.5] w-full">
             <Image
               src={src}
               alt={title}

@@ -21,7 +21,7 @@ const Footer = () => {
       <section className="bg-primary">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6  md:py-20 py-10 md:gap-24">
-            <div className=" flex flex-col gap-8 w-fit">
+            <div className=" flex flex-col max-md:mx-auto gap-8 w-fit">
               <div className="w-full max-w-[15rem] relative md:aspect-[4/1.5] aspect-[4/2.5] max-md:mx-auto">
                 <Image
                   src={footerLinks.src}
