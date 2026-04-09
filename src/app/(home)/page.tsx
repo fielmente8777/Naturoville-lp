@@ -5,8 +5,10 @@ import {
   Accommodation,
   Facilities,
   SignatureTherapies,
-  WellnessPrograms
+  WellnessPrograms,
 } from "./components";
+import LuxurySuitesSection from "../resort/components/LuxurySuitesSection";
+import { resortPageData } from "../resort/resortPageData";
 
 export default function Home() {
   return (
@@ -19,11 +21,13 @@ export default function Home() {
         </Container>
       </Section>
       {/* <HolisticHealing {...pageData.holisticHealing} />*/}
-      <WellnessPrograms {...pageData.wellnessPrograms} />
-      <Facilities {...pageData.facilities} />
-      <SignatureTherapies {...pageData.signatureTherapies} />
-      <Accommodation {...pageData.accommodation} />
+      <WellnessPrograms {...pageData?.wellnessPrograms} />
+      <Facilities {...pageData?.facilities} />
+      <SignatureTherapies {...pageData?.signatureTherapies} />
+      {/* <Accommodation {...pageData.accommodation} /> */}
       {/* <Testimonials {...pageData.testimonials} /> */}
+      <LuxurySuitesSection {...resortPageData?.luxurySuites} />
+
       <Section className="bg-dark lg:!py-8 !py-4">
         <Container>
           <Form1 />

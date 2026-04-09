@@ -31,7 +31,7 @@ const LuxurySuitesSection: React.FC<LuxurySuitesSectionProps> = ({
               <RoomImageSlider images={card.images} />
             </div>
             <div
-              className={`md:col-span-3 flex flex-col gap-6 card px-6 py-8.75 ${index % 2 === 0 ? "order-2" : "order-1"}`}
+              className={`md:col-span-3 flex flex-col gap-6 card-2 px-6 py-8.75 ${index % 2 === 0 ? "order-2" : "order-1"}`}
             >
               <div className="space-y-2">
                 <h3 className="md:text-[2rem] text-xl text-primary abhayaLibre">

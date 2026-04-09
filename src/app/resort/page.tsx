@@ -1,12 +1,11 @@
 import { Banner, OfferSlider, Section } from "@/components";
 import Form2 from "@/components/forms/Form2";
-import { Accommodation } from "../(home)/components";
+import SignatureTherapies from "@/components/sectionComponents/SignatureTherapies";
 import Celebrate from "./components/Celebrate";
 import ExperiencesSliders from "./components/ExperiencesSliders";
+import LuxurySuitesSection from "./components/LuxurySuitesSection";
 import Restaurant from "./components/Restaurant";
 import { resortPageData } from "./resortPageData";
-import SignatureTherapies from "@/components/sectionComponents/SignatureTherapies";
-import LuxurySuitesSection from "./components/LuxurySuitesSection";
 
 const page = () => {
   return (
@@ -23,7 +22,7 @@ const page = () => {
         button={false}
         showDetails={false}
       />
-      <Accommodation {...resortPageData.accommodation} />
+      {/* <Accommodation {...resortPageData.accommodation} /> */}
       <LuxurySuitesSection {...resortPageData?.luxurySuites} />
       <ExperiencesSliders {...resortPageData?.experienceData} />
       <Restaurant {...resortPageData?.restaurantPageData} />

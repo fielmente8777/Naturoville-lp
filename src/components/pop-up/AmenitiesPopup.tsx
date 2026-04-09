@@ -25,7 +25,7 @@ const AmenitiesPopup = () => {
           : "opacity-0 scale-95 invisible"
       }`}
     >
-      <div className="max-w-5xl rounded-2xl overflow-hidden max-h-[80vh] h-full  w-full bg-white py-8 relative">
+      <div className="max-w-5xl rounded-2xl overflow-hidden max-h-[78vh] h-full  w-full bg-white py-8 relative">
         <button
           onClick={() => setIsAmenityOpen(false)}
           className="absolute top-4 bg-primary right-4 z-20 cursor-pointer text-white p-2 rounded-full aspect-square hover:bg-secondary hover:shadow-2xl transition-all duration-300 ease-in-out"
