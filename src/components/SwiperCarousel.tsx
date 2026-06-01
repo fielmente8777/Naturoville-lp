@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";
+import "swiper/css/effect-fade";
 
 interface SwiperCaroselProps<T> extends SwiperProps {
   data: T[];

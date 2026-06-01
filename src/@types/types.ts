@@ -108,7 +108,6 @@ export interface ExperiencesProps {
   }[];
 }
 
-
 export interface LuxurySuitesSectionProps {
   title: string;
   subTitle: string;
@@ -133,4 +132,15 @@ export interface LuxurySuitesSectionProps {
     };
     images: string[];
   }[];
+}
+
+export interface introProps {
+  title: string;
+  description: string[];
+  points: string[];
+  cta: {
+    label: string;
+    href: string;
+  };
+  images: string[][];
 }

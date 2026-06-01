@@ -1,9 +1,9 @@
 import { Banner, OfferSlider, Section } from "@/components";
 import Form2 from "@/components/forms/Form2";
 import SignatureTherapies from "@/components/sectionComponents/SignatureTherapies";
-import Celebrate from "./components/Celebrate";
 import ExperiencesSliders from "./components/ExperiencesSliders";
 import LuxurySuitesSection from "./components/LuxurySuitesSection";
+import NewCelebrate from "./components/NewCelebrate";
 import Restaurant from "./components/Restaurant";
 import { resortPageData } from "./resortPageData";
 
@@ -26,7 +26,8 @@ const page = () => {
       <LuxurySuitesSection {...resortPageData?.luxurySuites} />
       <ExperiencesSliders {...resortPageData?.experienceData} />
       <Restaurant {...resortPageData?.restaurantPageData} />
-      <Celebrate {...resortPageData?.celebratePageData} />
+      {/* <Celebrate {...resortPageData?.celebratePageData} /> */}
+      <NewCelebrate {...resortPageData?.newCelebrateData} />
     </div>
   );
 };

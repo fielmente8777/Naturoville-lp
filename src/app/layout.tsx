@@ -14,6 +14,7 @@ import { contact } from "../../Constent";
 import "./globals.css";
 import "./style.scss";
 import AmenitiesPopup from "@/components/pop-up/AmenitiesPopup";
+import Image from "next/image";
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins",
@@ -184,7 +185,8 @@ export default function RootLayout({
               `,
           }}
         />
-        <Script
+
+        {/* <Script
           id="fb-pixel-noscript"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -192,7 +194,7 @@ export default function RootLayout({
                 src="https://www.facebook.com/tr?id=753380013733451&ev=PageView&noscript=1"
                 /></noscript>`,
           }}
-        />
+        /> */}
 
         {/* <!-- Google Tag Manager --> */}
         <Script
@@ -213,6 +215,15 @@ export default function RootLayout({
         className={`${poppins.variable}${myFont.className}  antialiased`}
         suppressHydrationWarning={true}
       >
+        <noscript>
+          <Image
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=753380013733451&ev=PageView&noscript=1"
+            alt=""
+          />
+        </noscript>
         {/* <!-- Google Tag Manager (noscript) --> */}
         <noscript>
           <iframe

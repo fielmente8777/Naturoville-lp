@@ -429,4 +429,31 @@ export const resortPageData = {
       },
     ],
   },
+  newCelebrateData: {
+    title: "Weddings & Celebrations",
+    description: [
+      "Celebrate your dream wedding in a luxurious resort surrounded by nature, where elegant accommodations, breathtaking outdoor venues, and warm hospitality come together to create unforgettable memories. With space for up to 200 guests and dedicated support for every celebration, we provide the perfect setting for a seamless destination wedding experience.",
+    ],
+    points: [
+      "25 Guest Rooms & Exclusive Bridal Suite",
+      "Wedding Celebrations for Up to 200 Guests",
+      "Scenic Outdoor Lawns, Mandap & Poolside Venues",
+      "Customized Vegetarian Catering & Live Food Counters",
+      "Mehendi, Haldi, Sangeet & Entertainment Arrangements",
+      "Complete Wedding Support, Décor & Travel Assistance",
+    ],
+    cta: {
+      label: "ENQUIRE VIA WHATSAPP",
+      href: `tel:${contact.phoneNumber}`,
+    },
+    images: [
+      ["/new-Celebrate/DSC00130.webp", "/new-Celebrate/DSC00145.webp"],
+      ["/new-Celebrate/DSC00154.webp", "/new-Celebrate/DSC00152.webp"],
+      ["/new-Celebrate/DSC00163.webp", "/new-Celebrate/DSC00176.webp"],
+      ["/new-Celebrate/DSC00169.webp", "/new-Celebrate/DSC00150.webp"],
+      ["/new-Celebrate/DSC04564.webp", "/new-Celebrate/DSC04573.webp"],
+      ["/new-Celebrate/DSC04583.webp", "/new-Celebrate/DSC04572.webp"],
+      ["/new-Celebrate/DSC04570.webp", "/new-Celebrate/DSC00141.webp"],
+    ],
+  },
 };
