@@ -438,7 +438,7 @@ export const resortPageData = {
       "25 Guest Rooms & Exclusive Bridal Suite",
       "Wedding Celebrations for Up to 200 Guests",
       "Scenic Outdoor Lawns, Mandap & Poolside Venues",
-      "Customized Vegetarian Catering & Live Food Counters",
+      "Customized Catering & Live Food Counters",
       "Mehendi, Haldi, Sangeet & Entertainment Arrangements",
       "Complete Wedding Support, Décor & Travel Assistance",
     ],
