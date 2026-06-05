@@ -4,9 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   
   compress: true,
-
   poweredByHeader: false,
-
   reactStrictMode: true,
   images: {
     remotePatterns: [
