@@ -1,6 +1,5 @@
-import { LinkButton, Section, SectionHeadingDesc, SectionWithContainer } from "@/components";
+import { LinkButton, SectionWithContainer } from "@/components";
 
-import React from "react";
 
 interface EscapeProps {
   title: string;
@@ -13,8 +12,8 @@ interface EscapeProps {
 
 const EscapeCard = ({ title, description,link }: EscapeProps) => {
   return (
-    <SectionWithContainer>
-      <div className="bg-primary rounded-2xl py-12 px-8 text-center">
+    <SectionWithContainer containerClassName="bg-primary rounded-2xl py-12">
+      <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-white text-3xl md:text-4xl font-semibold abhayaLibre">{title}</h2>
         <p className="text-white text-sm md:text-lg mt-6">{description}</p>
         <div>

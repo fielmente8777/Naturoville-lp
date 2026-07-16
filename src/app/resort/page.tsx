@@ -1,18 +1,20 @@
-import { Banner, OfferSlider, Section } from "@/components";
+import { Banner, Section } from "@/components";
 import Form2 from "@/components/forms/Form2";
 import SignatureTherapies from "@/components/sectionComponents/SignatureTherapies";
+import SlidingTitle from "@/components/slider/SlidingTitle";
+import EscapeCard from "./components/EscapeCard";
 import ExperiencesSliders from "./components/ExperiencesSliders";
 import LuxurySuitesSection from "./components/LuxurySuitesSection";
 import NewCelebrate from "./components/NewCelebrate";
 import Restaurant from "./components/Restaurant";
 import { resortPageData } from "./resortPageData";
-import EscapeCard from "./components/EscapeCard";
 
 const page = () => {
   return (
     <div>
       <Banner {...resortPageData?.bannerData} />
-      <OfferSlider />
+      {/* <OfferSlider /> */}
+      <SlidingTitle items={["Monsoon Special Offer: Stay 3 Nights & Enjoy the 4th Night Complimentary! Hurry Offer Ends Soon."]} />
       <Section className="bg-dark md:py-2! py-0!">
         <div className="max-w-[1380px] mx-auto p-3 rounded-md bg-white">
           <Form2 />
