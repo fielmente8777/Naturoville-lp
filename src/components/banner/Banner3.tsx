@@ -7,11 +7,12 @@ import SwiperCarousel from "../SwiperCarousel";
 
 type BannerProps = {
   title: string;
+  description: string;
   logo: string;
   videos: string[];
 };
 
-const Banner3 = ({ videos, title, logo }: BannerProps) => {
+const Banner3 = ({ videos, title, logo, description }: BannerProps) => {
   return (
     <Section className="bg-bg1 !p-5">
       <div className="grid lg:grid-cols-12 grid-cols-1 gap-3 items-center">
@@ -23,6 +24,7 @@ const Banner3 = ({ videos, title, logo }: BannerProps) => {
           <h1 className="md:text-6xl abhayaLibre text-6xl text-center font-aboreto text-primary ">
             {title}
           </h1>
+          <p className="text-lg font-semibold mt-5">{description}</p>
         </div>
 
         <div className="lg:col-span-8 col-span-1 grid lg:grid-cols-3 gap-3 h-full">

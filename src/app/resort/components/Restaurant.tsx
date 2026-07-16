@@ -13,6 +13,7 @@ interface RestaurantProps {
 
   cards: {
     title: string;
+    subtitle?: string;
     src: string[];
     description: string;
     link: {
@@ -61,6 +62,7 @@ const Restaurant = ({ title, subTitle, cards }: RestaurantProps) => {
                 <h1 className="md:text-3xl text-2xl text-primary abhayaLibre">
                   {card.title}
                 </h1>
+                <p className="text-lg font-semibold">{card.subtitle}</p>
                 <p className="text-lg/relaxed">{card.description}</p>
 
                 <div>

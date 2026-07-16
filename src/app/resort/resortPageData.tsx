@@ -9,6 +9,7 @@ import {
 } from "@/utils/amenityIcons";
 import { contact } from "../../../Constent";
 import { SpaciousIcon } from "../../utils/amenityIcons";
+import { link } from "fs";
 
 export const resortPageData = {
   bannerData: {
@@ -17,7 +18,15 @@ export const resortPageData = {
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Natureovilla-propertyvideo.mp4",
     src: "/core/im3.webp",
   },
+  vacationData:{
+    title:"A Safe & Hassle-Free Monsoon Escape",
+    description:"Enjoy complete peace of mind this monsoon. Strategically located on the highway, Naturoville Wellness Resort remains easily accessible even during heavy rainfall. Our location offers a smooth and comfortable journey, so you can focus on relaxation and wellness from the moment you arrive.",
+    link: {
+          label: "Book Now",
+          href: `tel:${contact.phoneNumber}`,
+        },
 
+  },
   signatureTherapies: {
     title: "Experience Serenity at Naturoville Wellness Resort!",
     // description: "Experience Serenity at Naturoville Wellness Resort!",
@@ -398,6 +407,7 @@ export const resortPageData = {
       },
       {
         title: "Cabanas by the Pool",
+        subtitle:"20% OFF ON CABANAS",
         description:
           "Relax in our luxurious poolside cabanas by the heated swimming pool, complete with a poolside bar. With tropical vibes, great food, and space for group bookings or celebrations, it feels like a mini vacation within your vacation.",
         src: ["/Restaurant2.jpg"],

@@ -6,6 +6,7 @@ import LuxurySuitesSection from "./components/LuxurySuitesSection";
 import NewCelebrate from "./components/NewCelebrate";
 import Restaurant from "./components/Restaurant";
 import { resortPageData } from "./resortPageData";
+import EscapeCard from "./components/EscapeCard";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
           <Form2 />
         </div>
       </Section>
+      <EscapeCard {...resortPageData.vacationData} />
       <SignatureTherapies
         {...resortPageData.signatureTherapies}
         button={false}

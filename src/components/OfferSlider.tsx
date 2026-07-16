@@ -4,9 +4,12 @@ import { Section } from "./sectionComponents";
 import SwiperCarousel from "./SwiperCarousel";
 
 const OfferSlider = () => {
-  const currentMonth = new Date().toLocaleDateString("en-US", { month: "long" });
+  const currentMonth = new Date().toLocaleDateString("en-US", {
+    month: "long",
+  });
   const offersTitle = [
-    `LIMITED TIME OFFER: UP TO 20% OFF – ENDS THIS ${currentMonth}`,
+    // `LIMITED TIME OFFER: UP TO 20% OFF – ENDS THIS ${currentMonth}`,
+    "Monsoon Special Offer: Stay 3 Nights & Enjoy the 4th Night Complimentary! Hurry Offer Ends Soon.",
   ];
 
   const data =
@@ -27,7 +30,7 @@ const OfferSlider = () => {
           pauseOnMouseEnter: false,
         }}
         slidesPerView={0.4}
-        spaceBetween={0}
+        spaceBetween={550}
         breakpoints={{
           768: {
             slidesPerView: 2,

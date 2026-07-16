@@ -4,6 +4,7 @@ export const CabanaPageData = {
   bannerData: {
     title: "Cabanas by the Pool",
     logo: "/logo2.png",
+    description:"20% OFF ON CABANAS",
     videos: [
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/NV-Drone+(2).mp4",
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/what-to-expect_1.mp4",
