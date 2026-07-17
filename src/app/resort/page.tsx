@@ -8,6 +8,7 @@ import LuxurySuitesSection from "./components/LuxurySuitesSection";
 import NewCelebrate from "./components/NewCelebrate";
 import Restaurant from "./components/Restaurant";
 import { resortPageData } from "./resortPageData";
+import CabanaPopup from "@/components/pop-up/CabanaPopup";
 
 const page = () => {
   return (
@@ -32,6 +33,7 @@ const page = () => {
       <Restaurant {...resortPageData?.restaurantPageData} />
       {/* <Celebrate {...resortPageData?.celebratePageData} /> */}
       <NewCelebrate {...resortPageData?.newCelebrateData} />
+      <CabanaPopup />
     </div>
   );
 };
