@@ -3,15 +3,17 @@ import "./sliding.title.scss";
 export default function SlidingTitle({
   items,
   ariaHidden = false,
+  className,
 }: {
   items: string[];
   ariaHidden?: boolean;
+  className?: string;
 }) {
   const titles = [...items, ...items, ...items];
 
   return (
     <div
-      className="relative overflow-hidden py-4 text-white max_screen_width bg-primary box-shadow"
+      className={`relative overflow-hidden py-4 text-white max_screen_width bg-primary box-shadow ${className}`}
       aria-hidden={ariaHidden}
     >
       <div className="marquee-wrapper">

@@ -5,10 +5,18 @@ import SignatureTherapies from "@/components/sectionComponents/SignatureTherapie
 import Celebrate from "../resort/components/Celebrate";
 import { CabanaPageData } from "./cabanaPageData";
 import Gallery from "./components/Gallery";
+import SlidingTitle from "@/components/slider/SlidingTitle";
+import CabanaPopup from "@/components/pop-up/CabanaPopup";
 
 export default function CabanaLandingPage() {
   return (
     <main>
+      <SlidingTitle
+        className="text-primary! bg-bg1!"
+        items={[
+          "Enjoy Exclusive Monsoon Offers & Create Unforgettable Getaways This Rainy Season.",
+        ]}
+      />
       <Banner3 {...CabanaPageData?.bannerData} />
       <Section className="bg-primary py-8!">
         <div className="!p-4 bg-white md:rounded-2xl max-w-[1450px] mx-auto">
@@ -18,6 +26,7 @@ export default function CabanaLandingPage() {
       <SignatureTherapies {...CabanaPageData?.signatureTherapies} />
       <Gallery {...CabanaPageData?.gallery} />
       <Celebrate {...CabanaPageData?.celebratePageData} />
+      <CabanaPopup />
     </main>
   );
 }

@@ -4,12 +4,13 @@ export const CabanaPageData = {
   bannerData: {
     title: "Cabanas by the Pool",
     logo: "/logo2.png",
-    description:"20% OFF ON CABANAS",
+    description:"",
     videos: [
+      "/video/Let-the-cool-waters.mp4",
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/NV-Drone+(2).mp4",
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/what-to-expect_1.mp4",
       // "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/a-day-at-cabana.mp4",
-      "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Christmas+at+Naturoville+celebrations.mp4",
+      // "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Christmas+at+Naturoville+celebrations.mp4",
     ],
   },
   signatureTherapies: {
@@ -72,7 +73,7 @@ export const CabanaPageData = {
     ],
   },
   celebratePageData: {
-    title: "A Perfect Start to Your Foreverat Naturoville Wellness Resort",
+    title: "A Perfect Start to Your Forever at Naturoville Wellness Resort",
     subTitle: "EXCLUSIVE WELLNESS DESTINATION WEDDING",
     description:
       "From serene pre-wedding spa rituals to breathtaking outdoor receptions, we blend luxury with holistic well-being. Exchange your vows in nature’s lap and celebrate a love that nourishes the soul.",

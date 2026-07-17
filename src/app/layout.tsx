@@ -5,16 +5,16 @@ import { Footer } from "@/components";
 import Call from "@/components/ContactButton/Call";
 import Whatsapp from "@/components/ContactButton/WhatsApp";
 import Header from "@/components/navbar/Header";
+import AmenitiesPopup from "@/components/pop-up/AmenitiesPopup";
 import OfferPopup from "@/components/pop-up/OfferPopup";
 import PopForm from "@/components/pop-up/PopForm";
 import { DataProvider } from "@/contextApi/DataContext";
 import localFont from "next/font/local";
+import Image from "next/image";
 import Script from "next/script";
 import { contact } from "../../Constent";
 import "./globals.css";
 import "./style.scss";
-import AmenitiesPopup from "@/components/pop-up/AmenitiesPopup";
-import Image from "next/image";
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins",
