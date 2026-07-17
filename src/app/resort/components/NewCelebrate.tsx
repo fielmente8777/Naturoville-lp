@@ -5,7 +5,6 @@ import {
   SectionHeadingDesc,
   SectionWithContainer,
 } from "@/components";
-import NewCelebrateSlider from "./slider/NewCelebrateSlider";
 
 const NewCelebrate: React.FC<introProps> = ({
   title,
@@ -17,7 +16,7 @@ const NewCelebrate: React.FC<introProps> = ({
 }) => {
   return (
     <SectionWithContainer sectionClassName="shadow-inner">
-      <div className="grid grid-cols-1 lg:grid-cols-7 items-center gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-6 items-center gap-8">
         <div className="flex flex-col gap-6 lg:col-span-4">
           <SectionHeadingDesc title={title} titleClassName="max-lg:text-2xl" />
           {/* <div className="w-full aspect-[4/3] lg:hidden lg:col-span-4">
@@ -55,7 +54,7 @@ const NewCelebrate: React.FC<introProps> = ({
           />
         </div>
         <div className="w-full rounded-sm lg:block hidden lg:col-span-2">
-        <div className="relative w-full aspect-4/6 max-w-lg ml-auto">
+        <div className="relative w-full aspect-4/6 max-w-3xl ml-auto">
           <LazyLoadedVideo
             src={video.src}
             poster={video.poster}
