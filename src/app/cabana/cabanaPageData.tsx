@@ -4,7 +4,7 @@ export const CabanaPageData = {
   bannerData: {
     title: "Cabanas by the Pool",
     logo: "/logo2.png",
-    description:"",
+    description: "",
     videos: [
       "/video/Let-the-cool-waters.mp4",
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/NV-Drone+(2).mp4",
@@ -90,6 +90,95 @@ export const CabanaPageData = {
         src: "/b2.png",
         alt: "Celebrate",
       },
+    ],
+    newimages: [
+      {
+        src: "/new-Celebrate/DSC00130.webp",
+        alt: "Celebrate image 1",
+      },
+      {
+        src: "/new-Celebrate/DSC00145.webp",
+        alt: "Celebrate image 2",
+      },
+      {
+        src: "/new-Celebrate/DSC00154.webp",
+        alt: "Celebrate image 3",
+      },
+      {
+        src: "/new-Celebrate/DSC00152.webp",
+        alt: "Celebrate image 4",
+      },
+      {
+        src: "/new-Celebrate/DSC00163.webp",
+        alt: "Celebrate image 5",
+      },
+      {
+        src: "/new-Celebrate/DSC00176.webp",
+        alt: "Celebrate image 6",
+      },
+      {
+        src: "/new-Celebrate/DSC00169.webp",
+        alt: "Celebrate image 7",
+      },
+      {
+        src: "/new-Celebrate/DSC00150.webp",
+        alt: "Celebrate image 8",
+      },
+      {
+        src: "/new-Celebrate/DSC04564.webp",
+        alt: "Celebrate image 9",
+      },
+      {
+        src: "/new-Celebrate/DSC04573.webp",
+        alt: "Celebrate image 10",
+      },
+      {
+        src: "/new-Celebrate/DSC04583.webp",
+        alt: "Celebrate image 11",
+      },
+      {
+        src: "/new-Celebrate/DSC04572.webp",
+        alt: "Celebrate image 12",
+      },
+      {
+        src: "/new-Celebrate/DSC04570.webp",
+        alt: "Celebrate image 13",
+      },
+      {
+        src: "/new-Celebrate/DSC00141.webp",
+        alt: "Celebrate image 14",
+      },
+    ],
+  },
+  newCelebrateData: {
+    title: "Weddings & Celebrations",
+    description: [
+      "Celebrate your dream wedding in a luxurious resort surrounded by nature, where elegant accommodations, breathtaking outdoor venues, and warm hospitality come together to create unforgettable memories. With space for up to 200 guests and dedicated support for every celebration, we provide the perfect setting for a seamless destination wedding experience.",
+    ],
+    points: [
+      "25 Guest Rooms & Exclusive Bridal Suite",
+      "Wedding Celebrations for Up to 200 Guests",
+      "Scenic Outdoor Lawns, Mandap & Poolside Venues",
+      "Customized Catering & Live Food Counters",
+      "Mehendi, Haldi, Sangeet & Entertainment Arrangements",
+      "Complete Wedding Support, Décor & Travel Assistance",
+    ],
+    cta: {
+      label: "ENQUIRE VIA WHATSAPP",
+      href: `tel:${contact.phoneNumber}`,
+    },
+    video: {
+      src: "/video/wedding.mp4",
+      poster: "/video/wedding-poster.webp",
+    },
+    images: [
+      ["/new-Celebrate/DSC00130.webp", "/new-Celebrate/DSC00145.webp"],
+      ["/new-Celebrate/DSC00154.webp", "/new-Celebrate/DSC00152.webp"],
+      ["/new-Celebrate/DSC00163.webp", "/new-Celebrate/DSC00176.webp"],
+      ["/new-Celebrate/DSC00169.webp", "/new-Celebrate/DSC00150.webp"],
+      ["/new-Celebrate/DSC04564.webp", "/new-Celebrate/DSC04573.webp"],
+      ["/new-Celebrate/DSC04583.webp", "/new-Celebrate/DSC04572.webp"],
+      ["/new-Celebrate/DSC04570.webp", "/new-Celebrate/DSC00141.webp"],
     ],
   },
 };

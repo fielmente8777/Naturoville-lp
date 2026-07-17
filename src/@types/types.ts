@@ -143,4 +143,8 @@ export interface introProps {
     href: string;
   };
   images: string[][];
+  video: {
+    src: string;
+    poster?: string;
+  };
 }

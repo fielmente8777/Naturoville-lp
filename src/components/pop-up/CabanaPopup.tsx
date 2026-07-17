@@ -39,10 +39,10 @@ const CabanaPopup = () => {
         >
           ✕
         </button>
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-6 items-center mt-5">
+        <div className="grid md:grid-cols-2 grid-cols-1 gap-6 items-center max-md:mt-5">
           <div className="w-full relative aspect-square">
             <Image
-              src={data?.images[1].src}
+              src={data?.newimages[0].src}
               alt="image"
               fill
               className="object-cover rounded-xl"

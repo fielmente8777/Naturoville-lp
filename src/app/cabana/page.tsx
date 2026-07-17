@@ -7,6 +7,7 @@ import { CabanaPageData } from "./cabanaPageData";
 import Gallery from "./components/Gallery";
 import SlidingTitle from "@/components/slider/SlidingTitle";
 import CabanaPopup from "@/components/pop-up/CabanaPopup";
+import NewCelebrate from "../resort/components/NewCelebrate";
 
 export default function CabanaLandingPage() {
   return (
@@ -25,7 +26,8 @@ export default function CabanaLandingPage() {
       </Section>
       <SignatureTherapies {...CabanaPageData?.signatureTherapies} />
       <Gallery {...CabanaPageData?.gallery} />
-      <Celebrate {...CabanaPageData?.celebratePageData} />
+      {/* <Celebrate {...CabanaPageData?.celebratePageData} /> */}
+      <NewCelebrate {...CabanaPageData.newCelebrateData} />
       <CabanaPopup />
     </main>
   );

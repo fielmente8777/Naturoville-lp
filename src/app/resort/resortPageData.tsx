@@ -18,21 +18,21 @@ export const resortPageData = {
       "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Natureovilla-propertyvideo.mp4",
     src: "/core/im3.webp",
   },
-  vacationData:{
-    title:"A Safe & Hassle-Free Monsoon Escape",
-    description:"Enjoy complete peace of mind this monsoon. Strategically located on the highway, Naturoville Wellness Resort remains easily accessible even during heavy rainfall. Our location offers a smooth and comfortable journey, so you can focus on relaxation and wellness from the moment you arrive.",
+  vacationData: {
+    title: "A Safe & Hassle-Free Monsoon Escape",
+    description:[
+      "Enjoy complete peace of mind this monsoon. Strategically located on the highway, Naturoville Wellness Resort remains easily accessible even during heavy rainfall. Our location offers a smooth and comfortable journey, so you can focus on relaxation and wellness from the moment you arrive."],
     link: {
-          label: "Book Now",
-          href: `tel:${contact.phoneNumber}`,
-        },
-
+      label: "Book Now",
+      href: `tel:${contact.phoneNumber}`,
+    },
   },
   signatureTherapies: {
     title: "Experience Serenity at Naturoville Wellness Resort!",
     // description: "Experience Serenity at Naturoville Wellness Resort!",
     description2: [
       "Escape to Naturoville, Rishikesh a luxurious resort surrounded by lush greenery and the calm of the Himalayan foothills. Enjoy expansive lawns, premium rooms, and modern amenities in a nature-inspired setting. Whether it’s a getaway, family vacation, wedding, or corporate event, we ensure warm, seamless hospitality.",
-      "Rejuvenate at our Ayurvedic wellness centre, breathe in clean mountain air, and experience a space designed for complete relaxation.",
+      "Rejuvenate at our exclusive in house spa and breathe in clean mountain air, and experience a space designed for complete relaxation.",
     ],
     images: [
       "/1.webp",
@@ -407,7 +407,7 @@ export const resortPageData = {
       },
       {
         title: "Cabanas by the Pool",
-        subtitle:"20% OFF ON CABANAS",
+        subtitle: "20% OFF ON CABANAS",
         description:
           "Relax in our luxurious poolside cabanas by the heated swimming pool, complete with a poolside bar. With tropical vibes, great food, and space for group bookings or celebrations, it feels like a mini vacation within your vacation.",
         src: ["/Restaurant2.jpg"],
@@ -455,6 +455,10 @@ export const resortPageData = {
     cta: {
       label: "ENQUIRE VIA WHATSAPP",
       href: `tel:${contact.phoneNumber}`,
+    },
+    video: {
+      src: "/video/wedding.mp4",
+      poster: "/video/wedding-poster.webp",
     },
     images: [
       ["/new-Celebrate/DSC00130.webp", "/new-Celebrate/DSC00145.webp"],

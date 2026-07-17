@@ -1,5 +1,6 @@
 import { introProps } from "@/@types/types";
 import {
+  LazyLoadedVideo,
   LinkButton,
   SectionHeadingDesc,
   SectionWithContainer,
@@ -10,16 +11,27 @@ const NewCelebrate: React.FC<introProps> = ({
   title,
   description,
   points,
+  video,
   images,
   cta,
 }) => {
   return (
     <SectionWithContainer sectionClassName="shadow-inner">
       <div className="grid grid-cols-1 lg:grid-cols-7 items-center gap-8">
-        <div className="flex flex-col gap-6 lg:col-span-3">
+        <div className="flex flex-col gap-6 lg:col-span-4">
           <SectionHeadingDesc title={title} titleClassName="max-lg:text-2xl" />
-          <div className="w-full aspect-[4/3] lg:hidden lg:col-span-4">
+          {/* <div className="w-full aspect-[4/3] lg:hidden lg:col-span-4">
             <NewCelebrateSlider images={images} />
+          </div> */}
+          <div className="relative w-full aspect-4/6 rounded-sm lg:hidden">
+            <LazyLoadedVideo
+              src={video.src}
+              poster={video.poster}
+              loop
+              muted
+              autoPlay
+              controls={false}
+            />
           </div>
           {description.map((item, index) => (
             <p key={index} className="text-light md:text-lg">
@@ -42,9 +54,21 @@ const NewCelebrate: React.FC<introProps> = ({
             className="bg-primary w-fit text-white rounded-full!"
           />
         </div>
-        <div className="w-full aspect-[4/3] lg:block hidden lg:col-span-4">
-          <NewCelebrateSlider images={images} />
+        <div className="w-full rounded-sm lg:block hidden lg:col-span-2">
+        <div className="relative w-full aspect-4/6 max-w-lg ml-auto">
+          <LazyLoadedVideo
+            src={video.src}
+            poster={video.poster}
+            loop
+            muted
+            autoPlay
+            controls={false}
+          />
+          </div>
         </div>
+        {/* <div className="w-full aspect-[4/3] lg:block hidden lg:col-span-4">
+          <NewCelebrateSlider images={images} />
+        </div> */}
       </div>
     </SectionWithContainer>
   );

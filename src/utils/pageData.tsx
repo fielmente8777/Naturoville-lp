@@ -426,6 +426,24 @@ export const pageData = {
     //   },
     // ],
   },
+  vacationData: {
+    description: [
+      "The monsoon season is regarded as the ideal time for Ayurveda, Panchakarma, and holistic therapies, allowing the body to cleanse, heal, and restore naturally. Enjoy exclusive monsoon wellness offers and experience nature at its most refreshing.",
+
+      "Conveniently located on the highway, Naturoville remains easily accessible during the season, ensuring a comfortable, worry-free journey for every guest",
+    ],
+    link: {
+      label: "Book Now",
+      href: `tel:${contact.phoneNumber}`,
+    },
+  },
+slidingTitle: {
+    items: [
+      "Enjoy Exclusive Monsoon Wellness Offers & Escape into Nature",
+    ],
+  },
+  
+
 };
 
 export const footerLinks = {
