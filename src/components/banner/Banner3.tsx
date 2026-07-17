@@ -28,7 +28,7 @@ const Banner3 = ({ videos, title, logo, description }: BannerProps) => {
         </div>
 
         <div className="lg:col-span-8 col-span-1 grid lg:grid-cols-3 gap-3 h-full">
-          {videos?.map((video, index) => (
+          {/* {videos?.map((video, index) => (
             <div key={index} className="relative w-full aspect-4/6 rounded-sm">
               <LazyLoadedVideo
                 src={video}
@@ -38,7 +38,35 @@ const Banner3 = ({ videos, title, logo, description }: BannerProps) => {
                 autoPlay
               />
             </div>
-          ))}
+          ))} */}
+
+          <div className="relative w-full aspect-4/6 rounded-sm">
+              <LazyLoadedVideo
+                src={videos[0]}
+                loop
+                muted
+                controls={false}
+                autoPlay
+              />
+            </div>
+          <div className="relative w-full aspect-4/6 rounded-sm">
+              <LazyLoadedVideo
+                src={videos[1]}
+                loop
+                muted
+                controls={false}
+                autoPlay
+              />
+            </div>
+          <div className="relative w-full aspect-4/6 rounded-sm max-md:hidden">
+              <LazyLoadedVideo
+                src={videos[2]}
+                loop
+                muted
+                controls={false}
+                autoPlay
+              />
+            </div>
         </div>
 
         {/* <div className="mt-6 block lg:hidden">
