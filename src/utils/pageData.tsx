@@ -427,6 +427,7 @@ export const pageData = {
     // ],
   },
   vacationData: {
+    title: "A Safe & Hassle-Free Monsoon Escape",
     description: [
       "The monsoon season is regarded as the ideal time for Ayurveda, Panchakarma, and holistic therapies, allowing the body to cleanse, heal, and restore naturally. Enjoy exclusive monsoon wellness offers and experience nature at its most refreshing.",
 

@@ -9,7 +9,6 @@ import {
 } from "@/utils/amenityIcons";
 import { contact } from "../../../Constent";
 import { SpaciousIcon } from "../../utils/amenityIcons";
-import { link } from "fs";
 
 export const resortPageData = {
   bannerData: {
