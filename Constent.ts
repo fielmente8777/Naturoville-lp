@@ -16,6 +16,8 @@ export const contact = {
     facebook: "https://www.facebook.com/Naturovillewellnessrishikesh/",
     instagram: "https://www.instagram.com/naturovillewellness/#",
   },
+  bookingLink:"https://bookings.naturovillewellness.com/?propertyId=12369",
   formDomain: "naturoville",
   // formDomain: "sumittest11157821",
 };
+

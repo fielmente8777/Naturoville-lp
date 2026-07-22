@@ -23,7 +23,8 @@ export const resortPageData = {
       "Enjoy complete peace of mind this monsoon. Strategically located on the highway, Naturoville Wellness Resort remains easily accessible even during heavy rainfall. Our location offers a smooth and comfortable journey, so you can focus on relaxation and wellness from the moment you arrive."],
     link: {
       label: "Book Now",
-      href: `tel:${contact.phoneNumber}`,
+      // href: `tel:${contact.phoneNumber}`,
+      href: contact.bookingLink
     },
   },
   signatureTherapies: {
