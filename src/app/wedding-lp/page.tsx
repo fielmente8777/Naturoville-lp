@@ -28,7 +28,7 @@ export default function WeddingLp() {
       <Faq {...weddingPageData.faq} />
       <SlidingTitle items={weddingPageData.highlightsBottom} />
       <GuestAccommodation {...weddingPageData.guestAccommodation} />
-      <Testimonials {...weddingPageData.testimonials} />
+      {/* <Testimonials {...weddingPageData.testimonials} /> */}
       <FinalCta {...weddingPageData.finalCta} />
       <Section className=" p-0!">
         <Container>
