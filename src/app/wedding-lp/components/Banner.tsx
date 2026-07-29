@@ -11,7 +11,7 @@ interface BannerType {
 
 const Banner: React.FC<BannerType> = ({ image, title, description, offer }) => {
   return (
-    <Section className="py-0! relative w-full aspect-square lg:aspect-[4/1.8]">
+    <Section className="py-0! relative w-full aspect-4/5 lg:aspect-[4/1.8]">
       <Image
         src={image}
         alt="wedding"
@@ -20,7 +20,7 @@ const Banner: React.FC<BannerType> = ({ image, title, description, offer }) => {
         sizes="100vw"
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,43,33,0.7)_0%,rgba(0,43,33,0.5)_50%,rgba(0,43,33,0.8)_100%)] z-10" />
-      <div className="absolute inset-0 flex items-center justify-center z-20">
+      <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
         <div className="flex flex-col items-center gap-6">
           <div className="relative w-[231px] aspect-4/2 rounded-lg border-[0.5px] backdrop-blur-sm border-white/70">
             <Image

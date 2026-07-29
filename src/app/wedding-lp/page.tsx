@@ -15,7 +15,7 @@ export default function WeddingLp() {
     <main>
       <SlidingTitle items={weddingPageData.highlights} />
       <Banner {...weddingPageData.hero} />
-      <Section className="md:hidden block p-0!">
+      <Section className="md:hidden block">
         <Container>
           <WeddingForm />
         </Container>

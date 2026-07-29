@@ -34,7 +34,7 @@ const AboutSection: React.FC<AboutSectionTypes> = ({
 }) => {
   return (
     <SectionWithContainer sectionClassName="relative ">
-      <div className="absolute inset-4 bg-bg1 border border-primary rounded-[56px] z-[-1]" />
+      <div className="absolute lg:block hidden inset-4 bg-bg1 border border-primary rounded-[56px] z-[-1]" />
       <div className="flex flex-col md:gap-14 gap-8">
         <div className="flex flex-col items-center gap-4 w-full max-w-5xl mx-auto">
           <span>
