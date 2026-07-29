@@ -18,6 +18,7 @@ export const contact = {
   },
   bookingLink:"https://bookings.naturovillewellness.com/?propertyId=12369",
   formDomain: "naturoville",
+  formHid: "",
   // formDomain: "sumittest11157821",
 };
 
