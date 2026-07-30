@@ -133,27 +133,31 @@ export const weddingPageData = {
     items: [
       {
         question: "What is the capacity for wedding events?",
-        answer: "",
+        answer: "We can accommodate weddings of approximately 200 guests. ",
       },
       {
         question: "Do you provide in house catering?",
-        answer: "",
+        answer: "Yes, our talented chefs provided curated and Multi cuisine in-house catering for all events",
       },
       {
         question: "Can we bring our own decorator?",
-        answer: "",
+        answer: "Yes, you can. ",
       },
       {
         question: "What venues are available for events?",
-        answer: "",
+        answer: "We have two beautiful open lawns available along with a semi covered space. ",
       },
       {
         question: "Do you host small gatherings and events?",
-        answer: "",
+        answer: "Yes we can curate and host all kinds of gatherings. ",
       },
       {
         question: "How far is the venue from major cities?",
-        answer: "",
+        answer: "Naturoville Wellness Resort in Lal Tappar is located about 25 km from Dehradun, 22 km from Haridwar, 15 km from Rishikesh, and 233 km from New Delhi",
+      },
+      {
+        question: "How many rooms do you have ? ",
+        answer: "We have 34 rooms- Deluxe, Premium and Luxury Rooms.",
       },
     ],
   },

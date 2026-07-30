@@ -344,3 +344,15 @@
     }
   }
 }
+
+.bg-image{
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url("/wedding-lp-img/Rectangle-365.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}

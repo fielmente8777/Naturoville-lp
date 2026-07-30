@@ -9,7 +9,6 @@ import Faq from "./components/Faq";
 import FinalCta from "./components/FinalCta";
 import GuestAccommodation from "./components/GuestAccommodation";
 import { weddingPageData } from "./components/pagedata";
-import Testimonials from "./components/Testimonials";
 export default function WeddingLp() {
   return (
     <main>
