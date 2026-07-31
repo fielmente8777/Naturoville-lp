@@ -26,8 +26,8 @@ const DestinationWeddingSection: React.FC<DestinationWeddingSectionTypes> = ({
 }) => {
   return (
     <SectionWithContainer>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-6">
-        <div className="relative w-full lg:aspect-4/5 ">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-6 max-w-6xl mx-auto">
+        <div className="relative w-full lg:aspect-4/6 ">
           <LazyLoadedVideo
             src={videos[0].src}
             poster={videos[0].poster}
@@ -49,7 +49,7 @@ const DestinationWeddingSection: React.FC<DestinationWeddingSectionTypes> = ({
             className="bg-primary text-white w-fit mx-auto rounded-full!"
           />
         </div>
-        <div className="relative w-full lg:aspect-4/5 ">
+        <div className="relative w-full lg:aspect-4/6 ">
           <LazyLoadedVideo
             src={videos[1].src}
             poster={videos[1].poster}

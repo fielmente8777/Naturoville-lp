@@ -14,7 +14,7 @@ import {
   FlowerIcon3,
 } from "@/utils/icons";
 import Image from "next/image";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 
 interface AboutSectionTypes {
   title: string;
@@ -52,7 +52,8 @@ const AboutSection: React.FC<AboutSectionTypes> = ({
         <div className="w-full  md:block hidden">
           <SwiperCarousel
             data={images || []}
-            modules={[EffectCoverflow, Navigation]}
+            modules={[EffectCoverflow, Navigation, Autoplay]}
+            autoplay={{ delay: 3000 }}
             navigation={{
               nextEl: ".about-next",
               prevEl: ".about-prev",

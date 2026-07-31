@@ -68,8 +68,8 @@ export const weddingPageData = {
         poster: "/video/wedding-poster.webp",
       },
       {
-        src: "/video/wedding.mp4",
-        poster: "/video/wedding-poster.webp",
+        src: "/video/instagrab.mp4",
+        poster: "/video/instagrab.png",
       },
     ],
   },

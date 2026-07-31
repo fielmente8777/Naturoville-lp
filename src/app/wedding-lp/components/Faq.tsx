@@ -22,7 +22,8 @@ const Faq: React.FC<FaqTypes> = ({ images, title, description, items }) => {
         className="object-cover"
         sizes="100vw"
       /> */}
-      {/* <div className="absolute top-1/2 lg:right-20 -translate-y-1/2 max-w-xl w-full bg-white/10 backdrop-blur-md rounded-2xl lg:rounded-4xl lg:p-8 p-4 z-10 space-y-3"> */}
+      {/* <div className="absolute top-1/2 lg:right-20 -translate-y-1/2 max-w-xl w-full bg-white/10 ba
+      ckdrop-blur-md rounded-2xl lg:rounded-4xl lg:p-8 p-4 z-10 space-y-3"> */}
       <Container className="py-16">
         <div className="lg:ml-auto max-w-xl w-full bg-white/10 backdrop-blur-md rounded-2xl lg:rounded-4xl lg:p-8 p-4 z-10 space-y-3">
           <SectionHeadingDesc
