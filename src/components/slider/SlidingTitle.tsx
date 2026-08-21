@@ -30,6 +30,7 @@ export default function SlidingTitle({
               </span>
             </span>
           ))}
+          
         </div>
       </div>
     </div>
