@@ -13,7 +13,7 @@ export default function SlidingTitle({
 
   return (
     <div
-      className={`relative overflow-hidden py-4 text-white max_screen_width bg-primary box-shadow ${className}`}
+      className={`relative overflow-hidden py-4 text-white max_screen_width bg-primary border-b border-white box-shadow ${className}`}
       aria-hidden={ariaHidden}
     >
       <div className="marquee-wrapper">

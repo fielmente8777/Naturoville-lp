@@ -30,7 +30,6 @@ export const weddingPageData = {
       "/wedding-lp-img/perfect-venue/DSC04571.webp",
       "/wedding-lp-img/gallery/Luxury-Room-4-balcony.jpg",
       "/new-Celebrate/DSC00130.webp",
-
     ],
     description: [
       "Celebrate your dream wedding at <strong>Naturoville</strong>, Rishikesh, where the serenity of the Himalayan foothills meets timeless elegance. ",
@@ -132,12 +131,13 @@ export const weddingPageData = {
       "Everything you need to know about hosting your event with us.",
     items: [
       {
-        question: "What is the capacity for wedding events?",
-        answer: "We can accommodate weddings of approximately 200 guests. ",
+        question: "What is the capacity for wedding and events?",
+        answer: "We can accommodate weddings and events for approximately 200 guests.",
       },
       {
         question: "Do you provide in house catering?",
-        answer: "Yes, our talented chefs provided curated and Multi cuisine in-house catering for all events",
+        answer:
+          "Yes, our talented chefs provided curated and Multi cuisine in-house catering for all events",
       },
       {
         question: "Can we bring our own decorator?",
@@ -145,7 +145,8 @@ export const weddingPageData = {
       },
       {
         question: "What venues are available for events?",
-        answer: "We have two beautiful open lawns available along with a semi covered space. ",
+        answer:
+          "We have two beautiful open lawns available along with a semi covered space. ",
       },
       {
         question: "Do you host small gatherings and events?",
@@ -153,11 +154,23 @@ export const weddingPageData = {
       },
       {
         question: "How far is the venue from major cities?",
-        answer: "Naturoville Wellness Resort in Lal Tappar is located about 25 km from Dehradun, 22 km from Haridwar, 15 km from Rishikesh, and 233 km from New Delhi",
+        answer:
+          "Naturoville Wellness Resort in Lal Tappar is located about 25 km from Dehradun, 22 km from Haridwar, 15 km from Rishikesh, and 233 km from New Delhi",
       },
+      // {
+      //   question: "How many rooms do you have ? ",
+      //   answer: "We have 34 rooms- Deluxe, Premium and Luxury Rooms.",
+      // },
+      // {
+      //   question: "What is the maximum capacity for weddings and events?",
+      //   answer:
+      //     "We can accommodate weddings and events for approximately 200 guests.",
+      // },
       {
-        question: "How many rooms do you have ? ",
-        answer: "We have 34 rooms- Deluxe, Premium and Luxury Rooms.",
+        question:
+          "How many rooms does the property have, and how many guests can they accommodate?",
+        answer:
+          "The property has 34 rooms, with accommodation for up to 100 guests",
       },
     ],
   },

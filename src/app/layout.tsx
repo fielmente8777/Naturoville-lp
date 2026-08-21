@@ -15,6 +15,8 @@ import Script from "next/script";
 import { contact } from "../../Constent";
 import "./globals.css";
 import "./style.scss";
+import SlidingTitle from "@/components/slider/SlidingTitle";
+import { weddingPageData } from "./wedding-lp/components/pagedata";
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins",
@@ -235,6 +237,7 @@ export default function RootLayout({
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         <DataProvider>
+           <SlidingTitle items={weddingPageData.highlights} />
           <Header />
           {children}
           <Footer />

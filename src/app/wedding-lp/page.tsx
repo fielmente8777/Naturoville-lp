@@ -12,7 +12,7 @@ import { weddingPageData } from "./components/pagedata";
 export default function WeddingLp() {
   return (
     <main>
-      <SlidingTitle items={weddingPageData.highlights} />
+      {/* <SlidingTitle items={weddingPageData.highlights} /> */}
       <Banner {...weddingPageData.hero} />
       <Section className="md:hidden block">
         <Container>
