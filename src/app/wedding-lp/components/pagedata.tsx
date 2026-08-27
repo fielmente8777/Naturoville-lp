@@ -166,6 +166,7 @@ export const weddingPageData = {
       //   answer:
       //     "We can accommodate weddings and events for approximately 200 guests.",
       // },
+      
       {
         question:
           "How many rooms does the property have, and how many guests can they accommodate?",
