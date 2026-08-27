@@ -248,7 +248,7 @@ const Form1 = () => {
     {
       name: "wellnessOffer",
       type: "select",
-      placeholder: "Select Offer*",
+      placeholder: "Select Treatment*",
       required: true,
     },
     {

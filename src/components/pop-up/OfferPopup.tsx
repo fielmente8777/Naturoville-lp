@@ -25,7 +25,7 @@ const OfferPopup = () => {
     1
   ).toLocaleString(undefined, { month: "long" });
   
-  const text = `limited time discount upto 20% off this ${month}.`;
+  const text = `Limited time discount upto 20% off this ${month}.`;
 
 
   // Auto-close panel after 5 seconds (show tab only)

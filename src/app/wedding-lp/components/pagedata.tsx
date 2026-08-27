@@ -3,7 +3,7 @@ export const weddingPageData = {
     image: "/wedding-lp-img/Rectangle-364.png",
     title: "Your Dream Wedding Awaits",
     description:
-      "Where luxury meets nature. Host up to 200 guests in our serene resort with infinity pool, lush lawns, and world class amenities.",
+      "Where luxury meets nature. Host events for up to 200 guests in our serene resort with infinity pool, lush lawns, and world class amenities.",
     offer:
       "Enjoy a 15% Discount on WEDDING & SMALL GATHERING bookings! Limited DATES Available!",
   },
