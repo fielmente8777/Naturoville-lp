@@ -15,13 +15,13 @@ const page = () => {
     <div>
       <Banner {...resortPageData?.bannerData} />
       {/* <OfferSlider /> */}
-      <SlidingTitle items={["Monsoon Special Offer: Stay 3 Nights & Enjoy the 4th Night Complimentary! Hurry Offer Ends Soon."]} />
+      {/* <SlidingTitle items={["Monsoon Special Offer: Stay 3 Nights & Enjoy the 4th Night Complimentary! Hurry Offer Ends Soon."]} /> */}
       <Section className="bg-dark md:py-2! py-0!">
         <div className="max-w-[1380px] mx-auto p-3 rounded-md bg-white">
           <Form2 />
         </div>
       </Section>
-      <EscapeCard {...resortPageData.vacationData} />
+      {/* <EscapeCard {...resortPageData.vacationData} /> */}
       <SignatureTherapies
         {...resortPageData.signatureTherapies}
         button={false}

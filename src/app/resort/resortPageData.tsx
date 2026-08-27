@@ -161,7 +161,8 @@ export const resortPageData = {
           href: `tel:${contact.phoneNumber}`,
         },
         images: [
-          "/Luxury-Suite/DSC02870-HDR.webp",
+          // "/Luxury-Suite/DSC02870-HDR.webp",
+          "/Luxury-Suite/507A2716-HDR.jpg",
           "/Luxury-Suite/DSC02873-HDR.webp",
           "/Luxury-Suite/DSC02876-HDR.webp",
           "/Luxury-Suite/DSC02892-HDR.webp",

@@ -12,12 +12,12 @@ import NewCelebrate from "../resort/components/NewCelebrate";
 export default function CabanaLandingPage() {
   return (
     <main>
-      <SlidingTitle
+      {/* <SlidingTitle
         className="text-primary! bg-bg1!"
         items={[
           "Enjoy Exclusive Monsoon Offers & Create Unforgettable Getaways This Rainy Season.",
         ]}
-      />
+      /> */}
       <Banner3 {...CabanaPageData?.bannerData} />
       <Section className="bg-primary py-8!">
         <div className="!p-4 bg-white md:rounded-2xl max-w-[1450px] mx-auto">
