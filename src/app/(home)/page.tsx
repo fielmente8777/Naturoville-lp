@@ -15,6 +15,8 @@ import SlidingTitle from "@/components/slider/SlidingTitle";
 export default function Home() {
   return (
     <main>
+
+      
       <Banner {...pageData.bannerData} />
       {/* <OfferSlider /> */}
       {/* <SlidingTitle items= {pageData.slidingTitle.items}/> */}
