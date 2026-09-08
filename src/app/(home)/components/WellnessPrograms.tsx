@@ -104,7 +104,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
       relative
       mx-auto
       flex
-      h-[325px]
+      h-[335px]
       w-[898px]
       flex-col
       overflow-hidden
@@ -117,6 +117,8 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
       max-md:w-full
     "
         >
+          
+
           {/* =================================================
         LOTUS WATERMARK
         ================================================= */}
