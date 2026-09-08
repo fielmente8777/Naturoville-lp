@@ -16,6 +16,7 @@ import {
 } from "@/utils/icons";
 import { Navigation } from "swiper/modules";
 import { contact } from "../../../../Constent";
+import Link from "next/link";
 
 const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
   title,
@@ -148,14 +149,11 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
             <h2
               className="
     abhayaLibre
-    m-0
     w-full
     max-w-[850px]
-    p-0
     text-center
     text-[48px]
     font-medium
-    not-italic
     text-white
     max-md:text-[30px]
   "
@@ -196,11 +194,10 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           gap-[24px]
           max-md:grid-cols-1
           max-md:gap-4
-          md:mb-6!
         "
             >
               {/* BOOK NOW */}
-              <a
+              <Link
                 href={`https://wa.me/${contact.WhatsappNumber.replace(
                   /\s+/g,
                   ""
@@ -209,7 +206,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
                 rel="noopener noreferrer"
                 className="
             flex
-            h-[60px]
+            py-2
             w-full
             items-center
             justify-center
@@ -220,7 +217,6 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
             px-[16px]
             text-[20px]
             font-medium
-            leading-[24px]
             uppercase
             text-[#002B21]
             transition-all
@@ -231,15 +227,15 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           "
               >
                 BOOK NOW
-              </a>
+              </Link>
 
               {/* DOWNLOAD BROCHURE */}
-              <a
+              <Link
                 href="/Naturoville-Wellness-Resort-Brochure.pdf"
                 download
                 className="
             flex
-            h-[60px]
+            py-2
             w-full
             items-center
             justify-center
@@ -251,7 +247,6 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
             px-[16px]
             text-[20px]
             font-medium
-            leading-[24px]
             uppercase
             text-white
             transition-all
@@ -263,7 +258,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
               >
                 <DownloadIcon />
                 DOWNLOAD BROCHURE
-              </a>
+              </Link>
             </div>
           </div>
         </div>
