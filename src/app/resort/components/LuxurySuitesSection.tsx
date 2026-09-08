@@ -41,8 +41,15 @@ const LuxurySuitesSection: React.FC<LuxurySuitesSectionProps> = ({
                 {/* room type or room size info */}
                 <ul className="flex items-center gap-2">
                   {card.roomType.map((roomType, index) => (
-                    <li key={index} className="text-lg text-[#343434]">
-                      {roomType}
+                    <li
+                      key={index}
+                      className="text-lg text-[#343434] flex items-center gap-2"
+                    >
+                      <span>{roomType}</span>
+
+                      {index < card.roomType.length - 1 && (
+                        <span className="text-[#343434]">|</span>
+                      )}
                     </li>
                   ))}
                 </ul>
