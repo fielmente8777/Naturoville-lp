@@ -116,6 +116,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
       max-md:w-full
     "
         >
+          
           {/* =================================================
         LOTUS WATERMARK
         ================================================= */}
