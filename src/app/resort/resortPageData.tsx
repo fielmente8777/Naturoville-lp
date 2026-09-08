@@ -13,8 +13,7 @@ import { SpaciousIcon } from "../../utils/amenityIcons";
 export const resortPageData = {
   bannerData: {
     title: "Welcome to Our Wellness Center",
-    videoSrc:
-      "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Natureovilla-propertyvideo.mp4",
+    videoSrc: "/room.mp4",
     src: "/core/im3.webp",
   },
   vacationData: {
@@ -37,11 +36,13 @@ export const resortPageData = {
     ],
     images: [
       "/1.webp",
-      "/Artboard14.webp",
+      "/exp-room/507A1406-HDR_11zon.jpg",
       "/Artboard15.webp",
-      "/Artboard22.webp",
+      "/exp-room/507A1651-HDR_11zon.jpg",
       "/Artboard36.webp",
+      "/exp-room/507A2452-HDR_11zon.jpg",
       "/DSC09158.webp",
+      "/exp-room/507A2887-HDR_11zon.jpg",
     ],
     links: [
       {

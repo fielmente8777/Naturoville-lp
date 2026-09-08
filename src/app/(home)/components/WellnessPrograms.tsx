@@ -175,10 +175,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           mt-[24px]
           p-0
           text-center
-          text-[24px]
-          font-normal
-          leading-[29px]
-          tracking-[0]
+          text-lg
           text-white
           max-md:mt-4
           max-md:text-[17px]
