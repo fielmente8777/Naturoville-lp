@@ -104,19 +104,19 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
       mx-auto
       flex
       h-[320px]
-      w-[800px]
+      w-[850px]
       flex-col
       overflow-hidden
       border-[0.5px]
       border-white
       bg-[#002B21]
-      px-[16px]
+      px-[24px]
       py-[32px]
-      items-center justify-center
       max-md:h-full
       max-md:w-full
     "
         >
+
           {/* =================================================
         LOTUS WATERMARK
         ================================================= */}
@@ -138,7 +138,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           {/* =================================================
         CONTENT
         ================================================= */}
-          <div className="relative z-10 flex w-full flex-col items-center justify-center">
+          <div className="relative z-10 flex w-full flex-col items-center">
             {/* =================================================
           HEADING
           Figma: Abhaya Libre Medium
@@ -152,18 +152,18 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
     m-0
     w-full
     max-w-[850px]
-    md: px-[16px]
+    p-0
     text-center
-    text-2xl
+    text-[30px]
     font-medium
     not-italic
     text-white
-    md:text-[36px]
+    md:text-[38px]
   "
             >
-              Wellness Packages Starting at
+              Wellness Packages Starting at 
               <br />
-              ₹25,000/- per night
+             ₹25,000/- per night
             </h2>
 
             {/* =================================================
@@ -179,7 +179,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           text-white
           max-md:mt-4
           md:text-lg
-          
+    
         "
             >
               Your journey towards complete wellness begins here.
@@ -192,11 +192,13 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
               className="
           mt-[24px]
           grid
-          w-auto
-          grid-cols-2
+          w-full
+          max-w-2xl
+          grid-cols-1
           gap-[24px]
           md:grid-cols-2
-          md:gap-4
+          max-md:gap-4
+          md:mb-6!
         "
             >
               {/* BOOK NOW */}
