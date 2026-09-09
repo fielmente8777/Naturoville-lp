@@ -153,7 +153,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
     w-full
     max-w-[850px]
     text-center
-    text-[30px]
+    text-[24px]
     font-medium
     text-white
     md:text-[38px]
