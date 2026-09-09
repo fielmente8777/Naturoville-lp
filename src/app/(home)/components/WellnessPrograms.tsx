@@ -16,6 +16,7 @@ import {
 } from "@/utils/icons";
 import { Navigation } from "swiper/modules";
 import { contact } from "../../../../Constent";
+import Link from "next/link";
 
 const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
   title,
@@ -149,14 +150,11 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
             <h2
               className="
     abhayaLibre
-    m-0
     w-full
     max-w-[850px]
-    p-0
     text-center
     text-[30px]
     font-medium
-    not-italic
     text-white
     md:text-[38px]
   "
@@ -198,11 +196,10 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           gap-[24px]
           md:grid-cols-2
           max-md:gap-4
-          md:mb-6!
         "
             >
               {/* BOOK NOW */}
-              <a
+              <Link
                 href={`https://wa.me/${contact.WhatsappNumber.replace(
                   /\s+/g,
                   ""
@@ -231,10 +228,10 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           "
               >
                 Book Now
-              </a>
+              </Link>
 
               {/* DOWNLOAD BROCHURE */}
-              <a
+              <Link
                 href="/Naturoville-Wellness-Resort-Brochure.pdf"
                 download
                 className="
@@ -261,7 +258,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
               >
                 <DownloadIcon />
                 Download Brochure
-              </a>
+              </Link>
             </div>
           </div>
         </div>

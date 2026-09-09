@@ -72,7 +72,7 @@ const OfferPopup = () => {
   `}
       >
         <div className="flex flex-col items-center bg-primary/80 backdrop-blur-md justify-center w-[250px] gap-4 px-4 py-5">
-          <div className="relative w-32 aspect-[4/2]">
+          <div className="relative w-32 aspect-[4/2.1]">
             <Image
               src={"/LOGO 1.png"}
               alt="Logo"
