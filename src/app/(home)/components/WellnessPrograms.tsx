@@ -103,25 +103,24 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
       relative
       mx-auto
       flex
-      h-[335px]
-      w-[898px]
+      h-[320px]
+      w-[800px]
       flex-col
       overflow-hidden
       border-[0.5px]
       border-white
       bg-[#002B21]
-      px-[24px]
+      px-[16px]
       py-[32px]
+      items-center justify-center
       max-md:h-full
       max-md:w-full
     "
         >
-          
-
           {/* =================================================
         LOTUS WATERMARK
         ================================================= */}
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          {/* <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
             <img
               src="/lotuswater.png"
               alt=""
@@ -134,12 +133,12 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           opacity-[10]
         "
             />
-          </div>
+          </div> */}
 
           {/* =================================================
         CONTENT
         ================================================= */}
-          <div className="relative z-10 flex w-full flex-col items-center">
+          <div className="relative z-10 flex w-full flex-col items-center justify-center">
             {/* =================================================
           HEADING
           Figma: Abhaya Libre Medium
@@ -153,18 +152,18 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
     m-0
     w-full
     max-w-[850px]
-    p-0
+    md: px-[16px]
     text-center
-    text-[48px]
+    text-2xl
     font-medium
     not-italic
     text-white
-    max-md:text-[30px]
+    md:text-[36px]
   "
             >
-              Wellness Packages Starting at ₹25,000/-
+              Wellness Packages Starting at
               <br />
-              per Night
+              ₹25,000/- per night
             </h2>
 
             {/* =================================================
@@ -176,11 +175,11 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           mt-[24px]
           p-0
           text-center
-          text-lg
+          text-sm
           text-white
           max-md:mt-4
-          max-md:text-[17px]
-          max-md:leading-[22px]
+          md:text-lg
+          
         "
             >
               Your journey towards complete wellness begins here.
@@ -193,12 +192,11 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
               className="
           mt-[24px]
           grid
-          w-full
+          w-auto
           grid-cols-2
           gap-[24px]
-          max-md:grid-cols-1
-          max-md:gap-4
-          md:mb-6!
+          md:grid-cols-2
+          md:gap-4
         "
             >
               {/* BOOK NOW */}
@@ -211,7 +209,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
                 rel="noopener noreferrer"
                 className="
             flex
-            h-[60px]
+            h-[40px]
             w-full
             items-center
             justify-center
@@ -222,8 +220,6 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
             px-[16px]
             text-[20px]
             font-medium
-            leading-[24px]
-            uppercase
             text-[#002B21]
             transition-all
             duration-200
@@ -232,7 +228,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
             max-md:text-[16px]
           "
               >
-                BOOK NOW
+                Book Now
               </a>
 
               {/* DOWNLOAD BROCHURE */}
@@ -241,7 +237,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
                 download
                 className="
             flex
-            h-[60px]
+            h-[40px]
             w-full
             items-center
             justify-center
@@ -253,8 +249,6 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
             px-[16px]
             text-[20px]
             font-medium
-            leading-[24px]
-            uppercase
             text-white
             transition-all
             duration-200
@@ -264,7 +258,7 @@ const WellnessPrograms: React.FC<WellnessProgramsTypes> = ({
           "
               >
                 <DownloadIcon />
-                DOWNLOAD BROCHURE
+                Download Brochure
               </a>
             </div>
           </div>

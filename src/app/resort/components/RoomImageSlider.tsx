@@ -2,7 +2,7 @@
 import { LuxurySuitesSectionProps } from "@/@types/types";
 import { SwiperCarousel } from "@/components";
 import Image from "next/image";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const RoomImageSlider: React.FC<{
   images: LuxurySuitesSectionProps["cards"][0]["images"];
@@ -14,8 +14,9 @@ const RoomImageSlider: React.FC<{
         slidesPerView={1}
         spaceBetween={4}
         loop={true}
-        modules={[Navigation]}
+        modules={[Navigation , Autoplay]}
         navigation={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
         className="w-full"
         renderSlide={(image) => (
           <div className="relative w-full aspect-[4/3.1] rounded-3xl overflow-hidden">
