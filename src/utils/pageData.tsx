@@ -16,7 +16,7 @@ export const pageData = {
   bannerData: {
     title: "Welcome to Our Wellness Center",
     videoSrc:
-      "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Natureovilla-propertyvideo.mp4",
+      "https://d2t379r2u8q011.cloudfront.net/naturoville/Natureovilla-propertyvideo.mp4",
     src: "/core/im3.webp",
   },
   holisticHealing: {
@@ -388,12 +388,12 @@ export const pageData = {
     review: [
       {
         videoSrc:
-          "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/With-warmth-and-gratitude.mp4",
+          "https://d2t379r2u8q011.cloudfront.net/naturoville/With-warmth-and-gratitude.mp4",
         thumbnail: "/With-warmth-and-gratitude.png",
       },
       {
         videoSrc:
-          "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/NV.mp4",
+          "https://d2t379r2u8q011.cloudfront.net/naturoville/NV.mp4",
         thumbnail: "/NV.png",
       },
     ],

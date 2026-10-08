@@ -14,7 +14,7 @@ export const resortPageData = {
   bannerData: {
     title: "Welcome to Our Wellness Center",
     videoSrc:
-      "https://eazotel-clients-images.s3.ap-south-1.amazonaws.com/naturoville/Natureovilla-propertyvideo.mp4",
+      "https://d2t379r2u8q011.cloudfront.net/naturoville/Natureovilla-propertyvideo.mp4",
     src: "/core/im3.webp",
   },
   vacationData: {

@@ -17,6 +17,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.facebook.com",
       },
+      {
+        protocol: "https",
+        hostname: "d2t379r2u8q011.cloudfront.net",
+        pathname: "/**",
+      },
     ],
     formats: ["image/avif", "image/webp"],
 
