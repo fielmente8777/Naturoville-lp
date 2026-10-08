@@ -8,6 +8,7 @@ import Header from "@/components/navbar/Header";
 import AmenitiesPopup from "@/components/pop-up/AmenitiesPopup";
 import OfferPopup from "@/components/pop-up/OfferPopup";
 import PopForm from "@/components/pop-up/PopForm";
+import SlidingText from "@/components/slider/SlidingText";
 import { DataProvider } from "@/contextApi/DataContext";
 import localFont from "next/font/local";
 import Image from "next/image";
@@ -15,6 +16,7 @@ import Script from "next/script";
 import { contact } from "../../Constent";
 import "./globals.css";
 import "./style.scss";
+
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins",
@@ -235,6 +237,8 @@ export default function RootLayout({
         </noscript>
         {/* <!-- End Google Tag Manager (noscript) --> */}
         <DataProvider>
+        
+           <SlidingText />
           <Header />
           {children}
           <Footer />
@@ -244,7 +248,9 @@ export default function RootLayout({
           <OfferPopup />
           <AmenitiesPopup />
           {/* <ImageGalleryPopup /> */}
+          
         </DataProvider>
+        
 
         <Script
           id="eazbot-config"
@@ -263,3 +269,4 @@ export default function RootLayout({
     </html>
   );
 }
+

@@ -320,6 +320,19 @@ export const pageData = {
         href: `/Naturoville-Wellness-Resort-Brochure.pdf`,
       },
     ],
+    wellnessCta: {
+  title: "WELLNESS PACKAGES STARTING AT",
+  price: "₹25,000/- PER NIGHT",
+  description:
+    "Your journey towards complete wellness begins here.",
+
+  links: [
+    {
+      label: "DOWNLOAD BROCHURE",
+      href: `/Naturoville-Wellness-Resort-Brochure.pdf`,
+    },
+  ],
+},
   },
   accommodation: {
     title: "Accommodation",

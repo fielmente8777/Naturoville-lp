@@ -15,15 +15,17 @@ import SlidingTitle from "@/components/slider/SlidingTitle";
 export default function Home() {
   return (
     <main>
+
+      
       <Banner {...pageData.bannerData} />
       {/* <OfferSlider /> */}
-      <SlidingTitle items= {pageData.slidingTitle.items}/>
+      {/* <SlidingTitle items= {pageData.slidingTitle.items}/> */}
       <Section className="bg-dark lg:!py-8 !py-4">
         <Container>
           <Form1 />
         </Container>
       </Section>
-      <EscapeCard {...pageData.vacationData}/>
+      {/* <EscapeCard {...pageData.vacationData}/> */}
       {/* <HolisticHealing {...pageData.holisticHealing} />*/}
       <WellnessPrograms {...pageData?.wellnessPrograms} />
       <Facilities {...pageData?.facilities} />
